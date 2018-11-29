@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ServerHttp : MonoBehaviour {
 
+    public NetworkEventManager networkEventManager;
+    public string urlDolphin;
+    public string portDolphin;
+
+    private bool inputReceived;
+    
+
 	// Use this for initialization
 	void Start () {
 		

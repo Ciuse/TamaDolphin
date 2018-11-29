@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TherapistManager : MonoBehaviour {
+public class NetworkEventManager : MonoBehaviour {
+    public HttpPutRequest realSamManager;
+    public HttpPutRequest therapistManager;
+    public GameEventManager gameEventManager;
 
 	// Use this for initialization
 	void Start () {

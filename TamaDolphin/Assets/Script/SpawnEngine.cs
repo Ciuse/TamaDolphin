@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NetworEventManager : MonoBehaviour {
+public class SpawnEngine : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    public GameObject[] foodBaskets;
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameEventManager : MonoBehaviour {
 
+    public NetworkEventManager networkEventManager;
+    public FeedbackManager feedbackManager;
 	// Use this for initialization
 	void Start () {
 		

@@ -4,13 +4,33 @@ using UnityEngine;
 
 public class InputState : MonoBehaviour {
 
+
+    private TypeOfInput samInput;
+    private TypeOfInput therapistInput;
+
 	// Use this for initialization
 	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        samInput = 0;
+        therapistInput = 0;
+    }
+
+    public TypeOfInput GetSamInput()
+    {
+        return samInput;
+    }
+
+    public TypeOfInput GetTherapistInput()
+    {
+        return therapistInput;
+    }
+
+    public void SetSamInput(TypeOfInput samInput)
+    {
+        this.samInput=samInput;
+    }
+
+    public void SetTherapistInput(TypeOfInput therapistInput)
+    {
+        this.therapistInput=therapistInput;
+    }
 }
