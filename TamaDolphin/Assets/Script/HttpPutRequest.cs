@@ -6,13 +6,13 @@ using UnityEngine.UI;
 public class HttpPutRequest : MonoBehaviour
 {
     public string url;
-    public Object jsonHttpSetting;
-    public void Request()
+
+    public void PutRequest(Object jsonHttpSetting)
     {
-        StartCoroutine(ChangeHttpSetting());
+        StartCoroutine(ChangeHttpSetting(jsonHttpSetting));
     }
 
-    IEnumerator ChangeHttpSetting()
+    IEnumerator ChangeHttpSetting(Object jsonHttpSetting)
     {
         string json = JsonUtility.ToJson(jsonHttpSetting);
         byte[] myData = System.Text.Encoding.UTF8.GetBytes(json);
