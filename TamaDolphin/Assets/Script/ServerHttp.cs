@@ -63,14 +63,16 @@ public class ServerHttp : MonoBehaviour
         }
     }
 
-    private static void HandleSamCardRead(Match match, HttpListenerResponse response)
+    private void HandleSamCardRead(Match match, HttpListenerResponse response)
     {
         Debug.Log("messaggio ricevuto");
+        networkEventManager.HandleSamCardRead("IDletto");
     }
 
-    private static void HandleWebButtonPressed(Match match, HttpListenerResponse response)
+    private void HandleWebButtonPressed(Match match, HttpListenerResponse response)
     {
-
+        Debug.Log("messaggio ricevuto");
+        networkEventManager.HandleWebButtonPressed("IDButton");
     }
 
     private void ListenerCallback(IAsyncResult result)

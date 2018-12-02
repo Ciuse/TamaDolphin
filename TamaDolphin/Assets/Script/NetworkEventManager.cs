@@ -9,9 +9,22 @@ public class NetworkEventManager : MonoBehaviour
     public GameEventManager gameEventManager;
     public Object jsonHttpSetting;
 
-    public void setRealSamSetting()
+
+    public void SetRealSamSetting()
     {
         realSamManager.PutRequest(jsonHttpSetting);
+    }
+
+    public void HandleSamCardRead(string cardIdRead)
+    {
+        gameEventManager.SetInputStateRealSam(cardIdRead);
+
+    }
+
+    public void HandleWebButtonPressed(string buttonPressedId)
+    {
+        gameEventManager.SetInputStateTherapist(buttonPressedId);
+
     }
 }
 
