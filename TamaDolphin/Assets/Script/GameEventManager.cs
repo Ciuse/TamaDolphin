@@ -15,7 +15,7 @@ public class GameEventManager : MonoBehaviour
     void Start()
     {
         gamePhase = "Start";
-        correctCardId = "1234567";
+        correctCardId = "45b41e39";
     }
 
     // Update is called once per frame
@@ -36,9 +36,12 @@ public class GameEventManager : MonoBehaviour
 
     public void SetInputStateRealSam(string cardIdRead)
     {
-        if (correctCardId == cardIdRead)
+        Debug.Log(cardIdRead);
+
+        if (correctCardId == cardIdRead )
         {
             inputState.SetRealSamInput(TypeOfInput.correct);
+            Debug.Log("LA STRINGA é CORRETTA");
         }
         else
         {

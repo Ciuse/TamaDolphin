@@ -34,6 +34,7 @@ public class InputState : MonoBehaviour {
     public void SetRealSamInput(TypeOfInput realSamInput)
     {
         this.realSamInput=realSamInput;
+        Debug.Log("HO settato giusto"+realSamInput);
     }
 
     public void SetTherapistInput(TypeOfInput therapistInput)

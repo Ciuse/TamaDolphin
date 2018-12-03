@@ -5,20 +5,21 @@ using UnityEngine.UI;
 
 public class HttpPutRequest : MonoBehaviour
 {
-    public string url;
+    private string url= "192.168.0.125";
 
-    public void PutRequest(Object jsonHttpSetting)
+    public void PutRequest(string jsonHttpSetting)
     {
         StartCoroutine(ChangeHttpSetting(jsonHttpSetting));
     }
 
-    IEnumerator ChangeHttpSetting(Object jsonHttpSetting)
+    IEnumerator ChangeHttpSetting(string jsonHttpSetting)
     {
-        string json = JsonUtility.ToJson(jsonHttpSetting);
+        string json =jsonHttpSetting;
         byte[] myData = System.Text.Encoding.UTF8.GetBytes(json);
-        UnityWebRequest www = UnityWebRequest.Put(url, myData);
+        UnityWebRequest www = UnityWebRequest.Post(url, myData);
         www.SetRequestHeader("Content-Type", "application/json");
         yield return www.SendWebRequest();
+        Debug.Log("Impostazioni fatte");
 
         if (www.isNetworkError || www.isHttpError)
         {

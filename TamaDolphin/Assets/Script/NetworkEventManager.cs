@@ -7,11 +7,17 @@ public class NetworkEventManager : MonoBehaviour
     public HttpPutRequest realSamManager;
     public HttpPutRequest therapistManager;
     public GameEventManager gameEventManager;
-    public Object jsonHttpSetting;
+    // public string jsonHttpSetting;
 
+    void Start()
+    {
+        SetRealSamSetting();
+    }
 
     public void SetRealSamSetting()
     {
+        string jsonHttpSetting = "{\"requestType\":\"changeHttp\",\"ipTarget\":\"192.168.0.103\",\"portTarget\":8081}";
+
         realSamManager.PutRequest(jsonHttpSetting);
     }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System;
 using System.Net;
 using System.Text.RegularExpressions;
-
+using System.IO;
 
 public class ServerHttp : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class ServerHttp : MonoBehaviour
     public string portDolphin;
     public string urlWeb;
     public string portWeb;
-    public delegate void RequestHandler(Match match, HttpListenerResponse response);
+    public delegate void RequestHandler(Match match, HttpListenerResponse response, string contRead);
 
     private Dictionary<Regex, RequestHandler> _requestHandlers = new Dictionary<Regex, RequestHandler>();
 
@@ -30,8 +30,9 @@ public class ServerHttp : MonoBehaviour
     {
         if (isMatching)
         {
-            functionToRun(param1, param2);
             isMatching = false;
+            function(); //test 
+
 
         }
     }
@@ -39,16 +40,17 @@ public class ServerHttp : MonoBehaviour
     void Awake()
     {
         // create the dictionnary of Regex and RequestHandler
-        _requestHandlers[new Regex(@"^/ $")] = HandleSamCardRead;
-        _requestHandlers[new Regex(@"^/ $")] = HandleWebButtonPressed;
+        _requestHandlers[new Regex(@"^/Web$")] = HandleWebResponse;
+        _requestHandlers[new Regex(@"^.*$")] = HandleSamResponse;
     }
 
     // Use this for initialization
     void Start()
     {
+        Debug.Log("ciao");
 
         _listener = new HttpListener();
-        _listener.Prefixes.Add("http://127.0.0.1:8080/");
+        _listener.Prefixes.Add("http://192.168.0.103:8081/");
 
         _listener.Start();
 
@@ -63,14 +65,30 @@ public class ServerHttp : MonoBehaviour
         }
     }
 
-    private void HandleSamCardRead(Match match, HttpListenerResponse response)
+    private void function()
     {
-        Debug.Log("messaggio ricevuto");
-        networkEventManager.HandleSamCardRead("IDletto");
+
+    }
+    private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
+    {
+        SamEvents samEvents = new SamEvents();
+        samEvents = JsonUtility.FromJson<SamEvents>(contRead);
+
+        string idLetto = samEvents.events[0].val;
+        isMatching = true;
+
+        Debug.Log("messaggio ricevutoSam");
+        Debug.Log(contRead);
+
+        networkEventManager.HandleSamCardRead(idLetto);
     }
 
-    private void HandleWebButtonPressed(Match match, HttpListenerResponse response)
+   
+    private void HandleWebResponse(Match match, HttpListenerResponse response,  string contRead)
     {
+
+        isMatching = true;
+
         Debug.Log("messaggio ricevuto");
         networkEventManager.HandleWebButtonPressed("IDButton");
     }
@@ -84,15 +102,16 @@ public class ServerHttp : MonoBehaviour
         // Obtain a response object.
         HttpListenerResponse response = context.Response;
 
+        string contRead = new StreamReader(request.InputStream).ReadToEnd();
+
+        Debug.Log(response);
+
         foreach (Regex r in _requestHandlers.Keys)
         {
             Match m = r.Match(request.Url.AbsolutePath);
             if (m.Success)
             {
-                functionToRun = (_requestHandlers[r]);
-                param1 = m;
-                param2 = response;
-                isMatching = true;
+                (_requestHandlers[r])(m, response, contRead);
                 // server waits fpr the next request
                 _listener.BeginGetContext(new AsyncCallback(ListenerCallback), _listener);
                 return;
@@ -104,4 +123,20 @@ public class ServerHttp : MonoBehaviour
     }
 
 
+}
+
+[Serializable]
+public class SamEvents
+{
+    public Evt[] events;
+
+}
+
+[Serializable]
+public class Evt
+{
+    public string typ;
+    public string val;
+    public bool act;
+    public int dur;
 }
