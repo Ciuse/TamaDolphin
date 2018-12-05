@@ -54,6 +54,7 @@ public class GameEventManager : MonoBehaviour
         if (buttonPressedId== "1")
         {
             inputState.SetTherapistInput(TypeOfInput.correct);
+            Debug.Log("therapist input settato");
         }
         else
         {

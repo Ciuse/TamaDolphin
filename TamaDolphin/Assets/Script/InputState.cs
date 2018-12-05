@@ -40,5 +40,6 @@ public class InputState : MonoBehaviour {
     public void SetTherapistInput(TypeOfInput therapistInput)
     {
         this.therapistInput=therapistInput;
+        Debug.Log("HO settato giusto" + therapistInput);
     }
 }

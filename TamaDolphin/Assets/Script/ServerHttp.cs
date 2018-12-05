@@ -50,7 +50,7 @@ public class ServerHttp : MonoBehaviour
         Debug.Log("ciao");
 
         _listener = new HttpListener();
-        _listener.Prefixes.Add("http://192.168.0.103:8081/");
+        _listener.Prefixes.Add("http://192.168.1.7:8081/");
 
         _listener.Start();
 
@@ -87,11 +87,35 @@ public class ServerHttp : MonoBehaviour
     private void HandleWebResponse(Match match, HttpListenerResponse response,  string contRead)
     {
 
+       
         isMatching = true;
 
         Debug.Log("messaggio ricevuto");
-        networkEventManager.HandleWebButtonPressed("IDButton");
+        Debug.Log(contRead);
+        //Debug.Log(TherapistButtonValue(contRead));
+        //networkEventManager.HandleWebButtonPressed(TherapistButtonValue(contRead));
     }
+
+    
+    public string TherapistButtonValue(string buttonValue)
+    {
+        
+        string val = string.Empty;
+        
+
+        for (int i = 0; i < buttonValue.Length; i++)
+        {
+            if (Char.IsDigit(buttonValue[i]))
+                val += buttonValue[i];
+        }
+
+        if (val.Length == 1 && (val=="0"|| val == "1" ))
+        {
+           return val;
+        }
+        else return "qualcosa è andato storto nella stringa passata dal sito web";
+    }
+
 
     private void ListenerCallback(IAsyncResult result)
     {
@@ -101,10 +125,9 @@ public class ServerHttp : MonoBehaviour
         HttpListenerRequest request = context.Request;
         // Obtain a response object.
         HttpListenerResponse response = context.Response;
-
         string contRead = new StreamReader(request.InputStream).ReadToEnd();
 
-        Debug.Log(response);
+
 
         foreach (Regex r in _requestHandlers.Keys)
         {
@@ -112,7 +135,7 @@ public class ServerHttp : MonoBehaviour
             if (m.Success)
             {
                 (_requestHandlers[r])(m, response, contRead);
-                // server waits fpr the next request
+                // server waits for the next request
                 _listener.BeginGetContext(new AsyncCallback(ListenerCallback), _listener);
                 return;
             }
@@ -139,4 +162,18 @@ public class Evt
     public string val;
     public bool act;
     public int dur;
+}
+
+[Serializable]
+public class WebEvents
+{
+    public EvtWeb[] eventsWeb;
+
+}
+
+[Serializable]
+public class EvtWeb
+{
+    public string name;
+    public string value;
 }
