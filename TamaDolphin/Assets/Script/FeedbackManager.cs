@@ -10,7 +10,7 @@ public class FeedbackManager : MonoBehaviour {
     public NetworkEventManager networkEventManager;
 	// Use this for initialization
 	void Start () {
-		
+        networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
 	}
 	
 	// Update is called once per frame

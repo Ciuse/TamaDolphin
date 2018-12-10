@@ -9,10 +9,6 @@ public class ServerHttp : MonoBehaviour
 {
 
     public NetworkEventManager networkEventManager;
-    public string urlDolphin;
-    public string portDolphin;
-    public string urlWeb;
-    public string portWeb;
     public delegate void RequestHandler(Match match, HttpListenerResponse response, string contRead);
 
     private Dictionary<Regex, RequestHandler> _requestHandlers = new Dictionary<Regex, RequestHandler>();
@@ -72,6 +68,7 @@ public class ServerHttp : MonoBehaviour
     }
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
+
         SamEvents samEvents = new SamEvents();
         samEvents = JsonUtility.FromJson<SamEvents>(contRead);
 
@@ -95,7 +92,7 @@ public class ServerHttp : MonoBehaviour
         Debug.Log("messaggio ricevuto");
         Debug.Log(contRead);
         
-        //networkEventManager.HandleWebButtonPressed(contRead);
+        networkEventManager.HandleWebButtonPressed(contRead);
     }
 
     

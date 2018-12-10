@@ -14,13 +14,13 @@ public class startGame : MonoBehaviour
 
 
 
-    public void Start()
+    public void Startg()
     {
         buttonStart.SetActive(false);
         
     }
 
-    public void Update()
+    public void Updateg()
     {
         if (server.clickButton)
         {
@@ -28,14 +28,14 @@ public class startGame : MonoBehaviour
         }
     }
 
-    public void Startg()
+    public void Start()
     {
         buttonStart.SetActive(false);
-        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", "192.168.0.115", "8081"));
+        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", Network.player.ipAddress, 8081));
   
     }
 
-    public void Updateg()
+    public void Update()
     {
         if (network.realSamManager.sendPost)
         {

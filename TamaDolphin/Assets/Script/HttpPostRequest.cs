@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class HttpPostRequest : MonoBehaviour
 {
-
     public bool sendPost=false;
 
     public void PostRequest(string jsonHttpSetting)
@@ -16,8 +15,9 @@ public class HttpPostRequest : MonoBehaviour
 
     private IEnumerator SendPostToSam(string jsonHttpSetting)
     {
+        
         string json = jsonHttpSetting;
-        string url = "http://192.168.1.7:8081";
+        string url = "http://192.168.0.125";
         UnityWebRequest www = UnityWebRequest.Post(url, json);
         www.SetRequestHeader("Content-Type", "application/json");
         yield return www.SendWebRequest();
@@ -36,9 +36,11 @@ public class HttpPostRequest : MonoBehaviour
 
     }
 
-    public string Configuration(string requestType, string ipTarget, string portTarget)
+    public string Configuration(string requestType, string ipTarget, int portTarget)
     {
-        return "{\"requestType\":" + requestType + "," + "\"changeHttp\":" + ipTarget + "," + "\"portTarget\":" + portTarget + "}";
+        string stringa= "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"ipTarget\":" + "\"" + ipTarget + "\"" + "," + "\"portTarget\":" + portTarget + "}";
+        Debug.Log(stringa);
+        return stringa;
     }
 
     public string SetLights(string requestType, string code1, string color1, string code2, string color2, string code3, string color3, string code4, string color4)

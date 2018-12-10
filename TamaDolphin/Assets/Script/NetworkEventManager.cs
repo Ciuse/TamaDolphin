@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class NetworkEventManager : MonoBehaviour
 {
-    public HttpPostRequest realSamManager;
-    public HttpPostRequest therapistManager;
     public GameEventManager gameEventManager;
+    public HttpPostRequest realSamManager;
+    public HttpPostRequest therapistWebManager;
     // public string jsonHttpSetting;
 
     void Start()

@@ -14,6 +14,7 @@ public class GameEventManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
         gamePhase = "Start";
         correctCardId = "45b41e39";
     }
