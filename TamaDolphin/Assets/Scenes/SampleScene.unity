@@ -113,91 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &137305051
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 137305055}
-  - component: {fileID: 137305054}
-  - component: {fileID: 137305053}
-  - component: {fileID: 137305052}
-  m_Layer: 0
-  m_Name: FoodBasket
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!65 &137305052
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 137305051}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &137305053
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 137305051}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: b465a394f02239d48b1f2ceb81d46179, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &137305054
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 137305051}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &137305055
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 137305051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.71, y: 1.03, z: 7.39}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 16
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -405,7 +320,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 452819396}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.9295645, y: 1.8057048, z: 2.2941236}
@@ -490,7 +405,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Spawnpoint: {fileID: 224866001495367092, guid: 36711046adf151b4babe0ade418077c5,
     type: 2}
-  Cloud: {fileID: 1802140230461950, guid: 36711046adf151b4babe0ade418077c5, type: 2}
+  Cloud: {fileID: 1281914019460654, guid: 4093e375c496f064d8340b9f3fc4ce07, type: 2}
 --- !u!1 &503428805
 GameObject:
   m_ObjectHideFlags: 0
@@ -518,7 +433,7 @@ Transform:
   m_Children:
   - {fileID: 282840814}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &558974842
 GameObject:
@@ -547,6 +462,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c526c1c134b954e9ef4b747b464517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendPost: 0
 --- !u!4 &558974844
 Transform:
   m_ObjectHideFlags: 0
@@ -558,7 +474,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &621858266
 GameObject:
@@ -615,7 +531,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b9166b43f7abe48ae055885af2005a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  networkEventManager: {fileID: 1592647546}
+  networkEventManager: {fileID: 0}
   feedbackManager: {fileID: 1189041256}
   inputState: {fileID: 1490348658}
   gamePhase: 
@@ -765,10 +681,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodBaskets:
-  - {fileID: 137305051}
-  - {fileID: 137305051}
-  - {fileID: 137305051}
-  - {fileID: 137305051}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!4 &1102531378
 Transform:
   m_ObjectHideFlags: 0
@@ -811,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   worldFeedback: {fileID: 351563717}
   dolphin_VR: {fileID: 452819396}
-  networkEventManager: {fileID: 1592647546}
+  networkEventManager: {fileID: 0}
 --- !u!4 &1189041257
 Transform:
   m_ObjectHideFlags: 0
@@ -924,7 +840,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5178a07553921f541b4351c57a31b56d, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 5178a07553921f541b4351c57a31b56d, type: 3}
       propertyPath: m_Name
@@ -989,94 +905,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 44.14111, y: 1.8503685, z: 38.174065}
   m_Center: {x: -0.82606125, y: 0.56158817, z: 0.43381596}
---- !u!1 &1592647545
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1592647547}
-  - component: {fileID: 1592647546}
-  m_Layer: 0
-  m_Name: NetworkEventManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1592647546
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1592647545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bfc103a3a7ebcfe49aa13360e4a3f271, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  realSamManager: {fileID: 2087056735}
-  therapistManager: {fileID: 558974843}
-  gameEventManager: {fileID: 842932273}
---- !u!4 &1592647547
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1592647545}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255, y: 255, z: 255}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1647166639
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 1647166641}
-  - component: {fileID: 1647166640}
-  m_Layer: 0
-  m_Name: ServerHttp
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1647166640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1647166639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0bba19de621fa4f41ab8da97ab509167, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  networkEventManager: {fileID: 1592647546}
-  urlDolphin: 
-  portDolphin: 
-  urlWeb: 
-  portWeb: 
---- !u!4 &1647166641
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1647166639}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255, y: 255, z: 255}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1683099792
 Prefab:
   m_ObjectHideFlags: 0
@@ -1192,6 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5c526c1c134b954e9ef4b747b464517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sendPost: 0
 --- !u!4 &2087056736
 Transform:
   m_ObjectHideFlags: 0
@@ -1203,5 +1032,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

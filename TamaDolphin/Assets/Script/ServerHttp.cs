@@ -20,6 +20,7 @@ public class ServerHttp : MonoBehaviour
     HttpListener _listener;
 
     private bool isMatching = false;
+    public bool clickButton = false;
 
     private Match param1;
     private HttpListenerResponse param2;
@@ -50,7 +51,7 @@ public class ServerHttp : MonoBehaviour
         Debug.Log("ciao");
 
         _listener = new HttpListener();
-        _listener.Prefixes.Add("http://192.168.1.7:8081/");
+        _listener.Prefixes.Add("http://+:8081/");
 
         _listener.Start();
 
@@ -89,11 +90,12 @@ public class ServerHttp : MonoBehaviour
 
        
         isMatching = true;
+        clickButton = true;
 
         Debug.Log("messaggio ricevuto");
         Debug.Log(contRead);
-        //Debug.Log(TherapistButtonValue(contRead));
-        //networkEventManager.HandleWebButtonPressed(TherapistButtonValue(contRead));
+        
+        //networkEventManager.HandleWebButtonPressed(contRead);
     }
 
     
@@ -116,9 +118,12 @@ public class ServerHttp : MonoBehaviour
         else return "qualcosa è andato storto nella stringa passata dal sito web";
     }
 
+    
+
 
     private void ListenerCallback(IAsyncResult result)
     {
+        Debug.Log("Messaggio http ricevuto");
         HttpListener listener = (HttpListener)result.AsyncState;
         // Call EndGetContext to complete the asynchronous operation.
         HttpListenerContext context = listener.EndGetContext(result);
@@ -126,6 +131,7 @@ public class ServerHttp : MonoBehaviour
         // Obtain a response object.
         HttpListenerResponse response = context.Response;
         string contRead = new StreamReader(request.InputStream).ReadToEnd();
+        
 
 
 
@@ -164,16 +170,4 @@ public class Evt
     public int dur;
 }
 
-[Serializable]
-public class WebEvents
-{
-    public EvtWeb[] eventsWeb;
 
-}
-
-[Serializable]
-public class EvtWeb
-{
-    public string name;
-    public string value;
-}

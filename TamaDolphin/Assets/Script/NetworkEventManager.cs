@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class NetworkEventManager : MonoBehaviour
 {
-    public HttpPutRequest realSamManager;
-    public HttpPutRequest therapistManager;
+    public HttpPostRequest realSamManager;
+    public HttpPostRequest therapistManager;
     public GameEventManager gameEventManager;
     // public string jsonHttpSetting;
 
     void Start()
     {
-        SetRealSamSetting();
+       
     }
 
-    public void SetRealSamSetting()
+    public void SetRealSamSetting(string request)
     {
-        string jsonHttpSetting = "{\"requestType\":\"changeHttp\",\"ipTarget\":\"192.168.0.103\",\"portTarget\":8081}";
-
-        realSamManager.PutRequest(jsonHttpSetting);
+        realSamManager.PostRequest(request);
+        
     }
 
     public void HandleSamCardRead(string cardIdRead)
