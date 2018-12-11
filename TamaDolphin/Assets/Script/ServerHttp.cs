@@ -37,6 +37,8 @@ public class ServerHttp : MonoBehaviour
     void Awake()
     {
         // create the dictionnary of Regex and RequestHandler
+        _requestHandlers[new Regex(@"^/Sam$")] = HandleSamWebResponse;
+        _requestHandlers[new Regex(@"^/Rfid$")] = HandleCardRfidResponse;
         _requestHandlers[new Regex(@"^/Web$")] = HandleWebResponse;
         _requestHandlers[new Regex(@"^.*$")] = HandleSamResponse;
     }
@@ -66,6 +68,30 @@ public class ServerHttp : MonoBehaviour
     {
 
     }
+
+    private void HandleSamWebResponse(Match match, HttpListenerResponse response, string contRead)
+    {
+
+        if (contRead == "1")
+        {
+
+            clickButton = true;
+            Debug.Log("configurazione avvenuta con successo");
+            
+        }
+       
+    }
+
+    private void HandleCardRfidResponse(Match match, HttpListenerResponse response, string contRead)
+    {
+
+        Debug.Log("messaggio ricevutoSam");
+        Debug.Log(contRead);
+
+        networkEventManager.HandleSamCardRead(contRead);
+
+    }
+
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
 
@@ -87,7 +113,7 @@ public class ServerHttp : MonoBehaviour
 
        
         isMatching = true;
-        clickButton = true;
+        
 
         Debug.Log("messaggio ricevuto");
         Debug.Log(contRead);

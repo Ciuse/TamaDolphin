@@ -17,8 +17,8 @@ public class HttpPostRequest : MonoBehaviour
     {
         
         string json = jsonHttpSetting;
-        string url = "http://192.168.0.125";
-        UnityWebRequest www = UnityWebRequest.Post(url, json);
+        string urlSam = "http://192.168.0.125";
+        UnityWebRequest www = UnityWebRequest.Post(urlSam, json);
         www.SetRequestHeader("Content-Type", "application/json");
         yield return www.SendWebRequest();
         Debug.Log("Impostazioni fatte");
@@ -45,11 +45,22 @@ public class HttpPostRequest : MonoBehaviour
 
     public string SetLights(string requestType, string code1, string color1, string code2, string color2, string code3, string color3, string code4, string color4)
     {
-        return "{\"requestType\":" + requestType + "," + "\"lightControllerSetter\":[{\"code\":" + code1 + "," + "\"color\":" + color1 + "},{\"code\":" + code2 + "," + "\"color\":" + color2 + "},{\"code\":" + code3 + "," + "\"color\":" + color3 + "},{\"code\":" + code4 + "," + "\"color\":" + color4 + "}]}";
+         string lights = "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"lightControllerSetter\":[{\"code\":" + "\"" + code1 + "\"" + "," + "\"color\":" + "\"" + color1 + "\"" + "},{\"code\":" + "\"" + code2 + "\"" + "," + "\"color\":" + "\"" + color2 + "\"" + "},{\"code\":" + "\"" + code3 + "\"" + "," + "\"color\":" + "\"" + color3 + "\"" + "},{\"code\":" + "\"" + code4 + "\"" + "," + "\"color\":" + "\"" + color4 + "\"" + "}]}";
+        Debug.Log(lights);
+        return lights;
     }
 
-    public string SetMotors(string requestType, string type, string id, string direction, string speed, string duration)
+    public string SetMotors(string requestType, string type, int id, string direction, int speed, int duration)
     {
-        return "{\"requestType\":" + requestType + "," + "\"motorControllerSetter\":[{\"type\":" + type + "," + "\"id\":" + id + "," +"\"direction\":" + direction + "," + "\"speed\":" + speed + "," + "\"duration\":" + duration + "}]}";
+        string motor = "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"motorControllerSetter\":[{\"type\":" + "\"" + type + "\"" + "," + "\"id\":" + id + "," +"\"direction\":" + "\"" + direction + "\"" + "," + "\"speed\":" + speed + "," + "\"duration\":" + duration + "}]}";
+        Debug.Log(motor);
+        return motor;
+    }
+
+    public string SetSounds(string requestType, string type, string track,  int volume)
+    {
+        string motor = "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"soundControllerSetter\":[{\"type\":" + "\"" + type + "\"" + "," + "\"track\":" + "\"" + track + "\"" + "," + "\"volume\":"  + volume +  "}]}";
+        Debug.Log(motor);
+        return motor;
     }
 }

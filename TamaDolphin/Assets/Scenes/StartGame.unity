@@ -308,10 +308,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   networkEventManager: {fileID: 1661433635}
-  urlDolphin: 
-  portDolphin: 
-  urlWeb: 
-  portWeb: 
   clickButton: 0
 --- !u!4 &236026908
 Transform:
@@ -1245,9 +1241,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc103a3a7ebcfe49aa13360e4a3f271, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  realSamManager: {fileID: 580141009}
-  therapistManager: {fileID: 0}
   gameEventManager: {fileID: 0}
+  realSamManager: {fileID: 580141009}
+  therapistWebManager: {fileID: 0}
 --- !u!4 &1661433636
 Transform:
   m_ObjectHideFlags: 0

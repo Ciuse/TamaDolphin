@@ -5,8 +5,8 @@ using UnityEngine;
 public class InputState : MonoBehaviour {
 
 
-    private TypeOfInput realSamInput;
-    private TypeOfInput therapistInput;
+    public TypeOfInput realSamInput;
+    public TypeOfInput therapistInput;
 
 	// Use this for initialization
 	void Start () {
@@ -21,15 +21,7 @@ public class InputState : MonoBehaviour {
         
     }
 
-    public TypeOfInput GetSamInput()
-    {
-        return realSamInput;
-    }
-
-    public TypeOfInput GetTherapistInput()
-    {
-        return therapistInput;
-    }
+   
 
     public void SetRealSamInput(TypeOfInput realSamInput)
     {
