@@ -7,10 +7,74 @@ ModelImporter:
     100002: //RootNode
     100004: Sphere_001
     100006: Sphere_000
+    100008: Armature
+    100010: Armature_001
+    100012: Bone
+    100014: Bone_001
+    100016: Bone_002
+    100018: Bone_003_L
+    100020: Bone_003_L_002
+    100022: Bone_003_L_003
+    100024: Bone_003_L_004
+    100026: Bone_003_R
+    100028: Bone_003_R_002
+    100030: Bone_003_R_003
+    100032: Bone_003_R_004
+    100034: Bone_004
+    100036: Bone_005
+    100038: Bone_006
+    100040: Bone_007
+    100042: Bone_008
+    100044: Bone_009
+    100046: Bone_010
+    100048: Bone_L
+    100050: Bone_L_001
+    100052: Bone_L_002
+    100054: Bone_L_003
+    100056: Bone_L_004
+    100058: Bone_L_005
+    100060: Bone_R
+    100062: Bone_R_001
+    100064: Bone_R_002
+    100066: Bone_R_003
+    100068: Bone_R_004
+    100070: Bone_R_005
     400000: Cube
     400002: //RootNode
     400004: Sphere_001
     400006: Sphere_000
+    400008: Armature
+    400010: Armature_001
+    400012: Bone
+    400014: Bone_001
+    400016: Bone_002
+    400018: Bone_003_L
+    400020: Bone_003_L_002
+    400022: Bone_003_L_003
+    400024: Bone_003_L_004
+    400026: Bone_003_R
+    400028: Bone_003_R_002
+    400030: Bone_003_R_003
+    400032: Bone_003_R_004
+    400034: Bone_004
+    400036: Bone_005
+    400038: Bone_006
+    400040: Bone_007
+    400042: Bone_008
+    400044: Bone_009
+    400046: Bone_010
+    400048: Bone_L
+    400050: Bone_L_001
+    400052: Bone_L_002
+    400054: Bone_L_003
+    400056: Bone_L_004
+    400058: Bone_L_005
+    400060: Bone_R
+    400062: Bone_R_001
+    400064: Bone_R_002
+    400066: Bone_R_003
+    400068: Bone_R_004
+    400070: Bone_R_005
     2100000: Material_003__Eyes
     2100002: Material__Dolphin
     2100004: Material_001__Dolphin
@@ -24,8 +88,25 @@ ModelImporter:
     4300002: Cube
     4300004: Sphere_000
     7400000: Default Take
+    7400002: ArmatureAction
     9500000: //RootNode
-  externalObjects: {}
+    13700000: Cube
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_001__Dolphin
+    second: {fileID: 2100000, guid: c1414af63db0eca4ab646003778900b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material_003__Eyes
+    second: {fileID: 2100000, guid: 95af276b26fbf6c489195cce7b2a233c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__Dolphin
+    second: {fileID: 2100000, guid: c1414af63db0eca4ab646003778900b5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
