@@ -7,6 +7,12 @@ public class CloudOccurs : MonoBehaviour {
     public Transform Spawnpoint;
     public GameObject Cloud;
 
+    public void Start()
+    {
+        Cloud.SetActive(false);
+
+    }
+
     public void Appear()
     {
         StartCoroutine("CloudOccur");
@@ -20,7 +26,8 @@ public class CloudOccurs : MonoBehaviour {
     {
         yield return new WaitForSeconds(5);
         Debug.Log("Wait is over");
-        Instantiate(Cloud, Spawnpoint.position, Spawnpoint.rotation);
+        Cloud.SetActive(true);
+        //Instantiate(Cloud, Spawnpoint.position, Spawnpoint.rotation);
 
     }
 }
