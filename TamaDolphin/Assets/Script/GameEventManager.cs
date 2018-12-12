@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class GameEventManager : MonoBehaviour
 {
@@ -27,24 +26,23 @@ public class GameEventManager : MonoBehaviour
     {
       if(inputState.realSamInput!= TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined)
         {
-            InputManager();
+            FeedbackFameManager(); //aggiungere in che scena siamo
         }
     }
 
-    public void InputManager()
+    public void FeedbackFameManager()
     {
         if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)
         {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
+            feedbackManager.CorrectFeedbackFame();
         }
         if ((inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong)|| (inputState.realSamInput == TypeOfInput.wrong  &&  inputState.therapistInput == TypeOfInput.correct))
         {
-
+            feedbackManager.QuestionMarkFeedbackFame();
         }
         if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)
         {
-
+            feedbackManager.WrongFeedbackFame();
         }
     }
 
