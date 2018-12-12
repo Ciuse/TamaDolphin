@@ -16,7 +16,7 @@ public class NetworkEventManager : MonoBehaviour
 
     public void SetRealSamSetting(string request)
     {
-        realSamManager.PostRequest(request);
+       realSamManager.PostRequest(request);
         
     }
 
@@ -29,6 +29,7 @@ public class NetworkEventManager : MonoBehaviour
     public void HandleWebButtonPressed(string buttonPressedId)
     {
         gameEventManager.SetInputStateTherapist(buttonPressedId);
+
 
     }
 }

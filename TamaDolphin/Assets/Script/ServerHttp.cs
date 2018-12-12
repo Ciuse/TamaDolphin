@@ -17,11 +17,7 @@ public class ServerHttp : MonoBehaviour
 
     private bool isMatching = false;
     public bool clickButton = false;
-
-    private Match param1;
-    private HttpListenerResponse param2;
-
-    private RequestHandler functionToRun;
+    public string stringaLetta;
 
     void Update()
     {
@@ -66,7 +62,15 @@ public class ServerHttp : MonoBehaviour
 
     private void function()
     {
+        string contRead = stringaLetta;
+        GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
+        Vector3 position1 = new Vector3(5, 5, 5);
+        Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
 
+        Debug.Log("messaggio ricevuto");
+        Debug.Log(contRead);
+
+        networkEventManager.HandleWebButtonPressed(contRead);
     }
 
     private void HandleSamWebResponse(Match match, HttpListenerResponse response, string contRead)
@@ -97,7 +101,7 @@ public class ServerHttp : MonoBehaviour
 
         SamEvents samEvents = new SamEvents();
         samEvents = JsonUtility.FromJson<SamEvents>(contRead);
-
+        if (samEvents.events[0].dur == 0) { 
         string idLetto = samEvents.events[0].val;
         isMatching = true;
 
@@ -105,20 +109,15 @@ public class ServerHttp : MonoBehaviour
         Debug.Log(contRead);
 
         networkEventManager.HandleSamCardRead(idLetto);
+        }
     }
 
    
     private void HandleWebResponse(Match match, HttpListenerResponse response,  string contRead)
     {
-
-       
+        stringaLetta = contRead;
         isMatching = true;
-        
-
-        Debug.Log("messaggio ricevuto");
-        Debug.Log(contRead);
-        
-        networkEventManager.HandleWebButtonPressed(contRead);
+      
     }
 
     

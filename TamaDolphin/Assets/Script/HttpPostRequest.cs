@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
-
+using System.Text;
 
 public class HttpPostRequest : MonoBehaviour
 {
@@ -15,23 +15,40 @@ public class HttpPostRequest : MonoBehaviour
 
     private IEnumerator SendPostToSam(string jsonHttpSetting)
     {
-        
-        string json = jsonHttpSetting;
-        string urlSam = "http://192.168.0.125";
-        UnityWebRequest www = UnityWebRequest.Post(urlSam, json);
+
+        //  string json = jsonHttpSetting;
+        // string urlSam = "http://192.168.0.125";
+        //UnityWebRequest www = UnityWebRequest.Post(urlSam, json);
+        // www.SetRequestHeader("Content-Type", "application/json");
+        //yield return www.SendWebRequest();
+        //Debug.Log("Impostazioni fatte");
+
+        //if (www.isNetworkError || www.isHttpError)
+        //{
+        //   Debug.Log(www.error);
+        //}
+        //else
+        //{
+
+        //  sendPost = true;
+
+        //}
+        UnityWebRequest www = new UnityWebRequest("http://192.168.0.125", "POST");
+        byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonHttpSetting);
+        www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
+        www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
         www.SetRequestHeader("Content-Type", "application/json");
         yield return www.SendWebRequest();
-        Debug.Log("Impostazioni fatte");
 
-        if (www.isNetworkError || www.isHttpError)
+        if (www.error != null)
         {
-            Debug.Log(www.error);
+            Debug.Log("Erro: " + www.error);
         }
         else
         {
-
             sendPost = true;
-
+            Debug.Log("All OK");
+            Debug.Log("Status Code: " + www.responseCode);
         }
 
     }

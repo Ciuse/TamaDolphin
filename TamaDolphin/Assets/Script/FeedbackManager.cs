@@ -12,8 +12,7 @@ public class FeedbackManager : MonoBehaviour {
     public SpawnEngine spawnEngine;
 	// Use this for initialization
 	void Start () {
-        //networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
-            spawnEngine.SpawnQuestionMark(5);
+        networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
     }
 	
 	// Update is called once per frame
@@ -24,7 +23,7 @@ public class FeedbackManager : MonoBehaviour {
     public void CorrectFeedbackFame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
+        //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
     }
 
     public void WrongFeedbackFame()
@@ -34,6 +33,6 @@ public class FeedbackManager : MonoBehaviour {
 
     public void QuestionMarkFeedbackFame()
     {
-        spawnEngine.SpawnQuestionMark(10);
+        spawnEngine.SpawnQuestionMark(5);
     }
 }

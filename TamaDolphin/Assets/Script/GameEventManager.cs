@@ -10,6 +10,7 @@ public class GameEventManager : MonoBehaviour
     public InputState inputState;
     public string gamePhase;
     public string correctCardId;
+    public bool inputSetted = false;
     
 
 
@@ -18,15 +19,20 @@ public class GameEventManager : MonoBehaviour
     {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
         gamePhase = "Start";
-        correctCardId = "45b41e39";
+        correctCardId = "a3cd81d5"; 
+
     }
 
     // Update is called once per frame
     void Update()
     {
-      if(inputState.realSamInput!= TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined)
+        if (Time.frameCount % 10 == 0)
         {
-            FeedbackFameManager(); //aggiungere in che scena siamo
+            if (!inputSetted && (inputState.realSamInput != TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined))
+            {
+                FeedbackFameManager(); //aggiungere in che scena siamo
+                inputSetted = true;
+            }
         }
     }
 

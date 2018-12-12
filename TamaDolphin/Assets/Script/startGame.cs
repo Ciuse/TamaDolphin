@@ -14,13 +14,13 @@ public class startGame : MonoBehaviour
 
 
 
-    public void Start()
+    public void Startg()
     {
         buttonStart.SetActive(false);
         
     }
 
-    public void Update()
+    public void Updateg()
     {
         if (server.clickButton)
         {
@@ -28,18 +28,19 @@ public class startGame : MonoBehaviour
         }
     }
 
-    public void Startg()
+    public void Start()
     {
-        buttonStart.SetActive(true);
+        buttonStart.SetActive(false);
         network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", Network.player.ipAddress, 8081));
   
     }
 
-    public void Updateg()
+    public void Update()
     {
         if (network.realSamManager.sendPost)
         {
             buttonStart.SetActive(true);
+            network.realSamManager.sendPost = false;
         }
     }
 
@@ -54,7 +55,7 @@ public class startGame : MonoBehaviour
 
     private IEnumerator PlayGame()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(2);
         Debug.Log("Wait is over");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
        
