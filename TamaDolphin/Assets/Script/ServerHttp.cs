@@ -16,6 +16,8 @@ public class ServerHttp : MonoBehaviour
     HttpListener _listener;
 
     private bool isMatching = false;
+    private bool isWeb = false;
+    private bool isSam = false;
     public bool clickButton = false;
     public string stringaLetta;
 
@@ -23,10 +25,22 @@ public class ServerHttp : MonoBehaviour
     {
         if (isMatching)
         {
-            isMatching = false;
-            function(); //test 
+            if (isWeb)
+            {
 
+                isMatching = false;
+                isWeb = false;
+                WebButtonFunction(); //test 
 
+            }
+            if (isSam)
+            {
+
+                isMatching = false;
+                isSam = false;
+                SamFunction(); //test 
+
+            }
         }
     }
 
@@ -60,19 +74,7 @@ public class ServerHttp : MonoBehaviour
         }
     }
 
-    private void function()
-    {
-        string contRead = stringaLetta;
-        GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
-        Vector3 position1 = new Vector3(5, 5, 5);
-        Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
-
-        Debug.Log("messaggio ricevuto");
-        Debug.Log(contRead);
-
-        networkEventManager.HandleWebButtonPressed(contRead);
-    }
-
+    
     private void HandleSamWebResponse(Match match, HttpListenerResponse response, string contRead)
     {
 
@@ -98,29 +100,51 @@ public class ServerHttp : MonoBehaviour
 
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
-
-        SamEvents samEvents = new SamEvents();
-        samEvents = JsonUtility.FromJson<SamEvents>(contRead);
-        if (samEvents.events[0].dur == 0) { 
-        string idLetto = samEvents.events[0].val;
+        stringaLetta = contRead;
         isMatching = true;
-
-        Debug.Log("messaggio ricevutoSam");
-        Debug.Log(contRead);
-
-        networkEventManager.HandleSamCardRead(idLetto);
-        }
+        isSam = true; 
     }
 
+    public void SamFunction()
+    {
+        SamEvents samEvents = new SamEvents();
+        samEvents = JsonUtility.FromJson<SamEvents>(stringaLetta);
+        if (samEvents.events[0].dur == 0)
+        {
+            //GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
+            //Vector3 position1 = new Vector3(0, 0, 10);
+            //Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
+            string idLetto = samEvents.events[0].val;
+            Debug.Log("messaggio ricevutoSam");
+            Debug.Log(stringaLetta);
+
+            networkEventManager.HandleSamCardRead(idLetto);
+        }
+    }
    
     private void HandleWebResponse(Match match, HttpListenerResponse response,  string contRead)
     {
         stringaLetta = contRead;
         isMatching = true;
+        isWeb = true;
       
     }
 
-    
+    private void WebButtonFunction()
+    {
+
+        //GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
+        //Vector3 position1 = new Vector3(5, 5, 5);
+        //Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
+        string contRead = stringaLetta;
+        Debug.Log("messaggio ricevuto");
+        Debug.Log(contRead);
+
+        networkEventManager.HandleWebButtonPressed(contRead);
+    }
+
+
+
     public string TherapistButtonValue(string buttonValue)
     {
         
@@ -155,8 +179,7 @@ public class ServerHttp : MonoBehaviour
         string contRead = new StreamReader(request.InputStream).ReadToEnd();
         
 
-
-
+        
         foreach (Regex r in _requestHandlers.Keys)
         {
             Match m = r.Match(request.Url.AbsolutePath);

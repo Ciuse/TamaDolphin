@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class startGame : MonoBehaviour
+public class StartGame : MonoBehaviour
 {
     
     public GameObject buttonStart;
@@ -17,7 +17,6 @@ public class startGame : MonoBehaviour
     public void Startg()
     {
         buttonStart.SetActive(false);
-        
     }
 
     public void Updateg()
@@ -32,7 +31,6 @@ public class startGame : MonoBehaviour
     {
         buttonStart.SetActive(false);
         network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", Network.player.ipAddress, 8081));
-  
     }
 
     public void Update()
@@ -55,7 +53,7 @@ public class startGame : MonoBehaviour
 
     private IEnumerator PlayGame()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(4);
         Debug.Log("Wait is over");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
        

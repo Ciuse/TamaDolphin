@@ -1,22 +1,17 @@
 fileFormatVersion: 2
-guid: 07fef2dc09e493d4a8fa84f9c26070f4
+guid: b41a0747b5fe20646a8997566f8cfe70
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Material_001
+    2100000: WrongMark
     2300000: //RootNode
     3300000: //RootNode
     4300000: Plane
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: QuestionMark
-    second: {fileID: 2100000, guid: 73573cea771b42f449749732fdd1e23a, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0

@@ -419,31 +419,31 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.87
+      value: 6.42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.3
+      value: 4.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.41
+      value: 5.5896387
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.041206114
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.041206114
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0.70590514
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.70710677
+      value: 0.70590514
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_RootOrder
@@ -456,6 +456,10 @@ Prefab:
     - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 6.682
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6d617a736a1d8314cb1882d642dae524, type: 3}
@@ -617,7 +621,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 713636977}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0.00000006324835, w: 0.0000001250656}
-  m_LocalPosition: {x: 5.87, y: 6.28, z: 5.41}
+  m_LocalPosition: {x: 6.2852254, y: 5.7000003, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -636,7 +640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 08859a6180586914994131ea4d6ae23d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.35
+      value: 4.73
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 08859a6180586914994131ea4d6ae23d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -765,6 +769,7 @@ MonoBehaviour:
   inputState: {fileID: 1490348658}
   gamePhase: 
   correctCardId: 
+  inputSetted: 0
 --- !u!4 &842932274
 Transform:
   m_ObjectHideFlags: 0
@@ -787,15 +792,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4037594867893618, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.91
+      value: -0.44
       objectReference: {fileID: 0}
     - target: {fileID: 4037594867893618, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.1
+      value: 2.96
       objectReference: {fileID: 0}
     - target: {fileID: 4037594867893618, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 5.64
+      value: 10.44
       objectReference: {fileID: 0}
     - target: {fileID: 4037594867893618, guid: 6ff0cd15d1a2a2942b6bb5159b2a0b51, type: 2}
       propertyPath: m_LocalRotation.x
@@ -943,6 +948,10 @@ Prefab:
     - target: {fileID: 482300, guid: 60270cf52a5e94998a5a335989159738, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 723926960, guid: 60270cf52a5e94998a5a335989159738, type: 2}
+      propertyPath: maxReticleDistance
+      value: 40
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60270cf52a5e94998a5a335989159738, type: 2}
@@ -1260,7 +1269,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: Ho Fame
+  m_text: I'm hungry
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
@@ -1269,8 +1278,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4292502795
+  m_fontColor: {r: 0.044544328, g: 0.39956334, b: 0.8584906, a: 1}
   m_enableVertexGradient: 0
   m_fontColorGradient:
     topLeft: {r: 1, g: 1, b: 1, a: 1}
@@ -1325,10 +1334,10 @@ MonoBehaviour:
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 14.560211, w: 3.7209835}
+  m_margin: {x: -0.7293512, y: 0, z: 13.824905, w: 3.7209835}
   m_textInfo:
     textComponent: {fileID: 1438725191}
-    characterCount: 7
+    characterCount: 10
     spriteCount: 0
     spaceCount: 1
     wordCount: 2
@@ -1424,7 +1433,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1478117089}
   m_LocalRotation: {x: 0.7071068, y: 0.7071068, z: 0.00000006324835, w: 0.0000001250656}
-  m_LocalPosition: {x: 5.87, y: 5.28, z: 5.41}
+  m_LocalPosition: {x: 6.2852254, y: 3.73, z: 5.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1562,8 +1571,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.984705, y: 6.792033, z: 9.497371}
-  m_Center: {x: -0.3167796, y: 2.8960164, z: -1.2707732}
+  m_Size: {x: 5.7598863, y: 5.295034, z: 9.497371}
+  m_Center: {x: -0.20436943, y: 2.1475167, z: -1.2707741}
 --- !u!1001 &1683099792
 Prefab:
   m_ObjectHideFlags: 0

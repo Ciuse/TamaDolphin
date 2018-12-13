@@ -28,11 +28,11 @@ public class FeedbackManager : MonoBehaviour {
 
     public void WrongFeedbackFame()
     {
-
+        spawnEngine.SpawnWrongMark(4);
     }
 
     public void QuestionMarkFeedbackFame()
     {
-        spawnEngine.SpawnQuestionMark(5);
+        spawnEngine.SpawnQuestionMark(4);
     }
 }

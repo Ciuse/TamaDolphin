@@ -19,7 +19,7 @@ public class SpawnEngine : MonoBehaviour {
     public void SpawnQuestionMark(int numToSpawn)
     {
         int spawned = 0;
-        GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
+        GameObject questionMark = (GameObject)(Resources.Load("QuestionMark"));
         float spawnTime = Time.time;
 
         while (spawned < numToSpawn)
@@ -34,4 +34,23 @@ public class SpawnEngine : MonoBehaviour {
             spawned++;
         }
     }
+
+        public void SpawnWrongMark(int numToSpawn)
+        {
+            int spawned = 0;
+            GameObject questionMark = (GameObject)(Resources.Load("WrongMark"));
+            float spawnTime = Time.time;
+
+            while (spawned < numToSpawn)
+            {
+
+                Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+                Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+
+                Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
+                Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation);
+
+                spawned++;
+            }
+        }
 }
