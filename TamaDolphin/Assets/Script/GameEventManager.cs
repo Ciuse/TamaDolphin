@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEventManager : MonoBehaviour
 {
@@ -30,25 +31,30 @@ public class GameEventManager : MonoBehaviour
         {
             if (!inputSetted && (inputState.realSamInput != TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined))
             {
-                FeedbackFameManager(); //aggiungere in che scena siamo
-                inputSetted = true;
+                if (SceneManager.GetActiveScene().name == "SamScene") {
+                    FeedbackSamFameManager();
+                    inputSetted = true;
+                }
             }
         }
     }
 
-    public void FeedbackFameManager()
+    public void FeedbackSamFameManager()
     {
-        if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)
+
         {
-            feedbackManager.CorrectFeedbackFame();
-        }
-        if ((inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong)|| (inputState.realSamInput == TypeOfInput.wrong  &&  inputState.therapistInput == TypeOfInput.correct))
-        {
-            feedbackManager.QuestionMarkFeedbackFame();
-        }
-        if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)
-        {
-            feedbackManager.WrongFeedbackFame();
+            if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)
+            {
+                feedbackManager.CorrectFeedbackFame();
+            }
+            if ((inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong) || (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.correct))
+            {
+                feedbackManager.QuestionMarkFeedbackFame();
+            }
+            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)
+            {
+                feedbackManager.WrongFeedbackFame();
+            }
         }
     }
 
@@ -65,7 +71,7 @@ public class GameEventManager : MonoBehaviour
     public void SetInputStateRealSam(string cardIdRead)
     {
         Debug.Log(cardIdRead);
-
+        OverloadInput();  // Permette di sovrvascrivere l'input
         if (correctCardId == cardIdRead )
         {
             inputState.SetRealSamInput(TypeOfInput.correct);
@@ -79,6 +85,7 @@ public class GameEventManager : MonoBehaviour
 
     public void SetInputStateTherapist(string buttonPressedId)
     {
+        OverloadInput();
         if (buttonPressedId== "1")
         {
             inputState.SetTherapistInput(TypeOfInput.correct);
@@ -90,5 +97,12 @@ public class GameEventManager : MonoBehaviour
             Debug.Log("therapist input settato con valore wrong");
         }
 
+    }
+
+    public void OverloadInput()
+    {
+        //TODO INSERIRE CHE DISTRUGGE I VECCHI OGGETTI
+        feedbackManager.ResetFeedback();
+        inputSetted = false;
     }
 }

@@ -53,9 +53,9 @@ public class StartGame : MonoBehaviour
 
     private IEnumerator PlayGame()
     {
-        yield return new WaitForSeconds(4);
+        yield return new WaitForSeconds(2);
         Debug.Log("Wait is over");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("SamScene");
        
     }
 

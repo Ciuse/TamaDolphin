@@ -6,6 +6,10 @@ public class SpawnEngine : MonoBehaviour {
 
     public GameObject[] foodBaskets;
 
+    List<GameObject> questionMarkList = new List<GameObject>();
+
+    List<GameObject> wrongMarkList = new List<GameObject>();
+
     // Use this for initialization
     void Start () {
 		
@@ -28,8 +32,8 @@ public class SpawnEngine : MonoBehaviour {
             Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
             Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
 
-            Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
-            Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation);
+            questionMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
+            questionMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
 
             spawned++;
         }
@@ -47,10 +51,23 @@ public class SpawnEngine : MonoBehaviour {
                 Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
                 Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
 
-                Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
-                Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation);
+                wrongMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
+                wrongMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
 
                 spawned++;
             }
         }
+
+    public void DestroyObjectSpawned()
+    {
+        foreach (GameObject item in questionMarkList)
+        {
+            Destroy(item);
+        }
+
+        foreach (GameObject item in wrongMarkList)
+        {
+            Destroy(item);
+        }
+    }
 }

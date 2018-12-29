@@ -22,7 +22,7 @@ public class FeedbackManager : MonoBehaviour {
 
     public void CorrectFeedbackFame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("Fireworks");
         //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
     }
 
@@ -34,5 +34,10 @@ public class FeedbackManager : MonoBehaviour {
     public void QuestionMarkFeedbackFame()
     {
         spawnEngine.SpawnQuestionMark(4);
+    }
+
+    public void ResetFeedback()
+    {
+        spawnEngine.DestroyObjectSpawned();
     }
 }
