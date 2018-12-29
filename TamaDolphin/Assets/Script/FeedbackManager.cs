@@ -23,16 +23,21 @@ public class FeedbackManager : MonoBehaviour {
     public void CorrectFeedbackFame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#008000", "#008000", "#008000", "#008000"));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 4, 25));
     }
 
     public void WrongFeedbackFame()
     {
         spawnEngine.SpawnWrongMark(4);
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
+
     }
 
     public void QuestionMarkFeedbackFame()
     {
         spawnEngine.SpawnQuestionMark(4);
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999"));
+
     }
 }
