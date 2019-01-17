@@ -71,21 +71,25 @@ public class GameEventManager : MonoBehaviour
     public void SetInputStateRealSam(string cardIdRead)
     {
         Debug.Log(cardIdRead);
-        OverloadInput();  // Permette di sovrvascrivere l'input
-        if (correctCardId == cardIdRead )
+        if (inputState.therapistInput != TypeOfInput.undefined)
         {
-            inputState.SetRealSamInput(TypeOfInput.correct);
-            Debug.Log("LA STRINGA é CORRETTA");
-        }
-        else
-        {
-            inputState.SetRealSamInput(TypeOfInput.wrong);
-        }
-    }
+            if (correctCardId == cardIdRead)
+            {
+                inputState.SetRealSamInput(TypeOfInput.correct);
+                Debug.Log("LA STRINGA é CORRETTA");
+            }
+            else
+            {
+                inputState.SetRealSamInput(TypeOfInput.wrong);
+            }
 
+            OverloadInput();  // Permette di sovrvascrivere l'input
+        }
+
+    }
     public void SetInputStateTherapist(string buttonPressedId)
     {
-        OverloadInput();
+       
         if (buttonPressedId== "1")
         {
             inputState.SetTherapistInput(TypeOfInput.correct);
@@ -96,6 +100,7 @@ public class GameEventManager : MonoBehaviour
             inputState.SetTherapistInput(TypeOfInput.wrong);
             Debug.Log("therapist input settato con valore wrong");
         }
+        OverloadInput();
 
     }
 
