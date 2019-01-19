@@ -60,7 +60,7 @@ public class HttpPostRequest : MonoBehaviour
         return stringa;
     }
 
-    public string SetLights(string requestType, string color1, string color2, string color3, string color4)
+    public string SetLights(string requestType, string color1, string color2, string color3, string color4, int intensità1, int intensità2, int intensità3, int intensità4 )
     {
          string lights = "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"lightControllerSetter\":[{\"code\":" + "\"" + "parthead" + "\"" + "," + "\"color\":" + "\"" + color1 + "\"" + "},{\"code\":" + "\"" + "partleftfin" + "\"" + "," + "\"color\":" + "\"" + color2 + "\"" + "},{\"code\":" + "\"" + "partrightfin" + "\"" + "," + "\"color\":" + "\"" + color3 + "\"" + "},{\"code\":" + "\"" + "partbelly" + "\"" + "," + "\"color\":" + "\"" + color4 + "\"" + "}]}";
         Debug.Log(lights);

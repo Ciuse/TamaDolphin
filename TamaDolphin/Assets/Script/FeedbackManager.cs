@@ -10,6 +10,7 @@ public class FeedbackManager : MonoBehaviour {
     public GameObject dolphin_VR;
     public NetworkEventManager networkEventManager;
     public SpawnEngine spawnEngine;
+
 	// Use this for initialization
 	void Start () {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
@@ -20,28 +21,76 @@ public class FeedbackManager : MonoBehaviour {
 
     }
 
-    public void CorrectFeedbackFame()
+    // ********** FEEDBACK FIND NEED **************
+
+    public void ActivateSamFindNeed ()
+    {
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del brontolio
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1)); //settare solo la luce della pancia a rosso e le altre intensità a 0
+    }
+
+    public void CorrectFeedbackFindNeed()
+    {
+        //spawn di bavaglio, tavolo, forchetta e coltello
+    }
+
+    public void WrongFeedbackFindNeed()
+    {
+        spawnEngine.SpawnWrongMark(4);
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1));
+
+    }
+
+    public void QuestionMarkFeedbackFindNeed()
+    {
+        spawnEngine.SpawnQuestionMark(4);
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999", 1, 1, 1, 1));
+
+    }
+
+    public void ResetFeedbackFindNeed()
+    {
+        spawnEngine.DestroyObjectSpawned();
+    }
+
+
+    // ********** FEEDBACK FIND FOOD **************
+
+    public void ActivateSamFindFood()
+    {
+        //TODOOOOOO
+    }
+
+    public void SameCorrectFindFood()
     {
         SceneManager.LoadScene("Fireworks");
         //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
-    }
 
-    public void WrongFeedbackFame()
-    {
-        spawnEngine.SpawnWrongMark(4);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
+        //TODO
 
     }
 
-    public void QuestionMarkFeedbackFame()
+    public void SameWrongFindFood()
     {
-        spawnEngine.SpawnQuestionMark(4);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999"));
+        //TODO
 
     }
 
-    public void ResetFeedback()
+    public void DifferentCorrectVRFindFood()
     {
-        spawnEngine.DestroyObjectSpawned();
+        //TODO
+
+    }
+
+    public void DifferentCorrectSamFindFood()
+    {
+        //TODO
+
+    }
+
+    public void DifferentWrongFindFood()
+    {
+        //TODO
+
     }
 }

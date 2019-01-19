@@ -9,8 +9,7 @@ public class GameEventManager : MonoBehaviour
     public NetworkEventManager networkEventManager;
     public FeedbackManager feedbackManager;
     public InputState inputState;
-    public string gamePhase;
-    public string correctCardId;
+    public GamePhase gamePhase;
     public bool inputSetted = false;
     
 
@@ -19,95 +18,146 @@ public class GameEventManager : MonoBehaviour
     void Start()
     {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
-        gamePhase = "Start";
-        correctCardId = "a3cd81d5"; 
+        gamePhase = GamePhase.startFindNeed;
+
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.frameCount % 10 == 0)
+        if (Time.frameCount % 20 == 0)
         {
             if (!inputSetted && (inputState.realSamInput != TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined))
             {
-                if (SceneManager.GetActiveScene().name == "SamScene") {
-                    FeedbackSamFameManager();
+                inputState.CheckIsInputTheSame();
+
+                if (gamePhase == GamePhase.findNeed) {
+                    FeedbackFindNeed();
+                    inputSetted = true;
+                }
+
+                if (gamePhase == GamePhase.findFood)
+                {
+                    FeedbackFindFood();
                     inputSetted = true;
                 }
             }
         }
     }
 
-    public void FeedbackSamFameManager()
+    public void FeedbackFindNeed()
     {
-
         {
             if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)
             {
-                feedbackManager.CorrectFeedbackFame();
+                feedbackManager.CorrectFeedbackFindNeed();
+                StartFindFoodGamePhase();
             }
             if ((inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong) || (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.correct))
             {
-                feedbackManager.QuestionMarkFeedbackFame();
+                feedbackManager.QuestionMarkFeedbackFindNeed();
             }
             if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)
             {
-                feedbackManager.WrongFeedbackFame();
+                feedbackManager.WrongFeedbackFindNeed();
             }
         }
     }
 
-    public void SetCorrectCardId(string correctCardId)
+    public void FeedbackFindFood()
     {
-        this.correctCardId = correctCardId;
+        if (inputState.isInputTheSame)
+        {
+            if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct) //stessi giusti
+            {
+                feedbackManager.SameCorrectFindFood();
+            }
+            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //stessi sbagliati
+            {
+                feedbackManager.SameWrongFindFood();
+            }      
+        }
+
+        else
+        {
+            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //diversi sbagliati
+            {
+                feedbackManager.DifferentWrongFindFood();
+            }
+            if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong)  //diversi sam giusto VR sbagliato
+            {
+                feedbackManager.DifferentCorrectSamFindFood();
+            }
+            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.correct)  //diversi sam sbagliato VR giusto
+            {
+                feedbackManager.DifferentCorrectVRFindFood();
+            }
+        }
     }
 
-    public void SetGamePhase(string gamePhase)
+    public void SetInputStateTherapist(string buttonPressedId)
     {
-        this.gamePhase = gamePhase;
+
+       if (gamePhase== GamePhase.startFindNeed) //Fase 1.0 -> leggo l'input della terapista
+        {
+            inputState.SetInputTherapistFindNeed(buttonPressedId);
+            feedbackManager.ActivateSamFindNeed(); //Fase 1.1 -> dopo che la terapista preme il bottone si "attiva" sam fisico
+            gamePhase = GamePhase.findNeed;
+            return; //da testare se da problemi
+        }
+
+        if (gamePhase == GamePhase.startFindFood) //Fase 2.0 -> 
+        {
+            inputState.SetInputTherapistFindFood(buttonPressedId);
+            feedbackManager.ActivateSamFindFood(); //Fase 2.1 ->
+            gamePhase = GamePhase.findFood;
+            return; //da testare se da problemi
+        }
+
+        if (gamePhase == GamePhase.findNeed) // Fase 1.3 -> la terapista può cambiare l'eventuale input sbagliato
+        {
+            inputState.SetInputTherapistFindNeed(buttonPressedId);
+            OverloadInput();
+        }
+
+        if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato
+        {
+            inputState.SetInputTherapistFindFood(buttonPressedId);
+            OverloadInput();
+        }
     }
 
     public void SetInputStateRealSam(string cardIdRead)
     {
         Debug.Log(cardIdRead);
-        if (inputState.therapistInput != TypeOfInput.undefined)
+        if (gamePhase == GamePhase.findNeed) //Fase 1.2 -> l'input della carta letta del sam fisico viene letto solo dopo che la terapista ha premuto il bottone
         {
-            if (correctCardId == cardIdRead)
-            {
-                inputState.SetRealSamInput(TypeOfInput.correct);
-                Debug.Log("LA STRINGA é CORRETTA");
-            }
-            else
-            {
-                inputState.SetRealSamInput(TypeOfInput.wrong);
-            }
-
+            inputState.SetInputRealSamFindNeed(cardIdRead);
             OverloadInput();  // Permette di sovrvascrivere l'input
         }
 
-    }
-    public void SetInputStateTherapist(string buttonPressedId)
-    {
-       
-        if (buttonPressedId== "1")
+        if (gamePhase == GamePhase.findFood) //Fase 2.2 ->
         {
-            inputState.SetTherapistInput(TypeOfInput.correct);
-            Debug.Log("therapist input settato con valore correct");
+            inputState.SetInputRealSamFindFood(cardIdRead);
+            OverloadInput();  // Permette di sovrvascrivere l'input
         }
-        else
-        {
-            inputState.SetTherapistInput(TypeOfInput.wrong);
-            Debug.Log("therapist input settato con valore wrong");
-        }
-        OverloadInput();
 
     }
 
     public void OverloadInput()
     {
         //TODO INSERIRE CHE DISTRUGGE I VECCHI OGGETTI
-        feedbackManager.ResetFeedback();
+        feedbackManager.ResetFeedbackFindNeed();
         inputSetted = false;
     }
+
+    public void StartFindFoodGamePhase()
+    {
+        inputSetted = false;
+        inputState.ResetInput();
+        gamePhase = GamePhase.startFindFood;
+        feedbackManager.spawnEngine.SpawnFoodBucket();
+    }
 }
+
