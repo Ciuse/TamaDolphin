@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class CloudOccurs : MonoBehaviour {
 
-    public Transform Spawnpoint;
-    public GameObject Cloud;
+    public GameObject cloud;
+    public GameObject planeCloud;
+    public GameObject textMeshPro;
+    public GameObject table;
+    List<GameObject> needAdvicesList = new List<GameObject>();
 
     public void Start()
     {
-        Cloud.SetActive(false);
+        cloud.SetActive(false);
+        planeCloud.SetActive(false);
+        textMeshPro.SetActive(false);
+       
 
     }
 
@@ -22,12 +28,16 @@ public class CloudOccurs : MonoBehaviour {
         StopCoroutine("CloudOccur");
     }
 
+
     private IEnumerator CloudOccur()
     {
         yield return new WaitForSeconds(5);
         Debug.Log("Wait is over");
-        Cloud.SetActive(true);
-        //Instantiate(Cloud, Spawnpoint.position, Spawnpoint.rotation);
-
+        cloud.SetActive(true);
+        planeCloud.SetActive(true);
+        
+        
     }
+
+   
 }
