@@ -70,4 +70,9 @@ public class SpawnEngine : MonoBehaviour {
             Destroy(item);
         }
     }
+
+    public void SpawnFoodBucket()
+    {
+        //TODO
+    }
 }

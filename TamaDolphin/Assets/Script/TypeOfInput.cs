@@ -8,3 +8,10 @@ public enum TypeOfInput
     correct,
     wrong
 }
+public enum GamePhase
+{
+    startFindNeed,
+    findNeed,
+    startFindFood,
+    findFood
+}

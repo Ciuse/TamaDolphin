@@ -30,7 +30,7 @@ public class StartGame : MonoBehaviour
     public void Start()
     {
         buttonStart.SetActive(false);
-        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", Network.player.ipAddress, 8081));
+        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", "a", 8081)); //TODO SISTEMARE L IP
     }
 
     public void Update()
