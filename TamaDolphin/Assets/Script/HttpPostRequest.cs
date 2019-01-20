@@ -33,7 +33,10 @@ public class HttpPostRequest : MonoBehaviour
         //  sendPost = true;
 
         //}
-        UnityWebRequest www = new UnityWebRequest("http://192.168.31.216", "POST");
+        SamInfo loadedData = DataSaver.LoadData<SamInfo>("samInfo");
+
+
+        UnityWebRequest www = new UnityWebRequest(loadedData.samIp, "POST");  //TODO VEDERE SE VA DAVVERO IL SAM IP
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonHttpSetting);
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();

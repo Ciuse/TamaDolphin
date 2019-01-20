@@ -148,6 +148,7 @@ public class InputState : MonoBehaviour {
 
     public void ResetInput()
     {
+        Debug.Log("RESETTATO INPUT");
         realSamInput = TypeOfInput.undefined;
         therapistInput = TypeOfInput.undefined;
         isInputTheSame = false;

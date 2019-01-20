@@ -1,7 +1,8 @@
-﻿using System;
+﻿
+
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour
@@ -12,32 +13,23 @@ public class StartGame : MonoBehaviour
     public ServerHttp server;
     public NetworkEventManager network;
 
-
-
-    public void Startg()
-    {
-        buttonStart.SetActive(false);
-    }
-
-    public void Updateg()
-    {
-        if (server.clickButton)
-        {
-            buttonStart.SetActive(true);
-        }
-    }
-
     public void Start()
     {
-        buttonStart.SetActive(false);
-        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", "a", 8081)); //TODO SISTEMARE L IP
+        SamInfo samInfo = new SamInfo();
+        samInfo.samIp = "192.168.xxx.xxx";
+
+        DataSaver.SaveData(samInfo, "samInfo");
+
+        buttonStart.SetActive(true);//TODO rimettere a false
+
+        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", IPManager.GetLocalIPAddress(), 8081)); //TODO CONTROLLARE SE VA IL NUOVO IP
     }
 
     public void Update()
     {
         if (network.realSamManager.sendPost)
         {
-            buttonStart.SetActive(true);
+            buttonStart.SetActive(true); 
             network.realSamManager.sendPost = false;
         }
     }
@@ -60,3 +52,4 @@ public class StartGame : MonoBehaviour
     }
 
 }
+

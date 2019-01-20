@@ -22,41 +22,15 @@ public class SpawnEngine : MonoBehaviour {
 
     public void SpawnQuestionMark(int numToSpawn)
     {
-        int spawned = 0;
-        GameObject questionMark = (GameObject)(Resources.Load("QuestionMark"));
-        float spawnTime = Time.time;
-
-        while (spawned < numToSpawn)
-        {
-
-            Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
-            Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
-
-            questionMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
-            questionMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
-
-            spawned++;
-        }
+        StopAllCoroutines();
+        StartCoroutine(SlowSpawnQuestionMark(numToSpawn));
     }
 
-        public void SpawnWrongMark(int numToSpawn)
-        {
-            int spawned = 0;
-            GameObject questionMark = (GameObject)(Resources.Load("WrongMark"));
-            float spawnTime = Time.time;
-
-            while (spawned < numToSpawn)
-            {
-
-                Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
-                Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
-
-                wrongMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
-                wrongMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
-
-                spawned++;
-            }
-        }
+    public void SpawnWrongMark(int numToSpawn)
+    {
+        StopAllCoroutines();
+        StartCoroutine(SlowSpawnWrongMark(numToSpawn));
+    }
 
     public void DestroyObjectSpawned()
     {
@@ -74,5 +48,59 @@ public class SpawnEngine : MonoBehaviour {
     public void SpawnFoodBucket()
     {
         //TODO
+    }
+
+
+    private IEnumerator SlowSpawnQuestionMark(int numToSpawn)
+    {
+        int spawned = 0;
+        GameObject questionMark = (GameObject)(Resources.Load("QuestionMark"));
+        float spawnTime = Time.time;
+
+        while (spawned < numToSpawn)
+        {
+
+            Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+            Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+
+            questionMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
+            questionMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
+
+            spawned++;
+
+            yield return new WaitForSeconds(2);
+            if (spawned != numToSpawn)
+            {
+                DestroyObjectSpawned();
+            }
+
+        }
+    }
+
+    private IEnumerator SlowSpawnWrongMark(int numToSpawn)
+    {
+
+        int spawned = 0;
+        GameObject questionMark = (GameObject)(Resources.Load("WrongMark"));
+        float spawnTime = Time.time;
+
+        while (spawned < numToSpawn)
+        {
+
+            Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+            Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(5F, 15.0F));
+
+            wrongMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
+            wrongMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
+
+            spawned++;
+
+            yield return new WaitForSeconds(2);
+            if (spawned != numToSpawn)
+            {
+                DestroyObjectSpawned();
+            }
+
+        }
     }
 }

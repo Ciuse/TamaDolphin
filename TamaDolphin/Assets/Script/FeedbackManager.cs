@@ -36,14 +36,14 @@ public class FeedbackManager : MonoBehaviour {
 
     public void WrongFeedbackFindNeed()
     {
-        spawnEngine.SpawnWrongMark(4);
+        spawnEngine.SpawnWrongMark(8);
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1));
 
     }
 
     public void QuestionMarkFeedbackFindNeed()
     {
-        spawnEngine.SpawnQuestionMark(4);
+        spawnEngine.SpawnQuestionMark(8);
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999", 1, 1, 1, 1));
 
     }

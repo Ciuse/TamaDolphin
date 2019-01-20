@@ -68,9 +68,6 @@ namespace Gvr.Internal {
         GvrControllerButton.App,
         GvrControllerButton.System,
         GvrControllerButton.TouchPadButton,
-        GvrControllerButton.Reserved0,
-        GvrControllerButton.Reserved1,
-        GvrControllerButton.Reserved2
     };
     private readonly int[] GVR_BUTTONS = new int[] {
         GVR_CONTROLLER_BUTTON_APP,
