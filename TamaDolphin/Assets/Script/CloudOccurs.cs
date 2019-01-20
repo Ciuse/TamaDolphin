@@ -8,20 +8,64 @@ public class CloudOccurs : MonoBehaviour {
     public GameObject planeCloud;
     public GameObject textMeshPro;
     public GameObject table;
+    public bool inizioSuggerimento;
+    public int i = 0;
     List<GameObject> needAdvicesList = new List<GameObject>();
+    List<GameObject> advicesActivatedList = new List<GameObject>();
 
     public void Start()
     {
-        cloud.SetActive(false);
-        planeCloud.SetActive(false);
-        textMeshPro.SetActive(false);
-       
 
+        cloud.SetActive(false);
+        inizioSuggerimento = false;
+        needAdvicesList.Add(planeCloud);
+        needAdvicesList.Add(table);
+        needAdvicesList.Add(textMeshPro);
+        foreach (GameObject item in needAdvicesList)
+        {
+            item.SetActive(false);
+            
+        }
+
+
+    }
+
+    public void Suggerimenti()
+    {
+        StartCoroutine(SuggerimentiAsync());
+
+    }
+
+    public IEnumerator SuggerimentiAsync()
+    {
+
+        foreach (GameObject item in needAdvicesList)
+        {
+
+            foreach (GameObject advice in advicesActivatedList)
+            {
+                if (item.transform.parent!= null && advice.transform.parent!= null && item.transform.parent.tag == "Cloud" && advice.transform.parent.tag== "Cloud")
+                {
+                    advice.SetActive(false);
+                    yield return new WaitForSeconds(2);
+
+                }
+            }
+           
+            item.SetActive(true);
+            yield return new WaitForSeconds(4);
+            advicesActivatedList.Add(item);
+            Debug.Log("suggerimento attivato");
+        }
+
+        
     }
 
     public void Appear()
     {
         StartCoroutine("CloudOccur");
+
+        
     }
     public void Disappear()
     {
@@ -32,12 +76,24 @@ public class CloudOccurs : MonoBehaviour {
     private IEnumerator CloudOccur()
     {
         yield return new WaitForSeconds(5);
-        Debug.Log("Wait is over");
+        
         cloud.SetActive(true);
-        planeCloud.SetActive(true);
+        Debug.Log("nuvola attivata");
+        Suggerimenti();
+
         
         
     }
 
-   
-}
+    private IEnumerator WaitTenSeconds()
+    {
+        yield return new WaitForSeconds(10);
+        
+    }
+
+  
+        
+        
+    }
+
+
