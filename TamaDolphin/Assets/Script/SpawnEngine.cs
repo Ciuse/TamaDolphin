@@ -46,8 +46,12 @@ public class SpawnEngine : MonoBehaviour {
     }
 
     public void SpawnFoodBucket()
-    {
-        //TODO
+    { 
+        
+        foreach (GameObject cestino in foodBaskets)
+        {
+            cestino.SetActive(true);
+        }
     }
 
 
