@@ -7,7 +7,6 @@ public class MovementTable : MonoBehaviour
     public GameObject targetTable;
     public Vector3 startPos;
     public Vector3 endPos;
-    public float distance;
 
     //Time to take from start to end
     public float lerpTime = 5;
