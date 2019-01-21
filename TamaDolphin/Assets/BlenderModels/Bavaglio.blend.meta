@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 6186b2b5b5a3e3a4594029be5f415bdc
+guid: 448c1b948354d2f4b89b8a3d98a5a867
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: TableWood_002__TableWood_jpg_001
+    2100000: Bavaglio
+    2100002: Bavaglio__StoffaTexture_JPG
     2300000: //RootNode
     3300000: //RootNode
     4300000: Plane

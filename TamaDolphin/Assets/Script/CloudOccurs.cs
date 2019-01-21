@@ -47,7 +47,7 @@ public class CloudOccurs : MonoBehaviour {
                 if (item.transform.parent!= null && advice.transform.parent!= null && item.transform.parent.tag == "Cloud" && advice.transform.parent.tag== "Cloud")
                 {
                     advice.SetActive(false);
-                    yield return new WaitForSeconds(2);
+                    yield return new WaitForSeconds(1);
 
                 }
             }
@@ -68,13 +68,18 @@ public class CloudOccurs : MonoBehaviour {
 
     public void Appear()
     {
-        StartCoroutine("CloudOccur");
+        if (cloud.activeSelf == false)
+        {
+            StartCoroutine("CloudOccur");
 
-        
+        }
     }
     public void Disappear()
     {
-        StopCoroutine("CloudOccur");
+        if (cloud.activeSelf == false)
+        {
+            StopCoroutine("CloudOccur");
+        }
     }
 
 
