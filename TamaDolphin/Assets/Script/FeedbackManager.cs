@@ -10,29 +10,58 @@ public class FeedbackManager : MonoBehaviour {
     public GameObject dolphin_VR;
     public NetworkEventManager networkEventManager;
     public SpawnEngine spawnEngine;
+    public float speed = 0.5f;
+    List<GameObject> feedbackCorrectList = new List<GameObject>();
+   
+   
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
     }
 
 	// Update is called once per frame
 	void Update () {
-
+       
     }
 
     // ********** FEEDBACK FIND NEED **************
 
-    public void ActivateSamFindNeed ()
+    public void ActivateSamFindNeed()
     {
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del brontolio
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1)); //settare solo la luce della pancia a rosso e le altre intensità a 0
+
     }
 
-    public void CorrectFeedbackFindNeed()
+        public void CorrectFeedbackFindNeed()
+        {
+            StartCoroutine(CorrectFeedbackFindNeedAsync());
+
+        }
+
+        public IEnumerator CorrectFeedbackFindNeedAsync()
     {
-        //spawn di bavaglio, tavolo, forchetta e coltello
+        yield return new WaitForSeconds(3);
+        GameObject cloud = GameObject.Find("Cloud");
+        Destroy(cloud);
+        yield return new WaitForSeconds(5);
+        GameObject fork = (GameObject)(Resources.Load("Fork"));
+        GameObject knife = (GameObject)(Resources.Load("Knife"));
+        Vector3 dolphinPosition = GameObject.Find("Dolphin_Vr").transform.position;
+        Vector3 position1 = new Vector3(dolphinPosition.x - 7.0F, dolphinPosition.y, dolphinPosition.z);
+        Vector3 position2 = new Vector3(dolphinPosition.x + 6.50F, dolphinPosition.y+0.7F, dolphinPosition.z);
+        feedbackCorrectList.Add(Instantiate(fork, position1, fork.GetComponent<Transform>().rotation) as GameObject);
+        feedbackCorrectList.Add(Instantiate(knife, position2, knife.GetComponent<Transform>().rotation) as GameObject);
+        yield return new WaitForSeconds(3);
+        //GameObject gag = (GameObject)(Resources.Load("Gag"));  //bavaglio
+        
+        GameObject.Find("Table").GetComponent<MovementTable>().enabled = true;
+
     }
+
+    
+    
 
     public void WrongFeedbackFindNeed()
     {

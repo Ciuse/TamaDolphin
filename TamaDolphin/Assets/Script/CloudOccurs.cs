@@ -52,7 +52,12 @@ public class CloudOccurs : MonoBehaviour {
                 }
             }
            
+            
             item.SetActive(true);
+            if (item.name == "Table")
+            {
+                item.GetComponent<MovementTable>().enabled = false;
+            }
             yield return new WaitForSeconds(4);
             advicesActivatedList.Add(item);
             Debug.Log("suggerimento attivato");
