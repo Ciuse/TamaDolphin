@@ -134,7 +134,7 @@ public class GameEventManager : MonoBehaviour
         if (gamePhase == GamePhase.findNeed) //Fase 1.2 -> l'input della carta letta del sam fisico viene letto solo dopo che la terapista ha premuto il bottone
         {
             inputState.SetInputRealSamFindNeed(cardIdRead);
-            OverloadInput();  // Permette di sovrvascrivere l'input
+            OverloadInput();  // Permette di sovrascrivere l'input
         }
 
         if (gamePhase == GamePhase.findFood) //Fase 2.2 ->
