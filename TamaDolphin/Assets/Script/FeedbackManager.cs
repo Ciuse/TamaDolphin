@@ -12,20 +12,27 @@ public class FeedbackManager : MonoBehaviour {
     public SpawnEngine spawnEngine;
     public float speed = 0.5f;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
-   
-   
+    private bool checkForTableEndMovement;
+
 
     // Use this for initialization
     void Start () {
+        checkForTableEndMovement = false;
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
     }
 
 	// Update is called once per frame
 	void Update () {
 
-        if (checkForTableCouroutineEnd)
+        if (Time.frameCount % 40 == 0 && checkForTableEndMovement == true)
         {
-            spawnEngine.SpawnFoodBucket();
+            if (GameObject.Find("Table").GetComponent<MovementTable>().movingTable == false)
+            {
+                GameObject.Find("Table").GetComponent<MovementTable>().enabled = false;
+                checkForTableEndMovement = false;
+
+                spawnEngine.SpawnFoodBucket();
+            }
         }
     }
 
@@ -63,7 +70,7 @@ public class FeedbackManager : MonoBehaviour {
         //GameObject gag = (GameObject)(Resources.Load("Gag"));  //bavaglio
         
         GameObject.Find("Table").GetComponent<MovementTable>().enabled = true;
-
+        checkForTableEndMovement = true;
 
     }
 

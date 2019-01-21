@@ -157,7 +157,6 @@ public class GameEventManager : MonoBehaviour
         inputSetted = false;
         inputState.ResetInput();
         gamePhase = GamePhase.startFindFood;
-        feedbackManager.
     }
 }
 
