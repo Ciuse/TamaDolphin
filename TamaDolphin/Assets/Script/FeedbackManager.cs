@@ -22,7 +22,11 @@ public class FeedbackManager : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-       
+
+        if (checkForTableCouroutineEnd)
+        {
+            spawnEngine.SpawnFoodBucket();
+        }
     }
 
     // ********** FEEDBACK FIND NEED **************
@@ -36,6 +40,8 @@ public class FeedbackManager : MonoBehaviour {
 
         public void CorrectFeedbackFindNeed()
         {
+
+         //TODO FARE I FEEDBACK PER IL SAM FISICO
             StartCoroutine(CorrectFeedbackFindNeedAsync());
 
         }
@@ -57,6 +63,7 @@ public class FeedbackManager : MonoBehaviour {
         //GameObject gag = (GameObject)(Resources.Load("Gag"));  //bavaglio
         
         GameObject.Find("Table").GetComponent<MovementTable>().enabled = true;
+
 
     }
 
@@ -87,7 +94,9 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ActivateSamFindFood()
     {
-        //TODOOOOOO
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del cibo giusto (????)
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#8c8c8c", "#8c8c8c", "#8c8c8c", "#8c8c8c", 1, 1, 1, 1)); //settare solo la luce della pancia a grigio e le altre intensità a 0
+
     }
 
     public void SameCorrectFindFood()
@@ -95,31 +104,38 @@ public class FeedbackManager : MonoBehaviour {
         SceneManager.LoadScene("Fireworks");
         //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
 
-        //TODO
+        //TODO -> finisce nel piatto
 
     }
 
     public void SameWrongFindFood()
     {
-        //TODO
+        //TODO -> finisce nel cestino :(
 
     }
 
     public void DifferentCorrectVRFindFood()
     {
-        //TODO
+        //TODO BHO
 
     }
 
     public void DifferentCorrectSamFindFood()
     {
-        //TODO
+        //TODO BHO
 
     }
 
     public void DifferentWrongFindFood()
     {
-        //TODO
+        //TODO -> torna indietro e sam é MOOOOOOOLTO ARRABBIATO. BUUUU
 
+    }
+
+    public void VisualFoodFeedbackChoice(string foodChoice) //nominare l oggetto del cibo da muovere come quello del valore chiave del dizionario associato all input della terapista nella classe InputState
+    {
+        GameObject food = GameObject.Find(foodChoice);
+
+        food.GetComponent<MovementFruit>().enabled = true;
     }
 }

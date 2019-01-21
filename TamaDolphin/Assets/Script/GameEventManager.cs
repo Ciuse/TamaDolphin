@@ -19,8 +19,6 @@ public class GameEventManager : MonoBehaviour
     {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
         gamePhase = GamePhase.startFindNeed;
-
-
     }
 
     // Update is called once per frame
@@ -107,10 +105,12 @@ public class GameEventManager : MonoBehaviour
             return; //da testare se da problemi
         }
 
-        if (gamePhase == GamePhase.startFindFood) //Fase 2.0 -> 
+        if (gamePhase == GamePhase.startFindFood) //Fase 2.0 -> leggo l'input della terapista, il cibo comunicato si muove verso il delfino
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
-            feedbackManager.ActivateSamFindFood(); //Fase 2.1 ->
+
+            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
+            feedbackManager.ActivateSamFindFood(); //Fase 2.1 -> TODO il delfino sam fisico si attiva
             gamePhase = GamePhase.findFood;
             return; //da testare se da problemi
         }
@@ -121,7 +121,7 @@ public class GameEventManager : MonoBehaviour
             OverloadInput();
         }
 
-        if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato
+        if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
             OverloadInput();
@@ -157,7 +157,7 @@ public class GameEventManager : MonoBehaviour
         inputSetted = false;
         inputState.ResetInput();
         gamePhase = GamePhase.startFindFood;
-        feedbackManager.spawnEngine.SpawnFoodBucket();
+        feedbackManager.
     }
 }
 
