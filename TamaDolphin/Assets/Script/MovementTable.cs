@@ -30,6 +30,14 @@ public class MovementTable : MonoBehaviour
         }
         float perc = currentLerpTime / lerpTime;
         transform.position = Vector3.Lerp(startPos, endPos, perc);
+
+        if(currentLerpTime==lerpTime)
+        {
+            GameObject piatto = (GameObject)(Resources.Load("Piatto"));
+            Vector3 position3 = new Vector3(transform.position.x, transform.position.y + 1.8F, transform.position.z);
+            Instantiate(piatto, position3, piatto.GetComponent<Transform>().rotation);
+            Destroy(this);
+        }
     }
 }
 

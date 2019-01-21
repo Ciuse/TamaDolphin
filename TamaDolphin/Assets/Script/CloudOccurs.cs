@@ -44,15 +44,15 @@ public class CloudOccurs : MonoBehaviour {
 
             foreach (GameObject advice in advicesActivatedList)
             {
-                if (item.transform.parent!= null && advice.transform.parent!= null && item.transform.parent.tag == "Cloud" && advice.transform.parent.tag== "Cloud")
+                if (item.transform.parent != null && advice.transform.parent != null && item.transform.parent.tag == "Cloud" && advice.transform.parent.tag == "Cloud")
                 {
                     advice.SetActive(false);
                     yield return new WaitForSeconds(1);
 
                 }
+
             }
-           
-            
+
             item.SetActive(true);
             if (item.name == "Table")
             {
@@ -68,17 +68,24 @@ public class CloudOccurs : MonoBehaviour {
 
     public void Appear()
     {
-        if (cloud.activeSelf == false)
+        if (cloud != null)
         {
-            StartCoroutine("CloudOccur");
+            if (cloud.activeSelf == false)
+            {
+                StartCoroutine("CloudOccur");
 
+            }
         }
     }
     public void Disappear()
     {
-        if (cloud.activeSelf == false)
+
+        if (cloud != null)
         {
-            StopCoroutine("CloudOccur");
+            if (cloud.activeSelf == false)
+            {
+                StopCoroutine("CloudOccur");
+            }
         }
     }
 

@@ -42,10 +42,10 @@ public class FeedbackManager : MonoBehaviour {
 
         public IEnumerator CorrectFeedbackFindNeedAsync()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         GameObject cloud = GameObject.Find("Cloud");
         Destroy(cloud);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(3);
         GameObject fork = (GameObject)(Resources.Load("Fork"));
         GameObject knife = (GameObject)(Resources.Load("Knife"));
         Vector3 dolphinPosition = GameObject.Find("Dolphin_Vr").transform.position;
