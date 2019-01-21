@@ -23,6 +23,11 @@ public class MovementTable : MonoBehaviour
 
     private void Update()
     {
+        StartCoroutine("UpdateAsync");
+    }
+
+    private IEnumerator UpdateAsync()
+    {
         currentLerpTime += Time.deltaTime;
         if (currentLerpTime >= lerpTime)
         {
@@ -33,6 +38,7 @@ public class MovementTable : MonoBehaviour
 
         if(currentLerpTime==lerpTime)
         {
+            yield return new WaitForSeconds(1);
             GameObject piatto = (GameObject)(Resources.Load("Piatto"));
             Vector3 position3 = new Vector3(transform.position.x, transform.position.y + 1.8F, transform.position.z);
             Instantiate(piatto, position3, piatto.GetComponent<Transform>().rotation);
