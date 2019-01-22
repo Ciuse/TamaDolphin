@@ -13,8 +13,6 @@ public class FeedbackManager : MonoBehaviour {
     public float speed = 0.5f;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
     private bool checkForTableEndMovement;
-
-
     // Use this for initialization
     void Start () {
         checkForTableEndMovement = false;

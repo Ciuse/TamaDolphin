@@ -37,7 +37,6 @@ public class MovementTable : MonoBehaviour
         if (currentLerpTime == lerpTime && piattoSpawned == false)
         {
             StartCoroutine("SpawnPiatto");
-            piattoSpawned = true;
         }
     }
 
@@ -48,6 +47,8 @@ public class MovementTable : MonoBehaviour
         Vector3 position3 = new Vector3(transform.position.x, transform.position.y + 1.8F, transform.position.z);
         Instantiate(piatto, position3, piatto.GetComponent<Transform>().rotation);
         movingTable = false;
+        piattoSpawned = true;
+
     }
 }
 
