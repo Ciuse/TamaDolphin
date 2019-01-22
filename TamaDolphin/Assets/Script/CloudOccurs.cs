@@ -36,6 +36,11 @@ public class CloudOccurs : MonoBehaviour {
 
     }
 
+    public void StopSuggerimenti()
+    {
+        StopAllCoroutines();
+    }
+
     public IEnumerator SuggerimentiAsync()
     {
 
@@ -101,6 +106,8 @@ public class CloudOccurs : MonoBehaviour {
         
         
     }
+
+
 
     private IEnumerator WaitTenSeconds()
     {

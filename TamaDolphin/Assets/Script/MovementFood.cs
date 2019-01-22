@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementFruit : MonoBehaviour
+public class MovementFood : MonoBehaviour
 {
     public GameObject targetFood;
     public Vector3 startPos;
@@ -11,8 +11,8 @@ public class MovementFruit : MonoBehaviour
     private Vector3 endMiddlePos;
     private Vector3 startMiddlePos;
     //Time to take from start to end
-    public float lerpTime1 = 2;
-    public float lerpTime2 = 5;
+    public float lerpTime1 = 5;
+    public float lerpTime2 = 10;
 
     //this will update the lerp time
     public float currentLerpTime1 = 0;

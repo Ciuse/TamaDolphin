@@ -46,9 +46,9 @@ public class InputState : MonoBehaviour {
         webInput.Add("correct", "1");
 
         webInput.Add("Fish", "2");
-        webInput.Add("Fruit", "3");
-        webInput.Add("Cake", "4");
-        webInput.Add("Ham", "5");
+        webInput.Add("Ham", "3");
+        webInput.Add("Fruit", "4");
+        webInput.Add("Cake", "5");
     }
 
 

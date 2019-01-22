@@ -8,9 +8,9 @@ public class FeedbackManager : MonoBehaviour {
 
     public WorldFeedback worldFeedback;
     public GameObject dolphin_VR;
+    public GameObject table;
     public NetworkEventManager networkEventManager;
     public SpawnEngine spawnEngine;
-    public float speed = 0.5f;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
     private bool checkForTableEndMovement;
     // Use this for initialization
@@ -53,13 +53,15 @@ public class FeedbackManager : MonoBehaviour {
 
         public IEnumerator CorrectFeedbackFindNeedAsync()
     {
+
         yield return new WaitForSeconds(2);
         GameObject cloud = GameObject.Find("Cloud");
+        dolphin_VR.GetComponent<CloudOccurs>().StopSuggerimenti();
         Destroy(cloud);
         yield return new WaitForSeconds(3);
         GameObject fork = (GameObject)(Resources.Load("Fork"));
         GameObject knife = (GameObject)(Resources.Load("Knife"));
-        Vector3 dolphinPosition = GameObject.Find("Dolphin_Vr").transform.position;
+        Vector3 dolphinPosition = dolphin_VR.transform.position;
         Vector3 position1 = new Vector3(dolphinPosition.x - 7.0F, dolphinPosition.y, dolphinPosition.z);
         Vector3 position2 = new Vector3(dolphinPosition.x + 6.50F, dolphinPosition.y+0.7F, dolphinPosition.z);
         feedbackCorrectList.Add(Instantiate(fork, position1, fork.GetComponent<Transform>().rotation) as GameObject);
@@ -67,7 +69,7 @@ public class FeedbackManager : MonoBehaviour {
         yield return new WaitForSeconds(3);
         //GameObject gag = (GameObject)(Resources.Load("Gag"));  //bavaglio
         
-        GameObject.Find("Table").GetComponent<MovementTable>().enabled = true;
+        table.GetComponent<MovementTable>().enabled = true;
         checkForTableEndMovement = true;
 
     }
@@ -141,6 +143,6 @@ public class FeedbackManager : MonoBehaviour {
     {
         GameObject food = GameObject.Find(foodChoice);
 
-        food.GetComponent<MovementFruit>().enabled = true;
+        food.GetComponent<MovementFood>().enabled = true;
     }
 }
