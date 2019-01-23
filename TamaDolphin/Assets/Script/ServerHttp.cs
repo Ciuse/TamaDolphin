@@ -47,8 +47,6 @@ public class ServerHttp : MonoBehaviour
     void Awake()
     {
         // create the dictionnary of Regex and RequestHandler
-        _requestHandlers[new Regex(@"^/Sam$")] = HandleSamWebResponse;
-        _requestHandlers[new Regex(@"^/Rfid$")] = HandleCardRfidResponse;
         _requestHandlers[new Regex(@"^/Web$")] = HandleWebResponse;
         _requestHandlers[new Regex(@"^.*$")] = HandleSamResponse;
     }

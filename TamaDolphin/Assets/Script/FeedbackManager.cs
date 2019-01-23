@@ -9,12 +9,14 @@ public class FeedbackManager : MonoBehaviour {
     public WorldFeedback worldFeedback;
     public GameObject dolphin_VR;
     public GameObject table;
+    public GameObject bavaglio;
     public NetworkEventManager networkEventManager;
     public SpawnEngine spawnEngine;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
     private bool checkForTableEndMovement;
     // Use this for initialization
     void Start () {
+        bavaglio.SetActive(false);
         checkForTableEndMovement = false;
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
     }
@@ -47,35 +49,45 @@ public class FeedbackManager : MonoBehaviour {
         {
 
          //TODO FARE I FEEDBACK PER IL SAM FISICO
-            StartCoroutine(CorrectFeedbackFindNeedAsync());
+           StartCoroutine(CorrectFeedbackFindNeedAsync());
 
         }
 
-        public IEnumerator CorrectFeedbackFindNeedAsync()
+    public IEnumerator CorrectFeedbackFindNeedAsync()
     {
 
         yield return new WaitForSeconds(2);
         GameObject cloud = GameObject.Find("Cloud");
         dolphin_VR.GetComponent<CloudOccurs>().StopSuggerimenti();
         Destroy(cloud);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         GameObject fork = (GameObject)(Resources.Load("Fork"));
         GameObject knife = (GameObject)(Resources.Load("Knife"));
         Vector3 dolphinPosition = dolphin_VR.transform.position;
         Vector3 position1 = new Vector3(dolphinPosition.x - 7.0F, dolphinPosition.y, dolphinPosition.z);
-        Vector3 position2 = new Vector3(dolphinPosition.x + 6.50F, dolphinPosition.y+0.7F, dolphinPosition.z);
+        Vector3 position2 = new Vector3(dolphinPosition.x + 6.50F, dolphinPosition.y + 0.7F, dolphinPosition.z);
         feedbackCorrectList.Add(Instantiate(fork, position1, fork.GetComponent<Transform>().rotation) as GameObject);
         feedbackCorrectList.Add(Instantiate(knife, position2, knife.GetComponent<Transform>().rotation) as GameObject);
+        bavaglio.SetActive(true);
         yield return new WaitForSeconds(3);
-        //GameObject gag = (GameObject)(Resources.Load("Gag"));  //bavaglio
-        
         table.GetComponent<MovementTable>().enabled = true;
         checkForTableEndMovement = true;
+       // StartCoroutine(CorrectFeedbackFindNeedAsyncSecond());
+
 
     }
 
-    
-    
+
+
+
+    //public IEnumerator CorrectFeedbackFindNeedAsyncSecond()
+    //{
+
+    //    new WaitForSeconds(2);
+
+    //    yield return null;
+
+    //}
 
     public void WrongFeedbackFindNeed()
     {

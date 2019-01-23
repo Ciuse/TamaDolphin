@@ -31,7 +31,7 @@ public class MovementTable : MonoBehaviour
         {
             currentLerpTime = lerpTime;
         }
-        Debug.Log(endPos.x +"  "+ endPos.y + "  " + endPos.z);
+
         float perc = currentLerpTime / lerpTime;
         transform.position = Vector3.Lerp(startPos, endPos, perc);
 
