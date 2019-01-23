@@ -8,6 +8,7 @@ public class CloudOccurs : MonoBehaviour {
     public GameObject planeCloud;
     public GameObject textMeshPro;
     public GameObject table;
+    public GameObject bavaglio;
     public bool inizioSuggerimento;
     public int i = 0;
     List<GameObject> needAdvicesList = new List<GameObject>();
@@ -15,7 +16,8 @@ public class CloudOccurs : MonoBehaviour {
 
     public void Start()
     {
-
+        
+       
         cloud.SetActive(false);
         inizioSuggerimento = false;
         needAdvicesList.Add(planeCloud);
@@ -30,8 +32,10 @@ public class CloudOccurs : MonoBehaviour {
 
     }
 
+   
     public void Suggerimenti()
     {
+       
         StartCoroutine(SuggerimentiAsync());
 
     }
@@ -81,7 +85,12 @@ public class CloudOccurs : MonoBehaviour {
 
             }
         }
+       
+        
     }
+
+
+
     public void Disappear()
     {
 
