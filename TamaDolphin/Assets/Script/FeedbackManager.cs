@@ -14,8 +14,6 @@ public class FeedbackManager : MonoBehaviour {
     public SpawnEngine spawnEngine;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
     private bool checkForTableEndMovement;
-
-
     // Use this for initialization
     void Start () {
         bavaglio.SetActive(false);
