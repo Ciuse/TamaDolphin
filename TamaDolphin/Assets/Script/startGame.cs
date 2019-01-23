@@ -12,6 +12,7 @@ public class StartGame : MonoBehaviour
     public bool postRequestReceived;
     public ServerHttp server;
     public NetworkEventManager network;
+    public string myIp;
 
     public void Start()
     {
@@ -22,7 +23,17 @@ public class StartGame : MonoBehaviour
 
         buttonStart.SetActive(true);//TODO rimettere a false
 
-        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", IPManager.GetLocalIPAddress(), 8081)); //TODO CONTROLLARE SE VA IL NUOVO IP
+            var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+                {
+                myIp=ip.ToString();
+                break; 
+                }
+            }
+
+        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", myIp, 8081)); //TODO CONTROLLARE SE VA IL NUOVO IP
     }
 
     public void Update()

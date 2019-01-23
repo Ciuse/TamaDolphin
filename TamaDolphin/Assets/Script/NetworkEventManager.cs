@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class NetworkEventManager : MonoBehaviour
 {
@@ -11,13 +12,13 @@ public class NetworkEventManager : MonoBehaviour
 
     void Start()
     {
-       
+
     }
 
     public void SetRealSamSetting(string request)
     {
-       realSamManager.PostRequest(request);
-        
+        realSamManager.bufferPost.Add(request);
+
     }
 
     public void HandleSamCardRead(string cardIdRead)
@@ -29,7 +30,6 @@ public class NetworkEventManager : MonoBehaviour
     public void HandleWebButtonPressed(string buttonPressedId)
     {
         gameEventManager.SetInputStateTherapist(buttonPressedId);
-
 
     }
 }

@@ -38,12 +38,12 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ActivateSamFindNeed()
     {
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#000000")); //settare solo la luce della pancia a rosso e le altre intensità a 0
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del brontolio
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1)); //settare solo la luce della pancia a rosso e le altre intensità a 0
 
     }
 
-        public void CorrectFeedbackFindNeed()
+    public void CorrectFeedbackFindNeed()
         {
 
          //TODO FARE I FEEDBACK PER IL SAM FISICO
@@ -80,14 +80,14 @@ public class FeedbackManager : MonoBehaviour {
     public void WrongFeedbackFindNeed()
     {
         spawnEngine.SpawnWrongMark(8);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000", 1, 1, 1, 1));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
 
     }
 
     public void QuestionMarkFeedbackFindNeed()
     {
         spawnEngine.SpawnQuestionMark(8);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999", 1, 1, 1, 1));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999"));
 
     }
 
@@ -102,7 +102,7 @@ public class FeedbackManager : MonoBehaviour {
     public void ActivateSamFindFood()
     {
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del cibo giusto (????)
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#8c8c8c", "#8c8c8c", "#8c8c8c", "#8c8c8c", 1, 1, 1, 1)); //settare solo la luce della pancia a grigio e le altre intensità a 0
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#8c8c8c", "#8c8c8c", "#8c8c8c", "#8c8c8c")); //settare solo la luce della pancia a grigio e le altre intensità a 0
 
     }
 

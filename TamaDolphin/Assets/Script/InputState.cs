@@ -32,21 +32,21 @@ public class InputState : MonoBehaviour {
         correctCardIdFindNeed = "hungry";
         correctWebIdFindNeed = "1";
 
-        cards.Add("hungry", "a3cd81d5");
+        cards.Add("hungry", "8f96dd00");
         cards.Add("sleepy", "abababb");
         cards.Add("tired", "abababb");
         cards.Add("happy", "abababb");
 
-        cards.Add("Fish", "abababb");
-        cards.Add("Fruit", "abababb");
-        cards.Add("Cake", "abababb");
-        cards.Add("Ham", "abababb");
+        cards.Add("Fish", "9f4dc300");
+        cards.Add("Fruit", "f3778ad5");
+        cards.Add("Cake", "be6b1f39");
+        cards.Add("Meat", "9044425d");
 
         webInput.Add("wrong", "0");
         webInput.Add("correct", "1");
 
         webInput.Add("Fish", "2");
-        webInput.Add("Ham", "3");
+        webInput.Add("Meat", "3");
         webInput.Add("Fruit", "4");
         webInput.Add("Cake", "5");
     }

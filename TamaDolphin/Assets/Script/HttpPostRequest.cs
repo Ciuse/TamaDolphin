@@ -3,14 +3,38 @@ using System.Collections;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.Text;
+using System.Collections.Generic;
 
 public class HttpPostRequest : MonoBehaviour
 {
     public bool sendPost=false;
+    private string samIp;
+    public List<string> bufferPost = new List<string>();
+    public Coroutine sendingPost;
+    private void Start()
+    {
+        SamInfo loadedData = DataSaver.LoadData<SamInfo>("samInfo");
+        samIp = loadedData.samIp;
+        sendingPost = null;
+    }
 
+    void Update()
+    {
+        if (Time.frameCount % 60 == 0)
+        {
+            if (bufferPost.Count > 0)
+            {
+                if (sendingPost == null)
+                {
+                    PostRequest(bufferPost[0]);
+                    bufferPost.Remove(bufferPost[0]);
+                }
+            }
+        }
+    }
     public void PostRequest(string jsonHttpSetting)
     {
-        StartCoroutine(SendPostToSam(jsonHttpSetting));
+        sendingPost=StartCoroutine(SendPostToSam(jsonHttpSetting));
     }
 
     private IEnumerator SendPostToSam(string jsonHttpSetting)
@@ -33,10 +57,9 @@ public class HttpPostRequest : MonoBehaviour
         //  sendPost = true;
 
         //}
-        SamInfo loadedData = DataSaver.LoadData<SamInfo>("samInfo");
 
 
-        UnityWebRequest www = new UnityWebRequest(loadedData.samIp, "POST");  //TODO VEDERE SE VA DAVVERO IL SAM IP
+        UnityWebRequest www = new UnityWebRequest(samIp, "POST");  //TODO VEDERE SE VA DAVVERO IL SAM IP
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonHttpSetting);
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
@@ -54,6 +77,8 @@ public class HttpPostRequest : MonoBehaviour
             Debug.Log("Status Code: " + www.responseCode);
         }
 
+        sendingPost = null;
+
     }
 
     public string Configuration(string requestType, string ipTarget, int portTarget)
@@ -63,7 +88,7 @@ public class HttpPostRequest : MonoBehaviour
         return stringa;
     }
 
-    public string SetLights(string requestType, string color1, string color2, string color3, string color4, int intensità1, int intensità2, int intensità3, int intensità4 )
+    public string SetLights(string requestType, string color1, string color2, string color3, string color4 )
     {
          string lights = "{\"requestType\":" + "\"" + requestType + "\"" + "," + "\"lightControllerSetter\":[{\"code\":" + "\"" + "parthead" + "\"" + "," + "\"color\":" + "\"" + color1 + "\"" + "},{\"code\":" + "\"" + "partleftfin" + "\"" + "," + "\"color\":" + "\"" + color2 + "\"" + "},{\"code\":" + "\"" + "partrightfin" + "\"" + "," + "\"color\":" + "\"" + color3 + "\"" + "},{\"code\":" + "\"" + "partbelly" + "\"" + "," + "\"color\":" + "\"" + color4 + "\"" + "}]}";
         Debug.Log(lights);
