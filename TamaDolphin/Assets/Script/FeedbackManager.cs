@@ -10,12 +10,17 @@ public class FeedbackManager : MonoBehaviour {
     public GameObject dolphin_VR;
     public GameObject table;
     public GameObject bavaglio;
+    public GameObject bin;
     public NetworkEventManager networkEventManager;
     public SpawnEngine spawnEngine;
     List<GameObject> feedbackCorrectList = new List<GameObject>();
-    private bool checkForTableEndMovement;
+    public bool checkForTableEndMovement;
+    public Vector3 movedFrom;
+    public GameObject foodMoved;
+
     // Use this for initialization
     void Start () {
+        foodMoved = null;
         bavaglio.SetActive(false);
         checkForTableEndMovement = false;
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
@@ -26,7 +31,7 @@ public class FeedbackManager : MonoBehaviour {
 
         if (Time.frameCount % 40 == 0 && checkForTableEndMovement == true)
         {
-            if (GameObject.Find("Table").GetComponent<MovementTable>().movingTable == false)
+            if (GameObject.Find("Table")!=null && GameObject.Find("Table").GetComponent<MovementTable>().movingTable == false)
             {
                 GameObject.Find("Table").GetComponent<MovementTable>().enabled = false;
                 checkForTableEndMovement = false;
@@ -48,19 +53,18 @@ public class FeedbackManager : MonoBehaviour {
     public void CorrectFeedbackFindNeed()
         {
 
-         //TODO FARE I FEEDBACK PER IL SAM FISICO
-           StartCoroutine(CorrectFeedbackFindNeedAsync());
+        //TODO FARE I FEEDBACK PER IL SAM FISICO
+        StartCoroutine(CorrectFeedbackFindNeedAsync());
 
         }
 
     public IEnumerator CorrectFeedbackFindNeedAsync()
     {
-
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         GameObject cloud = GameObject.Find("Cloud");
         dolphin_VR.GetComponent<CloudOccurs>().StopSuggerimenti();
         Destroy(cloud);
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
         GameObject fork = (GameObject)(Resources.Load("Fork"));
         GameObject knife = (GameObject)(Resources.Load("Knife"));
         Vector3 dolphinPosition = dolphin_VR.transform.position;
@@ -69,7 +73,11 @@ public class FeedbackManager : MonoBehaviour {
         feedbackCorrectList.Add(Instantiate(fork, position1, fork.GetComponent<Transform>().rotation) as GameObject);
         feedbackCorrectList.Add(Instantiate(knife, position2, knife.GetComponent<Transform>().rotation) as GameObject);
         bavaglio.SetActive(true);
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3f);
+        if (table.activeInHierarchy == false )
+        {
+            table.SetActive(true);
+        }
         table.GetComponent<MovementTable>().enabled = true;
         checkForTableEndMovement = true;
        // StartCoroutine(CorrectFeedbackFindNeedAsyncSecond());
@@ -105,6 +113,7 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ResetFeedbackFindNeed()
     {
+        spawnEngine.StopAllCoroutines();
         spawnEngine.DestroyObjectSpawned();
     }
 
@@ -120,15 +129,38 @@ public class FeedbackManager : MonoBehaviour {
 
     public void SameCorrectFindFood()
     {
-        SceneManager.LoadScene("Fireworks");
+        if (foodMoved != null)
+        {
+            GameObject piatto = GameObject.Find("Piatto(Clone)");
+            if (piatto != null)
+            {
+                foodMoved.GetComponent<MovementFood>().enabled = true;
+                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToDish(piatto.transform.position);
+            }
+        }
+        //TODO -> attivare la scena
+
+        //SceneManager.LoadScene("Fireworks");
+
         //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
 
-        //TODO -> finisce nel piatto
 
     }
 
     public void SameWrongFindFood()
     {
+
+        if (foodMoved != null)
+        {
+            GameObject bin = GameObject.Find("Bin");
+            if (bin != null)
+            {
+                GameObject targetTrash = GameObject.Find("Bin/TargetTrash");
+
+                foodMoved.GetComponent<MovementFood>().enabled = true;
+                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToBin(targetTrash.transform.position);
+            }
+        }
         //TODO -> finisce nel cestino :(
 
     }
@@ -153,8 +185,32 @@ public class FeedbackManager : MonoBehaviour {
 
     public void VisualFoodFeedbackChoice(string foodChoice) //nominare l oggetto del cibo da muovere come quello del valore chiave del dizionario associato all input della terapista nella classe InputState
     {
-        GameObject food = GameObject.Find(foodChoice);
 
-        food.GetComponent<MovementFood>().enabled = true;
+
+        GameObject food = GameObject.Find(foodChoice);
+        if (food != null)
+        {
+            if (foodMoved == null)
+            {
+                foodMoved = food;
+                movedFrom = new Vector3(food.transform.position.x, food.transform.position.y, food.transform.position.z); ;
+                food.GetComponent<MovementFood>().enabled = true;
+                food.GetComponent<MovementFood>().SetMoveToDolphin();
+            }
+            else
+            {
+                //  -> TODO di sicuro non va messo qui.
+                //rimetto a posto il cibo vecchio 
+                foodMoved.GetComponent<MovementFood>().enabled = true;
+                foodMoved.GetComponent<MovementFood>().SetMoveBackToBucket(movedFrom);
+
+                //muovo il nuovo cibo
+                foodMoved = food;
+                movedFrom = new Vector3(food.transform.position.x, food.transform.position.y, food.transform.position.z); ;
+                food.GetComponent<MovementFood>().enabled = true;
+                food.GetComponent<MovementFood>().SetMoveToDolphin();
+
+            }
+        }
     }
 }

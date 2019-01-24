@@ -56,7 +56,7 @@ public class CloudOccurs : MonoBehaviour {
                 if (item.transform.parent != null && advice.transform.parent != null && item.transform.parent.tag == "Cloud" && advice.transform.parent.tag == "Cloud")
                 {
                     advice.SetActive(false);
-                    yield return new WaitForSeconds(1);
+                    yield return new WaitForSeconds(1f);
 
                 }
 
@@ -67,7 +67,7 @@ public class CloudOccurs : MonoBehaviour {
             {
                 item.GetComponent<MovementTable>().enabled = false;
             }
-            yield return new WaitForSeconds(4);
+            yield return new WaitForSeconds(4f);
             advicesActivatedList.Add(item);
             Debug.Log("suggerimento attivato");
         }

@@ -124,6 +124,8 @@ public class GameEventManager : MonoBehaviour
         if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
+            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); //TODO non è il massimo messo così perchè se fatto subito succede un casino con i cibi che volano
+
             OverloadInput();
         }
     }

@@ -29,21 +29,25 @@ public class InputState : MonoBehaviour {
         realSamInput = TypeOfInput.undefined;
         therapistInput = TypeOfInput.undefined;
 
-        correctCardIdFindNeed = "hungry";
-        correctWebIdFindNeed = "1";
+        correctCardIdFindNeed = "Hungry";
+        correctWebIdFindNeed = "Correct";
 
-        cards.Add("hungry", "8f96dd00");
-        cards.Add("sleepy", "abababb");
-        cards.Add("tired", "abababb");
-        cards.Add("happy", "abababb");
+
+        correctCardIdFindFood = "Fish";
+        correctWebIdFindFood = "Fish";
+
+        cards.Add("Hungry", "8f96dd00");
+        cards.Add("Sleepy", "abababb");
+        cards.Add("Tired", "abababb");
+        cards.Add("Happy", "abababb");
 
         cards.Add("Fish", "9f4dc300");
         cards.Add("Fruit", "f3778ad5");
         cards.Add("Cake", "be6b1f39");
         cards.Add("Meat", "9044425d");
 
-        webInput.Add("wrong", "0");
-        webInput.Add("correct", "1");
+        webInput.Add("Wrong", "0");
+        webInput.Add("Correct", "1");
 
         webInput.Add("Fish", "2");
         webInput.Add("Meat", "3");
@@ -66,7 +70,7 @@ public class InputState : MonoBehaviour {
         realSamInputValue = cardKey;
         Debug.Log("realSamInputValue input settato con valore:" + realSamInputValue);
 
-        if (correctCardIdFindNeed == cardKey)
+        if (correctCardIdFindNeed == realSamInputValue)
         {
             realSamInput=TypeOfInput.correct;
             Debug.Log("carta letta con valore correct");
@@ -84,7 +88,7 @@ public class InputState : MonoBehaviour {
         realSamInputValue = cardKey;
         Debug.Log("realSamInputValue input settato con valore:" + realSamInputValue);
 
-        if (correctCardIdFindFood == cardKey)
+        if (correctCardIdFindFood == realSamInputValue)
         {
             realSamInput = TypeOfInput.correct;
             Debug.Log("carta letta con valore correct");
@@ -103,7 +107,7 @@ public class InputState : MonoBehaviour {
         therapistInputValue = KeyByValue(webInput, buttonPressedId);
         Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
 
-        if (correctWebIdFindNeed == buttonPressedId)
+        if (correctWebIdFindNeed == therapistInputValue)
         {
             therapistInput = TypeOfInput.correct;
             Debug.Log("therapist input settato con valore correct");
@@ -120,7 +124,7 @@ public class InputState : MonoBehaviour {
         therapistInputValue = KeyByValue(webInput, buttonPressedId);
         Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
 
-        if (correctWebIdFindFood == buttonPressedId)
+        if (correctWebIdFindFood == therapistInputValue)
         {
             therapistInput = TypeOfInput.correct;
             Debug.Log("therapist input settato con valore correct");
