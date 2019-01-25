@@ -318,13 +318,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139688590}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53af845a48f79b84a974cdc4e8e66356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   targetFood: {fileID: 256851521}
-  food: {fileID: 139688590}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   lerpTime1: 2
@@ -1063,7 +1062,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFood: {fileID: 256851521}
-  food: {fileID: 527155389}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   lerpTime1: 5
@@ -1344,7 +1342,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 139688592}
+        - m_Target: {fileID: 654575336}
           m_MethodName: MovementSingleFood
           m_Mode: 1
           m_Arguments:
@@ -1361,8 +1359,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 139688592}
-          m_MethodName: NoMovementSingleFood
+        - m_Target: {fileID: 654575336}
+          m_MethodName: SingleFoodReturnBack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1375,6 +1373,21 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &654575336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654575333}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 139688590}
+  foodStandUp: 0
+  foodComeBack: 0
 --- !u!4 &654575337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -1655,7 +1668,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFood: {fileID: 256851521}
-  food: {fileID: 775302811}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   lerpTime1: 5
@@ -1730,7 +1742,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f7d86bcee996a3e4ea5576e4b3d48c73, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f7d86bcee996a3e4ea5576e4b3d48c73, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2273,6 +2285,7 @@ MonoBehaviour:
   - {fileID: 1192071428}
   - {fileID: 1989319352}
   - {fileID: 1769803142}
+  bin: {fileID: 920206094}
 --- !u!4 &1102531378
 Transform:
   m_ObjectHideFlags: 0
@@ -2450,7 +2463,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 775302813}
+        - m_Target: {fileID: 1192071431}
           m_MethodName: MovementSingleFood
           m_Mode: 1
           m_Arguments:
@@ -2467,8 +2480,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 775302813}
-          m_MethodName: NoMovementSingleFood
+        - m_Target: {fileID: 1192071431}
+          m_MethodName: SingleFoodReturnBack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2481,6 +2494,21 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &1192071431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1192071428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 775302811}
+  foodStandUp: 0
+  foodComeBack: 0
 --- !u!4 &1192071432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -3813,7 +3841,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1975298165}
+        - m_Target: {fileID: 1769803145}
           m_MethodName: MovementSingleFood
           m_Mode: 1
           m_Arguments:
@@ -3830,8 +3858,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1975298165}
-          m_MethodName: NoMovementSingleFood
+        - m_Target: {fileID: 1769803145}
+          m_MethodName: SingleFoodReturnBack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3844,6 +3872,21 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &1769803145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1769803142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1975298163}
+  foodStandUp: 0
+  foodComeBack: 0
 --- !u!4 &1769803146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -4110,7 +4153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetFood: {fileID: 256851521}
-  food: {fileID: 1975298163}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
   lerpTime1: 5
@@ -4297,7 +4339,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 527155391}
+        - m_Target: {fileID: 1989319355}
           m_MethodName: MovementSingleFood
           m_Mode: 1
           m_Arguments:
@@ -4314,8 +4356,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 527155391}
-          m_MethodName: NoMovementSingleFood
+        - m_Target: {fileID: 1989319355}
+          m_MethodName: SingleFoodReturnBack
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4328,6 +4370,21 @@ MonoBehaviour:
       m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
         Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   delegates: []
+--- !u!114 &1989319355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1989319352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 527155389}
+  foodStandUp: 0
+  foodComeBack: 0
 --- !u!4 &1989319356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,

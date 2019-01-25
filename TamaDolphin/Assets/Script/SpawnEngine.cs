@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnEngine : MonoBehaviour {
 
     public GameObject[] foodBaskets;
+    public GameObject bin;
 
     List<GameObject> questionMarkList = new List<GameObject>();
 
@@ -45,13 +46,15 @@ public class SpawnEngine : MonoBehaviour {
         }
     }
 
-    public void SpawnFoodBucket()
+    public void SpawnFoodBucketAndBin()
     { 
         
         foreach (GameObject cestino in foodBaskets)
         {
             cestino.SetActive(true);
         }
+
+        bin.SetActive(true);
     }
 
 

@@ -4,15 +4,36 @@ using UnityEngine;
 
 public class MovementSingleFoodObservation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject food;
+    public bool foodStandUp = false;
+    public bool foodComeBack = false;
+
+    public void MovementSingleFood()
     {
-        
+
+        if (food != null && foodStandUp==false)
+        {
+
+            food.GetComponent<MovementFood>().enabled = true;
+            food.GetComponent<MovementFood>().SetPositionSingleFoodAtTop(food);
+            foodStandUp = true;
+
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    public void SingleFoodReturnBack()
     {
-        
+        if (food != null && foodComeBack==false)
+        {
+            food.GetComponent<MovementFood>().enabled = true;
+            food.GetComponent<MovementFood>().ReturnBackSingleFood(food);
+            foodComeBack = true;
+
+        }
+
     }
 }

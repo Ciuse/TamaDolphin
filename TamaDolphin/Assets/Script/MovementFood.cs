@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementFood : MonoBehaviour
 {
     public GameObject targetFood;
-    public GameObject food;
+    
     public Vector3 startPos;
     public Vector3 endPos;
 
@@ -131,43 +131,33 @@ public class MovementFood : MonoBehaviour
 
     }
 
-    public IEnumerator MovementSingleFoodObservation()
+    public void SetPositionSingleFoodAtTop(GameObject food)
     {
-        yield return new WaitForSeconds(3);
-
+       
         currentLerpTime1 = 0;
         lerpTime1 = 5;
         lerpTime2 = 1;
-        startPos = transform.position;
-        endMiddlePos = transform.position + new Vector3(0f, 1.4f, 0f) ;
-        endPos = transform.position + new Vector3(0f, 1.4f, 0f);
+        startPos = food.transform.position;
+        endMiddlePos = food.transform.position + new Vector3(0f, 1.4f, 0f) ;
+        endPos = food.transform.position + new Vector3(0f, 1.4f, 0f);
         startMiddlePos = endMiddlePos;
         positionSetted = true;
        
     }
 
-    public void MovementSingleFood()
+    public void ReturnBackSingleFood(GameObject food)
     {
-
-        if (food != null)
-        {
-           
-         StartCoroutine(MovementSingleFoodObservation());
-
-        }
+        
+        currentLerpTime1 = 0;
+        lerpTime1 = 5;
+        lerpTime2 = 1;
+        startPos = food.transform.position;
+        endMiddlePos = food.transform.position + new Vector3(0f, -1.4f, 0f);
+        endPos = food.transform.position + new Vector3(0f, -1.4f, 0f);
+        startMiddlePos = endMiddlePos;
+        positionSetted = true;
 
     }
 
-
-
-    public void NoMovementSingleFood()
-    {
-        if (food != null)
-        {
-            
-         StopCoroutine("CloudOccur");
-           
-        }
-
-    }
+   
 }

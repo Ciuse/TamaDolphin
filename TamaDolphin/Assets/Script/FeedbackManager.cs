@@ -36,7 +36,7 @@ public class FeedbackManager : MonoBehaviour {
                 GameObject.Find("Table").GetComponent<MovementTable>().enabled = false;
                 checkForTableEndMovement = false;
 
-                spawnEngine.SpawnFoodBucket();
+                spawnEngine.SpawnFoodBucketAndBin(); // Vengono fatti comparire i cestini con il cibo e il cestino per la spazzatura
             }
         }
     }
