@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementFood : MonoBehaviour
 {
     public GameObject targetFood;
-    
+
     public Vector3 startPos;
     public Vector3 endPos;
 
@@ -19,11 +19,12 @@ public class MovementFood : MonoBehaviour
     public float currentLerpTime1;
     public float currentLerpTime2;
 
-    public bool positionSetted;
+    public bool positionSetted =false ;
+
+    public bool foodMovedToDolphin=false ;
 
     private void Start()
     {
-
     }
 
     private void Update()
@@ -71,6 +72,7 @@ public class MovementFood : MonoBehaviour
         startMiddlePos = endMiddlePos;
 
         endPos = targetFood.transform.position;
+        foodMovedToDolphin = true;
         positionSetted = true;
     }
 
@@ -131,33 +133,36 @@ public class MovementFood : MonoBehaviour
 
     }
 
-    public void SetPositionSingleFoodAtTop(GameObject food)
+    public void SetPositionFoodBucketTop(GameObject food)
     {
-       
-        currentLerpTime1 = 0;
-        lerpTime1 = 5;
-        lerpTime2 = 1;
-        startPos = food.transform.position;
-        endMiddlePos = food.transform.position + new Vector3(0f, 1.4f, 0f) ;
-        endPos = food.transform.position + new Vector3(0f, 1.4f, 0f);
-        startMiddlePos = endMiddlePos;
-        positionSetted = true;
-       
+        if (foodMovedToDolphin == false)
+        {
+            currentLerpTime1 = 0;
+            lerpTime1 = 5;
+            lerpTime2 = 1;
+            startPos = food.transform.position;
+            endMiddlePos = food.transform.position + new Vector3(0f, 1.4f, 0f);
+            endPos = food.transform.position + new Vector3(0f, 1.4f, 0f);
+            startMiddlePos = endMiddlePos;
+            positionSetted = true;
+
+        }
     }
 
-    public void ReturnBackSingleFood(GameObject food)
+    public void SetPositionFoodBucketDown(GameObject food)
     {
-        
-        currentLerpTime1 = 0;
-        lerpTime1 = 5;
-        lerpTime2 = 1;
-        startPos = food.transform.position;
-        endMiddlePos = food.transform.position + new Vector3(0f, -1.4f, 0f);
-        endPos = food.transform.position + new Vector3(0f, -1.4f, 0f);
-        startMiddlePos = endMiddlePos;
-        positionSetted = true;
-
+        if (foodMovedToDolphin == false)
+        {
+            currentLerpTime1 = 0;
+            lerpTime1 = 5;
+            lerpTime2 = 1;
+            startPos = food.transform.position;
+            endMiddlePos = food.transform.position + new Vector3(0f, -1.4f, 0f);
+            endPos = food.transform.position + new Vector3(0f, -1.4f, 0f);
+            startMiddlePos = endMiddlePos;
+            positionSetted = true;
+        }
     }
 
-   
 }
+
