@@ -11,7 +11,8 @@ public class GameEventManager : MonoBehaviour
     public InputState inputState;
     public GamePhase gamePhase;
     public bool inputSetted = false;
-    
+    public bool changedWrongFoodTherapist = false;
+
 
 
     // Use this for initialization
@@ -26,7 +27,7 @@ public class GameEventManager : MonoBehaviour
     {
         if (Time.frameCount % 20 == 0)
         {
-            if (!inputSetted && (inputState.realSamInput != TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined))
+            if (!inputSetted && !feedbackManager.isFoodInMovement && (inputState.realSamInput != TypeOfInput.undefined && inputState.therapistInput != TypeOfInput.undefined))
             {
                 inputState.CheckIsInputTheSame();
 
@@ -65,7 +66,7 @@ public class GameEventManager : MonoBehaviour
 
     public void FeedbackFindFood()
     {
-        if (inputState.isInputTheSame)
+        if (inputState.isInputTheSame && changedWrongFoodTherapist == false)
         {
             if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct) //stessi giusti
             {
@@ -74,26 +75,46 @@ public class GameEventManager : MonoBehaviour
             if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //stessi sbagliati
             {
                 feedbackManager.SameWrongFindFood();
-            }      
+            }
         }
 
         else
         {
-            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //diversi sbagliati
+            if (inputState.isInputTheSame && changedWrongFoodTherapist == true)
             {
-                feedbackManager.DifferentWrongFindFood();
+
+                if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)  //stesso correct correct dopo che è stato cambiato l input della terapista
+                {
+                    feedbackManager.DifferentCorrectChangedFood();
+                    changedWrongFoodTherapist = false;
+                }
+
+
+                if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong) //stesso wrong wrong dopo che è stato cambiato l input della terapista
+                {
+                    feedbackManager.DifferentWrongChangedFood();
+                    changedWrongFoodTherapist = false;
+                }
+
+
             }
-            if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong)  //diversi sam giusto VR sbagliato
+            else
             {
-                feedbackManager.DifferentCorrectSamFindFood();
-            }
-            if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.correct)  //diversi sam sbagliato VR giusto
-            {
-                feedbackManager.DifferentCorrectVRFindFood();
+                if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //diversi sbagliati
+                {
+                    feedbackManager.DifferentWrongFindFood();
+                }
+                if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.wrong)  //diversi sam giusto VR sbagliato
+                {
+                    feedbackManager.DifferentCorrectSamFindFood();
+                }
+                if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.correct)  //diversi sam sbagliato VR giusto
+                {
+                    feedbackManager.DifferentCorrectVRFindFood();
+                }
             }
         }
     }
-
     public void SetInputStateTherapist(string buttonPressedId)
     {
 
@@ -125,7 +146,7 @@ public class GameEventManager : MonoBehaviour
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
             feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); //TODO non è il massimo messo così perchè se fatto subito succede un casino con i cibi che volano
-
+            changedWrongFoodTherapist = true;
             OverloadInput();
         }
     }

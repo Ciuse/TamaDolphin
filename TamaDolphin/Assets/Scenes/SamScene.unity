@@ -331,6 +331,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!4 &205963958 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd,
@@ -767,7 +769,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 358010382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0, z: 0.646}
+  m_LocalPosition: {x: 0, y: 0, z: 0.554}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 920206095}
@@ -1057,6 +1059,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!1 &558974842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,6 +1418,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!1001 &697323894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1683,6 +1689,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!4 &776617928 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd,
@@ -1723,6 +1731,7 @@ MonoBehaviour:
   inputState: {fileID: 1490348658}
   gamePhase: 0
   inputSetted: 0
+  changedWrongFoodTherapist: 0
 --- !u!4 &842932274
 Transform:
   m_ObjectHideFlags: 0
@@ -2077,6 +2086,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!4 &998146331 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c,
@@ -2374,6 +2385,8 @@ MonoBehaviour:
   checkForTableEndMovement: 0
   movedFrom: {x: 0, y: 0, z: 0}
   foodMoved: {fileID: 0}
+  isFoodInMovement: 0
+  moveUpFoodInBin: 0
 --- !u!4 &1189041257
 Transform:
   m_ObjectHideFlags: 0
@@ -2892,6 +2905,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!1001 &1402509388
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3669,6 +3684,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!1 &1652528129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 6186b2b5b5a3e3a4594029be5f415bdc,
@@ -4253,6 +4270,8 @@ MonoBehaviour:
   currentLerpTime2: 0
   positionSetted: 0
   foodMovedToDolphin: 0
+  destroyBucket: 0
+  parentToDestroy: {fileID: 0}
 --- !u!1001 &1975602578
 PrefabInstance:
   m_ObjectHideFlags: 0

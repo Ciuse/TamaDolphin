@@ -23,6 +23,10 @@ public class MovementFood : MonoBehaviour
 
     public bool foodMovedToDolphin=false ;
 
+    public bool destroyBucket = false;
+
+    public GameObject parentToDestroy;
+
     private void Start()
     {
     }
@@ -50,6 +54,13 @@ public class MovementFood : MonoBehaviour
                 {
                     currentLerpTime2 = lerpTime2;
                     positionSetted = false;
+                    if(destroyBucket == true && transform.parent != null)
+                    {
+                        parentToDestroy = transform.parent.gameObject;
+                        transform.parent = null;
+                        Destroy(parentToDestroy);
+                        gameObject.name = gameObject.name + "Bin";
+                    }
                     this.enabled = false;
                 }
                 float perc2 = currentLerpTime2 / lerpTime2;
@@ -78,7 +89,6 @@ public class MovementFood : MonoBehaviour
 
     public void SetMoveBackToBucket(Vector3 bucketPosition)
     {
-
         currentLerpTime1 = 0;
         currentLerpTime2 = 0;
 
@@ -101,36 +111,36 @@ public class MovementFood : MonoBehaviour
         currentLerpTime1 = 0;
         currentLerpTime2 = 0;
 
-        lerpTime1 = 10;
+        lerpTime1 = 8;
         lerpTime2 = 1;
 
         startPos = transform.position;
 
-        endMiddlePos = dishPosition;
+        endMiddlePos = dishPosition + new Vector3(0f, 1.2f, 0f);
         startMiddlePos = endMiddlePos;
 
         endPos = dishPosition;
         positionSetted = true;
 
     }
-
+   
     public void SetMoveFromDolphinToBin(Vector3 binPosition)
     {
 
         currentLerpTime1 = 0;
         currentLerpTime2 = 0;
 
-        lerpTime1 = 10;
+        lerpTime1 = 9;
         lerpTime2 = 5;
 
         startPos = transform.position;
 
-        endMiddlePos = binPosition + new Vector3(0f, 13f, 0f); ;
+        endMiddlePos = binPosition + new Vector3(0f, 11f, 0f); ;
         startMiddlePos = endMiddlePos;
 
         endPos = binPosition;
         positionSetted = true;
-
+        destroyBucket = true;
     }
 
     public void SetPositionFoodBucketTop(GameObject food)
@@ -163,6 +173,5 @@ public class MovementFood : MonoBehaviour
             positionSetted = true;
         }
     }
-
 }
 

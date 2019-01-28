@@ -17,9 +17,11 @@ public class FeedbackManager : MonoBehaviour {
     public bool checkForTableEndMovement;
     public Vector3 movedFrom;
     public GameObject foodMoved;
-
+    public bool isFoodInMovement;
+    public float moveUpFoodInBin = 0f;
     // Use this for initialization
     void Start () {
+        isFoodInMovement = false;
         foodMoved = null;
         bavaglio.SetActive(false);
         checkForTableEndMovement = false;
@@ -37,6 +39,14 @@ public class FeedbackManager : MonoBehaviour {
                 checkForTableEndMovement = false;
 
                 spawnEngine.SpawnFoodBucketAndBin(); // Vengono fatti comparire i cestini con il cibo e il cestino per la spazzatura
+            }
+        }
+        if (isFoodInMovement == true)
+        {
+            if (foodMoved.GetComponent<MovementFood>().enabled == false)
+            {
+                Debug.Log("IL CIBO NON é PIU IN MOVIMENTO");
+                isFoodInMovement = false;
             }
         }
     }
@@ -158,12 +168,56 @@ public class FeedbackManager : MonoBehaviour {
                 GameObject targetTrash = GameObject.Find("Bin/TargetTrash");
 
                 foodMoved.GetComponent<MovementFood>().enabled = true;
-                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToBin(targetTrash.transform.position);
+                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToBin(targetTrash.transform.position + new Vector3 (0f, moveUpFoodInBin, 0f));
+                moveUpFoodInBin = moveUpFoodInBin + 2.7f;
+                foodMoved = null;
+                movedFrom = Vector3.zero;
             }
         }
-        //TODO -> finisce nel cestino :(
 
     }
+    public void DifferentCorrectChangedFood() //TODO bho non cambia niente dal correct correct normale in teoria
+    {
+        if (foodMoved != null)
+        {
+            GameObject piatto = GameObject.Find("Piatto(Clone)");
+            if (piatto != null)
+            {
+                foodMoved.GetComponent<MovementFood>().enabled = true;
+                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToDish(piatto.transform.position); 
+            }
+        }
+        //TODO -> attivare la scena
+
+        //SceneManager.LoadScene("Fireworks");
+
+        //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
+
+
+    }
+
+    public void DifferentWrongChangedFood()
+    {
+
+        if (foodMoved != null)
+        {
+            GameObject bin = GameObject.Find("Bin");
+            if (bin != null)
+            {
+                GameObject targetTrash = GameObject.Find("Bin/TargetTrash");
+
+                foodMoved.GetComponent<MovementFood>().enabled = true;
+                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToBin(targetTrash.transform.position + new Vector3(0f, moveUpFoodInBin, 0f));
+                moveUpFoodInBin = moveUpFoodInBin + 2.7f;
+                foodMoved = null;
+                movedFrom = Vector3.zero;
+            }
+        }
+
+    }
+
+
+
 
     public void DifferentCorrectVRFindFood()
     {
@@ -196,6 +250,7 @@ public class FeedbackManager : MonoBehaviour {
                 movedFrom = new Vector3(food.transform.position.x, food.transform.position.y, food.transform.position.z); ;
                 food.GetComponent<MovementFood>().enabled = true;
                 food.GetComponent<MovementFood>().SetMoveToDolphin();
+                isFoodInMovement = true;
             }
             else
             {
@@ -209,6 +264,8 @@ public class FeedbackManager : MonoBehaviour {
                 movedFrom = new Vector3(food.transform.position.x, food.transform.position.y, food.transform.position.z); ;
                 food.GetComponent<MovementFood>().enabled = true;
                 food.GetComponent<MovementFood>().SetMoveToDolphin();
+                isFoodInMovement = true;
+
 
             }
         }
