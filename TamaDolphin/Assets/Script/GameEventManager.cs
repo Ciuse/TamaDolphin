@@ -129,7 +129,7 @@ public class GameEventManager : MonoBehaviour
         if (gamePhase == GamePhase.startFindFood) //Fase 2.0 -> leggo l'input della terapista, il cibo comunicato si muove verso il delfino
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
-
+            feedbackManager.spawnEngine.DestroyObjectSpawned();
             feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
             feedbackManager.ActivateSamFindFood(); //Fase 2.1 -> TODO il delfino sam fisico si attiva
             gamePhase = GamePhase.findFood;
@@ -145,6 +145,7 @@ public class GameEventManager : MonoBehaviour
         if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
+            feedbackManager.spawnEngine.DestroyObjectSpawned();
             feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); //TODO non è il massimo messo così perchè se fatto subito succede un casino con i cibi che volano
             changedWrongFoodTherapist = true;
             OverloadInput();

@@ -168,6 +168,9 @@ public class FeedbackManager : MonoBehaviour {
     public void SameWrongFindFood()
     {
 
+        spawnEngine.SpawnWrognMarkAtPosition(new Vector3(foodMoved.transform.position.x + 5f, foodMoved.transform.position.y, foodMoved.transform.position.z));
+
+
         if (foodMoved != null)
         {
             GameObject bin = GameObject.Find("Bin");
@@ -207,17 +210,23 @@ public class FeedbackManager : MonoBehaviour {
     {
         //TODO BHO
 
+        spawnEngine.SpawnQuestionMarkAtPosition(new Vector3(foodMoved.transform.position.x +5f, foodMoved.transform.position.y, foodMoved.transform.position.z));
     }
 
     public void DifferentCorrectSamFindFood()
     {
         //TODO BHO
 
+        spawnEngine.SpawnQuestionMarkAtPosition(new Vector3(foodMoved.transform.position.x + 5f, foodMoved.transform.position.y, foodMoved.transform.position.z));
+
+
+
     }
 
     public void DifferentWrongFindFood()
     {
         //TODO -> torna indietro e sam é MOOOOOOOLTO ARRABBIATO. BUUUU
+        spawnEngine.SpawnQuestionMarkAtPosition(new Vector3(foodMoved.transform.position.x + 5f, foodMoved.transform.position.y, foodMoved.transform.position.z));
 
     }
 

@@ -21,6 +21,21 @@ public class SpawnEngine : MonoBehaviour {
 
 	}
 
+    public void SpawnQuestionMarkAtPosition(Vector3 position)
+    {
+        GameObject questionMark = (GameObject)(Resources.Load("QuestionMark"));
+
+        questionMarkList.Add(Instantiate(questionMark, position, questionMark.GetComponent<Transform>().rotation) as GameObject);
+    }
+
+    public void SpawnWrognMarkAtPosition(Vector3 position)
+    {
+        GameObject wrongMark = (GameObject)(Resources.Load("WrongMark"));
+
+        wrongMarkList.Add(Instantiate(wrongMark, position, wrongMark.GetComponent<Transform>().rotation) as GameObject);
+
+    }
+
     public void SpawnQuestionMark(int numToSpawn)
     {
         StopAllCoroutines();
@@ -62,6 +77,7 @@ public class SpawnEngine : MonoBehaviour {
     {
         int spawned = 0;
         GameObject questionMark = (GameObject)(Resources.Load("QuestionMark"));
+
         float spawnTime = Time.time;
 
         while (spawned < numToSpawn)
@@ -88,7 +104,7 @@ public class SpawnEngine : MonoBehaviour {
     {
 
         int spawned = 0;
-        GameObject questionMark = (GameObject)(Resources.Load("WrongMark"));
+        GameObject wrongMark = (GameObject)(Resources.Load("WrongMark"));
         float spawnTime = Time.time;
 
         while (spawned < numToSpawn)
@@ -97,8 +113,8 @@ public class SpawnEngine : MonoBehaviour {
             Vector3 position1 = new Vector3(Random.Range(-10.0F, -6F), Random.Range(0.0F, 10.0F), Random.Range(0F, -10F));
             Vector3 position2 = new Vector3(Random.Range(6.0F, 10.0F), Random.Range(0.0F, 10.0F), Random.Range(0F, -10F));
 
-            wrongMarkList.Add(Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation) as GameObject);
-            wrongMarkList.Add(Instantiate(questionMark, position2, questionMark.GetComponent<Transform>().rotation) as GameObject);
+            wrongMarkList.Add(Instantiate(wrongMark, position1, wrongMark.GetComponent<Transform>().rotation) as GameObject);
+            wrongMarkList.Add(Instantiate(wrongMark, position2, wrongMark.GetComponent<Transform>().rotation) as GameObject);
 
             spawned++;
 
