@@ -127,15 +127,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.2
+      value: -0.29
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.33
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalRotation.x
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 139688591}
   - component: {fileID: 139688592}
   m_Layer: 0
-  m_Name: FruitBucket
+  m_Name: FruitMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -296,7 +296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 139688590}
   m_LocalRotation: {x: 0.67422867, y: 0.20779341, z: 0.20872541, w: 0.6772528}
-  m_LocalPosition: {x: 0.081, y: 0.129, z: -0.548}
+  m_LocalPosition: {x: 0.08, y: 0.092, z: -0.028}
   m_LocalScale: {x: 0.15912193, y: 0.19999902, z: 0.15040289}
   m_Children:
   - {fileID: 665874366}
@@ -325,8 +325,8 @@ MonoBehaviour:
   targetFood: {fileID: 256851521}
   startPos: {x: 0, y: 0, z: 0}
   endPos: {x: 0, y: 0, z: 0}
-  lerpTime1: 2
-  lerpTime2: 5
+  lerpTime1: 5
+  lerpTime2: 10
   currentLerpTime1: 0
   currentLerpTime2: 0
   positionSetted: 0
@@ -1017,7 +1017,7 @@ GameObject:
   - component: {fileID: 527155390}
   - component: {fileID: 527155391}
   m_Layer: 0
-  m_Name: CakeBucket
+  m_Name: CakeMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1377,8 +1377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodBucket: {fileID: 139688590}
+  foodMultiple: {fileID: 139688590}
   foodSingle: {fileID: 1643937662}
+  bucket: {fileID: 654575333}
 --- !u!4 &654575337 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -1433,15 +1434,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.36063218
+      value: -0.36
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.11314939
+      value: 0.115
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01705103
+      value: 0.035
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8db774d63ffa4304fb8dddd6116ead54, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1647,7 +1648,7 @@ GameObject:
   - component: {fileID: 775302812}
   - component: {fileID: 775302813}
   m_Layer: 0
-  m_Name: MeatBucket
+  m_Name: MeatMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1934,15 +1935,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b493bbd86ef3443a770a279d0426a9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.38
+      value: 1.29
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b493bbd86ef3443a770a279d0426a9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.62
+      value: 1.35
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b493bbd86ef3443a770a279d0426a9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.1
+      value: 2.21
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d9b493bbd86ef3443a770a279d0426a9, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2107,15 +2108,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.01
+      value: -0.1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.33
+      value: -2.22
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2176,15 +2177,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f889d6e3d71e9c54eaf07783b7e5348c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.33
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f889d6e3d71e9c54eaf07783b7e5348c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.38
+      value: 0.11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f889d6e3d71e9c54eaf07783b7e5348c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.73
+      value: -0.62
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f889d6e3d71e9c54eaf07783b7e5348c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2554,8 +2555,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodBucket: {fileID: 775302811}
+  foodMultiple: {fileID: 775302811}
   foodSingle: {fileID: 686916684}
+  bucket: {fileID: 1192071428}
 --- !u!4 &1192071432 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -2993,15 +2995,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.08
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.51
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 1.11
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3452,15 +3454,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c7babd0d9f849c9449d1c29e86f6245f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.58
+      value: -3.67
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c7babd0d9f849c9449d1c29e86f6245f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.35
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c7babd0d9f849c9449d1c29e86f6245f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.64
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c7babd0d9f849c9449d1c29e86f6245f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3995,8 +3997,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodBucket: {fileID: 1975298163}
+  foodMultiple: {fileID: 1975298163}
   foodSingle: {fileID: 1369748859}
+  bucket: {fileID: 1769803142}
 --- !u!4 &1769803146 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -4063,15 +4066,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.61
+      value: -2.7
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.6
+      value: 0.33
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.44
+      value: 2.55
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 944f91bda976fe544ac41f090012e16c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4227,7 +4230,7 @@ GameObject:
   - component: {fileID: 1975298164}
   - component: {fileID: 1975298165}
   m_Layer: 0
-  m_Name: FishBucket
+  m_Name: FishMultiple
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4494,8 +4497,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b908226e7215f346916a2228c66c3c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  foodBucket: {fileID: 527155389}
+  foodMultiple: {fileID: 527155389}
   foodSingle: {fileID: 990217611}
+  bucket: {fileID: 1989319352}
 --- !u!4 &1989319356 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f7e0a0b9db95e9145aa01b9de9d290cc,
@@ -4521,15 +4525,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.67
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.9
+      value: -0.37
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.62
+      value: -0.51
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3a9857ff38f5efa41ae3ff3ff643f2bd, type: 3}
       propertyPath: m_LocalRotation.x

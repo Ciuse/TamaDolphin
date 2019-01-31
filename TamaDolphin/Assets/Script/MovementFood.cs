@@ -143,32 +143,37 @@ public class MovementFood : MonoBehaviour
         destroyBucket = true;
     }
 
-    public void SetPositionFoodBucketTop(GameObject food)
+    public void SetPositionFoodBucketTop()
     {
+      
+
         if (foodMovedToDolphin == false)
         {
             currentLerpTime1 = 0;
-            lerpTime1 = 5;
+            lerpTime1 = 3;
             lerpTime2 = 1;
-            startPos = food.transform.position;
-            endMiddlePos = food.transform.position + new Vector3(0f, 1.4f, 0f);
-            endPos = food.transform.position + new Vector3(0f, 1.4f, 0f);
+            startPos = transform.position;
+            endMiddlePos = startPos + new Vector3(0f, 1.8f, 0f);
+            endPos = startPos+ new Vector3(0f, 1.8f, 0f);
             startMiddlePos = endMiddlePos;
             positionSetted = true;
 
         }
     }
 
-    public void SetPositionFoodBucketDown(GameObject food)
+    public void SetPositionFoodBucketDown(GameObject foodBucket)
     {
+        
+
         if (foodMovedToDolphin == false)
         {
             currentLerpTime1 = 0;
-            lerpTime1 = 5;
+            lerpTime1 = 3;
             lerpTime2 = 1;
-            startPos = food.transform.position;
-            endMiddlePos = food.transform.position + new Vector3(0f, -1.4f, 0f);
-            endPos = food.transform.position + new Vector3(0f, -1.4f, 0f);
+            startPos = transform.position;
+            Vector3 finalPos = new Vector3(transform.position.x, foodBucket.transform.position.y - 0.2f, transform.position.z);
+            endMiddlePos = finalPos; 
+            endPos = finalPos;
             startMiddlePos = endMiddlePos;
             positionSetted = true;
         }

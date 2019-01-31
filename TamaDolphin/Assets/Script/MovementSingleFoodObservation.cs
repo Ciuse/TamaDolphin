@@ -5,19 +5,22 @@ using UnityEngine;
 public class MovementSingleFoodObservation : MonoBehaviour
 {
 
-    public GameObject foodBucket;
+    public GameObject foodMultiple;
     public GameObject foodSingle;
+    public GameObject bucket;
+    
 
     public void MovementSingleFood()
     {
 
-        if (foodBucket != null && foodSingle !=null)
+        if (foodMultiple != null && foodSingle !=null)
         {
 
-            foodBucket.GetComponent<MovementFood>().enabled = true;
-            foodBucket.GetComponent<MovementFood>().SetPositionFoodBucketTop(foodBucket);
+            foodMultiple.GetComponent<MovementFood>().enabled = true;
+            foodMultiple.GetComponent<MovementFood>().SetPositionFoodBucketTop();
             foodSingle.GetComponent<MovementFood>().enabled = true;
-            foodSingle.GetComponent<MovementFood>().SetPositionFoodBucketTop(foodBucket);
+            foodSingle.GetComponent<MovementFood>().SetPositionFoodBucketTop();
+           
         }
 
     }
@@ -26,12 +29,12 @@ public class MovementSingleFoodObservation : MonoBehaviour
 
     public void SingleFoodReturnBack()
     {
-        if (foodBucket != null && foodSingle != null)
+        if (foodMultiple != null && foodSingle != null)
         {
-            foodBucket.GetComponent<MovementFood>().enabled = true;
-            foodBucket.GetComponent<MovementFood>().SetPositionFoodBucketDown(foodBucket);
+            foodMultiple.GetComponent<MovementFood>().enabled = true;
+            foodMultiple.GetComponent<MovementFood>().SetPositionFoodBucketDown(bucket);
             foodSingle.GetComponent<MovementFood>().enabled = true;
-            foodSingle.GetComponent<MovementFood>().SetPositionFoodBucketDown(foodBucket);
+            foodSingle.GetComponent<MovementFood>().SetPositionFoodBucketDown(bucket);
 
         }
 
