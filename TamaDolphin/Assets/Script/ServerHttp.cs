@@ -72,29 +72,7 @@ public class ServerHttp : MonoBehaviour
         }
     }
 
-    
-    private void HandleSamWebResponse(Match match, HttpListenerResponse response, string contRead)
-    {
-
-        if (contRead == "1")
-        {
-
-            clickButton = true;
-            Debug.Log("configurazione avvenuta con successo");
-            
-        }
-       
-    }
-
-    private void HandleCardRfidResponse(Match match, HttpListenerResponse response, string contRead)
-    {
-
-        Debug.Log("messaggio ricevutoSam");
-        Debug.Log(contRead);
-
-        networkEventManager.HandleSamCardRead(contRead);
-
-    }
+   
 
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
@@ -107,11 +85,8 @@ public class ServerHttp : MonoBehaviour
     {
         SamEvents samEvents = new SamEvents();
         samEvents = JsonUtility.FromJson<SamEvents>(stringaLetta);
-        if (samEvents.events[0].dur == 0)
+        if (samEvents.events[0].dur == 0 && samEvents.events[0].typ == "rfid")
         {
-            //GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
-            //Vector3 position1 = new Vector3(0, 0, 10);
-            //Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
             string idLetto = samEvents.events[0].val;
             Debug.Log("messaggio ricevutoSam");
             Debug.Log(stringaLetta);

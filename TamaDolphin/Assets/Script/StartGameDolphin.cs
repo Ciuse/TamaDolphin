@@ -18,7 +18,7 @@ public class StartGameDolphin : MonoBehaviour
 
         DataSaver.SaveData(samInfo, "samInfo");
 
-        buttonStart.SetActive(true);//TODO rimettere a false
+        buttonStart.SetActive(false);//TODO rimettere a false
 
         var host = System.Net.Dns.GetHostEntry(System.Net.Dns.GetHostName());
         foreach (var ip in host.AddressList)

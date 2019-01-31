@@ -55,8 +55,8 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ActivateSamFindNeed()
     {
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#000000")); //settare solo la luce della pancia a rosso e le altre intensità a 0
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del brontolio
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#cc0000")); //settare solo la luce della pancia a rosso e le altre intensità a 0
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 15, 20)); //inserire suono del brontolio
 
     }
 
@@ -65,8 +65,10 @@ public class FeedbackManager : MonoBehaviour {
 
         //TODO FARE I FEEDBACK PER IL SAM FISICO
         StartCoroutine(CorrectFeedbackFindNeedAsync());
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#009933", "#009933", "#009933", "#009933")); //tutto verde
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono gioia TODO
 
-        }
+    }
 
     public IEnumerator CorrectFeedbackFindNeedAsync()
     {
@@ -111,14 +113,14 @@ public class FeedbackManager : MonoBehaviour {
     {
         spawnEngine.SpawnWrongMark(8);
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
-
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 13, 20)); //disappointment
     }
 
     public void QuestionMarkFeedbackFindNeed()
     {
         spawnEngine.SpawnQuestionMark(8);
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#669999", "#669999", "#669999", "#669999"));
-
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#808080", "#808080", "#808080", "#808080"));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 13, 20)); //disappointment
     }
 
     public void ResetFeedbackFindNeed()
@@ -132,8 +134,8 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ActivateSamFindFood()
     {
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 10, 20)); //inserire suono del cibo giusto (????)
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#8c8c8c", "#8c8c8c", "#8c8c8c", "#8c8c8c")); //settare solo la luce della pancia a grigio e le altre intensità a 0
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //settare solo la luce della pancia a grigio e le altre intensità a 0
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //inserire suono del cibo giusto (????)
 
     }
 
@@ -147,7 +149,13 @@ public class FeedbackManager : MonoBehaviour {
                 foodMoved.GetComponent<MovementFood>().enabled = true;
                 foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToDish(piatto.transform.position);
             }
+        
         }
+
+
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //settare solo la luce della pancia a grigio e le altre intensità a 0
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //inserire suono della felicità (????)
+
         //TODO -> attivare la scena
 
         //SceneManager.LoadScene("Fireworks");
@@ -175,45 +183,21 @@ public class FeedbackManager : MonoBehaviour {
             }
         }
 
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 13, 20)); //inserire suono DELLO SCHIFO TODO
+
+
     }
     public void DifferentCorrectChangedFood() //TODO bho non cambia niente dal correct correct normale in teoria
     {
-        if (foodMoved != null)
-        {
-            GameObject piatto = GameObject.Find("Piatto(Clone)");
-            if (piatto != null)
-            {
-                foodMoved.GetComponent<MovementFood>().enabled = true;
-                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToDish(piatto.transform.position); 
-            }
-        }
-        //TODO -> attivare la scena
 
-        //SceneManager.LoadScene("Fireworks");
-
-        //networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", "10", 20));
-
+        SameCorrectFindFood();
 
     }
 
     public void DifferentWrongChangedFood()
     {
-
-        if (foodMoved != null)
-        {
-            GameObject bin = GameObject.Find("Bin");
-            if (bin != null)
-            {
-                GameObject targetTrash = GameObject.Find("Bin/TargetTrash");
-
-                foodMoved.GetComponent<MovementFood>().enabled = true;
-                foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToBin(targetTrash.transform.position + new Vector3(0f, moveUpFoodInBin, 0f));
-                moveUpFoodInBin = moveUpFoodInBin + 2.7f;
-                foodMoved = null;
-                movedFrom = Vector3.zero;
-            }
-        }
-
+        SameWrongFindFood();
     }
 
 
