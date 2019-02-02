@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CloudOccurs : MonoBehaviour {
+public class DolphinInteraction : MonoBehaviour
+{
 
     public GameObject cloud;
     public GameObject planeCloud;
@@ -16,8 +17,8 @@ public class CloudOccurs : MonoBehaviour {
 
     public void Start()
     {
-        
-       
+
+
         cloud.SetActive(false);
         inizioSuggerimento = false;
         needAdvicesList.Add(planeCloud);
@@ -26,16 +27,16 @@ public class CloudOccurs : MonoBehaviour {
         foreach (GameObject item in needAdvicesList)
         {
             item.SetActive(false);
-            
+
         }
 
 
     }
 
-   
+
     public void Suggerimenti()
     {
-       
+
         StartCoroutine(SuggerimentiAsync());
 
     }
@@ -72,7 +73,7 @@ public class CloudOccurs : MonoBehaviour {
             Debug.Log("suggerimento attivato");
         }
 
-        
+
     }
 
     public void Appear()
@@ -85,8 +86,8 @@ public class CloudOccurs : MonoBehaviour {
 
             }
         }
-       
-        
+
+
     }
 
 
@@ -107,13 +108,13 @@ public class CloudOccurs : MonoBehaviour {
     private IEnumerator CloudOccur()
     {
         yield return new WaitForSeconds(5);
-        
+
         cloud.SetActive(true);
         Debug.Log("nuvola attivata");
         Suggerimenti();
 
-        
-        
+
+
     }
 
 
@@ -121,12 +122,12 @@ public class CloudOccurs : MonoBehaviour {
     private IEnumerator WaitTenSeconds()
     {
         yield return new WaitForSeconds(10);
-        
+
     }
 
-  
-        
-        
-    }
+
+
+
+}
 
 

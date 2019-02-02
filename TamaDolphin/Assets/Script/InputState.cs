@@ -36,15 +36,15 @@ public class InputState : MonoBehaviour {
         correctCardIdFindFood = "Fish";
         correctWebIdFindFood = "Fish";
 
-        cards.Add("Hungry", "8f96dd00");
-        cards.Add("Sleepy", "abababb");
-        cards.Add("Tired", "abababb");
-        cards.Add("Happy", "abababb");
+        cards.Add("Hungry", "2f467000");
+        cards.Add("Sleepy", "4fe44a06");
+        cards.Add("Playful", "2f4ac700");
+        cards.Add("Study", "2f399b00");
 
-        cards.Add("Fish", "9f4dc300");
-        cards.Add("Fruit", "f3778ad5");
-        cards.Add("Cake", "be6b1f39");
-        cards.Add("Meat", "9044425d");
+        cards.Add("Fish", "2f36cc00");
+        cards.Add("Fruit", "2f4a8a00");
+        cards.Add("Cake", "5f46a406");
+        cards.Add("Meat", "4fcecd06");
 
         webInput.Add("Wrong", "0");
         webInput.Add("Correct", "1");
@@ -155,19 +155,24 @@ public class InputState : MonoBehaviour {
         Debug.Log("RESETTATO INPUT");
         realSamInput = TypeOfInput.undefined;
         therapistInput = TypeOfInput.undefined;
+        therapistInputValue = "";
+        realSamInputValue = "";
         isInputTheSame = false;
     }
 
     public void CheckIsInputTheSame()
     {
-        if (realSamInputValue == therapistInputValue)
+        if (!string.IsNullOrEmpty(realSamInputValue) && !string.IsNullOrEmpty(therapistInputValue))
         {
-            isInputTheSame = true;
-            Debug.Log("SETTATO isInputTheSame :" + isInputTheSame);
-        }
-        else
-        {
-            isInputTheSame = false;
+            if (realSamInputValue == therapistInputValue)
+            {
+                isInputTheSame = true;
+                Debug.Log("SETTATO isInputTheSame :" + isInputTheSame);
+            }
+            else
+            {
+                isInputTheSame = false;
+            }
         }
     }
 }

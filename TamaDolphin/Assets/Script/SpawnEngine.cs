@@ -61,7 +61,7 @@ public class SpawnEngine : MonoBehaviour {
         }
     }
 
-    public void SpawnFoodBucketAndBin()
+    public void SpawnFoodBasketAndBin()
     { 
         
         foreach (GameObject cestino in foodBaskets)

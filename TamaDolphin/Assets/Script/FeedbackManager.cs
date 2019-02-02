@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class FeedbackManager : MonoBehaviour {
 
 
-    public WorldFeedback worldFeedback;
     public GameObject dolphin_VR;
     public GameObject table;
     public GameObject bavaglio;
@@ -38,7 +37,7 @@ public class FeedbackManager : MonoBehaviour {
                 GameObject.Find("Table").GetComponent<MovementTable>().enabled = false;
                 checkForTableEndMovement = false;
 
-                spawnEngine.SpawnFoodBucketAndBin(); // Vengono fatti comparire i cestini con il cibo e il cestino per la spazzatura
+                spawnEngine.SpawnFoodBasketAndBin(); // Vengono fatti comparire i cestini con il cibo e il cestino per la spazzatura
             }
         }
         if (isFoodInMovement == true)
@@ -66,15 +65,16 @@ public class FeedbackManager : MonoBehaviour {
         //TODO FARE I FEEDBACK PER IL SAM FISICO
         StartCoroutine(CorrectFeedbackFindNeedAsync());
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#009933", "#009933", "#009933", "#009933")); //tutto verde
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono gioia TODO
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono gioia 
 
     }
 
     public IEnumerator CorrectFeedbackFindNeedAsync()
     {
         yield return new WaitForSeconds(2f);
-        GameObject cloud = GameObject.Find("Cloud");
-        dolphin_VR.GetComponent<CloudOccurs>().StopSuggerimenti();
+        GameObject cloud = dolphin_VR.GetComponent<DolphinInteraction>().cloud; //TODO DISTRUGGERE LA NUVOLA ANCHE SE NON ATTIVATA
+   
+        dolphin_VR.GetComponent<DolphinInteraction>().StopSuggerimenti();
         Destroy(cloud);
         yield return new WaitForSeconds(2f);
         GameObject fork = (GameObject)(Resources.Load("Fork"));
@@ -134,8 +134,8 @@ public class FeedbackManager : MonoBehaviour {
 
     public void ActivateSamFindFood()
     {
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //settare solo la luce della pancia a grigio e le altre intensità a 0
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //inserire suono del cibo giusto (????)
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //solo la luce della pancia a grigio
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono del cibo giusto
 
     }
 
@@ -153,8 +153,8 @@ public class FeedbackManager : MonoBehaviour {
         }
 
 
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //settare solo la luce della pancia a grigio e le altre intensità a 0
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //inserire suono della felicità (????)
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //luce della pancia a grigio
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono della felicità 
 
         //TODO -> attivare la scena
 
@@ -186,19 +186,19 @@ public class FeedbackManager : MonoBehaviour {
             }
         }
 
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000"));
-        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 13, 20)); //inserire suono DELLO SCHIFO TODO
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#cc0000", "#cc0000", "#cc0000", "#cc0000")); //luci rosse
+        networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 13, 20)); //Suono disappunto
 
 
     }
-    public void DifferentCorrectChangedFood() //TODO bho non cambia niente dal correct correct normale in teoria
+    public void DifferentCorrectChangedFood() //feedback ora corretto dopo che hanno già sbagliato TODO bho non cambia niente dal correct correct normale in teoria
     {
 
         SameCorrectFindFood();
 
     }
 
-    public void DifferentWrongChangedFood()
+    public void DifferentWrongChangedFood() //feedback ancora sbagliato dopo che hanno già sbagliato 
     {
         SameWrongFindFood();
     }
@@ -225,7 +225,7 @@ public class FeedbackManager : MonoBehaviour {
 
     public void DifferentWrongFindFood()
     {
-        //TODO -> torna indietro e sam é MOOOOOOOLTO ARRABBIATO. BUUUU
+
         spawnEngine.SpawnQuestionMarkAtPosition(new Vector3(foodMoved.transform.position.x + 5f, foodMoved.transform.position.y, foodMoved.transform.position.z));
 
     }
@@ -237,7 +237,7 @@ public class FeedbackManager : MonoBehaviour {
         GameObject food = GameObject.Find(foodChoice);
         if (food != null)
         {
-            if (foodMoved == null)
+            if (foodMoved == null) //TODO muoverlo solo se non è la stessa selzione di prima ?????? o nel caso se è lo stesso cibo già mosso fargli fare qualcosa di diverso.
             {
                 foodMoved = food;
                 movedFrom = new Vector3(food.transform.position.x, food.transform.position.y, food.transform.position.z); ;
@@ -247,7 +247,6 @@ public class FeedbackManager : MonoBehaviour {
             }
             else
             {
-                //  -> TODO di sicuro non va messo qui.
                 //rimetto a posto il cibo vecchio 
                 foodMoved.GetComponent<MovementFood>().enabled = true;
                 foodMoved.GetComponent<MovementFood>().SetMoveBackToBucket(movedFrom);

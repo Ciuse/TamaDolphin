@@ -71,10 +71,12 @@ public class GameEventManager : MonoBehaviour
             if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct) //stessi giusti
             {
                 feedbackManager.SameCorrectFindFood();
+                inputState.ResetInput(); // TODO quando si inseriranno nuove fase questo sarà il punto di partenza per la successiva.
             }
             if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //stessi sbagliati
             {
                 feedbackManager.SameWrongFindFood();
+                inputState.ResetInput();
             }
         }
 
@@ -86,6 +88,7 @@ public class GameEventManager : MonoBehaviour
                 if (inputState.realSamInput == TypeOfInput.correct && inputState.therapistInput == TypeOfInput.correct)  //stesso correct correct dopo che è stato cambiato l input della terapista
                 {
                     feedbackManager.DifferentCorrectChangedFood();
+                    inputState.ResetInput(); // TODO quando si inseriranno nuove fase questo sarà il punto di partenza per la successiva.
                     changedWrongFoodTherapist = false;
                 }
 
@@ -93,6 +96,7 @@ public class GameEventManager : MonoBehaviour
                 if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong) //stesso wrong wrong dopo che è stato cambiato l input della terapista
                 {
                     feedbackManager.DifferentWrongChangedFood();
+                    inputState.ResetInput();
                     changedWrongFoodTherapist = false;
                 }
 
@@ -142,11 +146,11 @@ public class GameEventManager : MonoBehaviour
             OverloadInput();
         }
 
-        if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+        if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> TODO abbiamo deciso di lasciarlo così ma eventualmente si può evitare che la scelta del VR venga cambiata
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
             feedbackManager.spawnEngine.DestroyObjectSpawned();
-            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); //TODO non è il massimo messo così perchè se fatto subito succede un casino con i cibi che volano
+            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); 
             changedWrongFoodTherapist = true;
             OverloadInput();
         }
@@ -171,7 +175,6 @@ public class GameEventManager : MonoBehaviour
 
     public void OverloadInput()
     {
-        //TODO INSERIRE CHE DISTRUGGE I VECCHI OGGETTI
         feedbackManager.ResetFeedbackFindNeed();
         inputSetted = false;
     }

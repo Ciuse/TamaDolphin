@@ -18,7 +18,6 @@ public class ServerHttp : MonoBehaviour
     private bool isMatching = false;
     private bool isWeb = false;
     private bool isSam = false;
-    public bool clickButton = false;
     public string stringaLetta;
 
     void Update()
@@ -30,7 +29,7 @@ public class ServerHttp : MonoBehaviour
 
                 isMatching = false;
                 isWeb = false;
-                WebButtonFunction(); //test 
+                WebButtonFunction(); 
 
             }
             if (isSam)
@@ -38,7 +37,7 @@ public class ServerHttp : MonoBehaviour
 
                 isMatching = false;
                 isSam = false;
-                SamFunction(); //test 
+                SamFunction();
 
             }
         }
@@ -57,7 +56,7 @@ public class ServerHttp : MonoBehaviour
         Debug.Log("ciao");
 
         _listener = new HttpListener();
-        _listener.Prefixes.Add("http://+:8081/");
+        _listener.Prefixes.Add("http://+:2601/");
 
         _listener.Start();
 
@@ -76,6 +75,13 @@ public class ServerHttp : MonoBehaviour
 
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
+        response.StatusCode = (int)HttpStatusCode.OK;
+        Stream serverResponseOutput = response.OutputStream;
+        response.StatusCode = 200;
+
+        response.Close();
+
+
         stringaLetta = contRead;
         isMatching = true;
         isSam = true; 
@@ -97,6 +103,13 @@ public class ServerHttp : MonoBehaviour
    
     private void HandleWebResponse(Match match, HttpListenerResponse response,  string contRead)
     {
+
+        response.StatusCode = (int)HttpStatusCode.OK;
+        Stream serverResponseOutput = response.OutputStream;
+        response.StatusCode = 200;
+        
+        response.Close();
+
         stringaLetta = contRead;
         isMatching = true;
         isWeb = true;
@@ -106,38 +119,12 @@ public class ServerHttp : MonoBehaviour
     private void WebButtonFunction()
     {
 
-        //GameObject questionMark = (GameObject)Instantiate(Resources.Load("QuestionMark"));
-        //Vector3 position1 = new Vector3(5, 5, 5);
-        //Instantiate(questionMark, position1, questionMark.GetComponent<Transform>().rotation);
         string contRead = stringaLetta;
         Debug.Log("messaggio ricevuto");
         Debug.Log(contRead);
 
         networkEventManager.HandleWebButtonPressed(contRead);
     }
-
-
-
-    public string TherapistButtonValue(string buttonValue)
-    {
-        
-        string val = string.Empty;
-        
-
-        for (int i = 0; i < buttonValue.Length; i++)
-        {
-            if (Char.IsDigit(buttonValue[i]))
-                val += buttonValue[i];
-        }
-
-        if (val.Length == 1 && (val=="0"|| val == "1" ))
-        {
-           return val;
-        }
-        else return "qualcosa è andato storto nella stringa passata dal sito web";
-    }
-
-    
 
 
     private void ListenerCallback(IAsyncResult result)
@@ -165,8 +152,8 @@ public class ServerHttp : MonoBehaviour
             }
         }
 
-        response.StatusCode = 404;
-        response.Close();
+    //    response.StatusCode = 404;
+    //    response.Close();
     }
 
 

@@ -30,7 +30,7 @@ public class StartGameDolphin : MonoBehaviour
             }
         }
 
-        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", myIp, 8081)); //TODO CONTROLLARE SE VA IL NUOVO IP
+        network.SetRealSamSetting(network.realSamManager.Configuration("changeHttp", myIp, 2601)); //invio messaggio per settare il mio ip a sam
     }
 
     public void Update()

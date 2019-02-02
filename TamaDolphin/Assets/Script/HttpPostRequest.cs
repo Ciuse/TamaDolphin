@@ -11,6 +11,8 @@ public class HttpPostRequest : MonoBehaviour
     private string samIp;
     public List<string> bufferPost = new List<string>();
     public Coroutine sendingPost;
+
+
     private void Start()
     {
         SamInfo loadedData = DataSaver.LoadData<SamInfo>("samInfo");
@@ -40,26 +42,7 @@ public class HttpPostRequest : MonoBehaviour
     private IEnumerator SendPostToSam(string jsonHttpSetting)
     {
 
-        //  string json = jsonHttpSetting;
-        // string urlSam = "http://192.168.0.125";
-        //UnityWebRequest www = UnityWebRequest.Post(urlSam, json);
-        // www.SetRequestHeader("Content-Type", "application/json");
-        //yield return www.SendWebRequest();
-        //Debug.Log("Impostazioni fatte");
-
-        //if (www.isNetworkError || www.isHttpError)
-        //{
-        //   Debug.Log(www.error);
-        //}
-        //else
-        //{
-
-        //  sendPost = true;
-
-        //}
-
-
-        UnityWebRequest www = new UnityWebRequest(samIp, "POST");  //TODO VEDERE SE VA DAVVERO IL SAM IP
+        UnityWebRequest www = new UnityWebRequest(samIp, "POST");
         byte[] bodyRaw = Encoding.UTF8.GetBytes(jsonHttpSetting);
         www.uploadHandler = (UploadHandler)new UploadHandlerRaw(bodyRaw);
         www.downloadHandler = (DownloadHandler)new DownloadHandlerBuffer();
