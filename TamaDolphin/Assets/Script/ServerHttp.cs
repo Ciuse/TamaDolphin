@@ -76,8 +76,10 @@ public class ServerHttp : MonoBehaviour
     private void HandleSamResponse(Match match, HttpListenerResponse response, string contRead)
     {
         response.StatusCode = (int)HttpStatusCode.OK;
-        Stream serverResponseOutput = response.OutputStream;
-        response.StatusCode = 200;
+        response.AppendHeader("Access-Control-Allow-Origin", "*");
+        response.AppendHeader("Access-Control-Allow-Methods", "POST, PUT, DELETE, GET, OPTIONS");
+        response.AppendHeader("Access-Control-Request-Method", "*");
+        response.AppendHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
 
         response.Close();
 
@@ -105,8 +107,10 @@ public class ServerHttp : MonoBehaviour
     {
 
         response.StatusCode = (int)HttpStatusCode.OK;
-        Stream serverResponseOutput = response.OutputStream;
-        response.StatusCode = 200;
+        response.AppendHeader("Access-Control-Allow-Origin", "*");
+        response.AppendHeader("Access-Control-Allow-Methods", "POST, PUT, DELETE, GET, OPTIONS");
+        response.AppendHeader("Access-Control-Request-Method", "*");
+        response.AppendHeader("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
         
         response.Close();
 
