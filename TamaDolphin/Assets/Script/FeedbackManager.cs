@@ -17,9 +17,11 @@ public class FeedbackManager : MonoBehaviour {
     public Vector3 movedFrom;
     public GameObject foodMoved;
     public bool isFoodInMovement;
+    public bool findFoodObjectSpawned;
     public float moveUpFoodInBin = 0f;
     // Use this for initialization
     void Start () {
+        findFoodObjectSpawned = false;
         isFoodInMovement = false;
         foodMoved = null;
         bavaglio.SetActive(false);
@@ -38,6 +40,8 @@ public class FeedbackManager : MonoBehaviour {
                 checkForTableEndMovement = false;
 
                 spawnEngine.SpawnFoodBasketAndBin(); // Vengono fatti comparire i cestini con il cibo e il cestino per la spazzatura
+                findFoodObjectSpawned =true;
+
             }
         }
         if (isFoodInMovement == true)
@@ -48,6 +52,8 @@ public class FeedbackManager : MonoBehaviour {
                 isFoodInMovement = false;
             }
         }
+
+
     }
 
     // ********** FEEDBACK FIND NEED **************
@@ -141,6 +147,8 @@ public class FeedbackManager : MonoBehaviour {
 
     public void SameCorrectFindFood()
     {
+        dolphin_VR.GetComponent<DolphinAnimation>().StopMovimentoBocca();
+        dolphin_VR.GetComponent<DolphinAnimation>().ApriBocca();
         if (foodMoved != null)
         {
             GameObject piatto = GameObject.Find("Piatto(Clone)");
@@ -148,10 +156,12 @@ public class FeedbackManager : MonoBehaviour {
             {
                 foodMoved.GetComponent<MovementFood>().enabled = true;
                 foodMoved.GetComponent<MovementFood>().SetMoveFromDolphinToDish(piatto.transform.position);
+                isFoodInMovement = true;
+                foodMoved.GetComponent<MovementFood>().SetEatFood();
+                StartCoroutine(WaitCloseBocca(15.5f));
             }
-        
-        }
 
+        }
 
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#808080")); //luce della pancia a grigio
         networkEventManager.SetRealSamSetting(networkEventManager.realSamManager.SetSounds("set", "music", 14, 20)); //suono della felicità 
@@ -262,4 +272,12 @@ public class FeedbackManager : MonoBehaviour {
             }
         }
     }
+
+    private IEnumerator WaitCloseBocca(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        dolphin_VR.GetComponent<DolphinAnimation>().ChiudiBocca();
+
+    }
+
 }

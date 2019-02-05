@@ -20,6 +20,7 @@ public class GameEventManager : MonoBehaviour
     {
         networkEventManager = GameObject.Find("NetworkEventManager").GetComponent<NetworkEventManager>();
         gamePhase = GamePhase.startFindNeed;
+        feedbackManager.dolphin_VR.GetComponent<DolphinAnimation>().StartMuoviBocca();
     }
 
     // Update is called once per frame
@@ -121,8 +122,7 @@ public class GameEventManager : MonoBehaviour
     }
     public void SetInputStateTherapist(string buttonPressedId)
     {
-
-       if (gamePhase== GamePhase.startFindNeed) //Fase 1.0 -> leggo l'input della terapista
+        if (gamePhase == GamePhase.startFindNeed) //Fase 1.0 -> leggo l'input della terapista
         {
             inputState.SetInputTherapistFindNeed(buttonPressedId);
             feedbackManager.ActivateSamFindNeed(); //Fase 1.1 -> dopo che la terapista preme il bottone si "attiva" sam fisico
@@ -130,7 +130,7 @@ public class GameEventManager : MonoBehaviour
             return; //da testare se da problemi
         }
 
-        if (gamePhase == GamePhase.startFindFood) //Fase 2.0 -> leggo l'input della terapista, il cibo comunicato si muove verso il delfino
+        if (gamePhase == GamePhase.startFindFood && feedbackManager.findFoodObjectSpawned == true)  //Fase 2.0 -> leggo l'input della terapista, il cibo comunicato si muove verso il delfino
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
             feedbackManager.spawnEngine.DestroyObjectSpawned();
@@ -150,7 +150,7 @@ public class GameEventManager : MonoBehaviour
         {
             inputState.SetInputTherapistFindFood(buttonPressedId);
             feedbackManager.spawnEngine.DestroyObjectSpawned();
-            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); 
+            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
             changedWrongFoodTherapist = true;
             OverloadInput();
         }

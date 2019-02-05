@@ -5,7 +5,7 @@ using UnityEngine;
 public class MovementFood : MonoBehaviour
 {
     public GameObject targetFood;
-
+    public GameObject eatTarget;
     public Vector3 startPos;
     public Vector3 endPos;
 
@@ -27,6 +27,12 @@ public class MovementFood : MonoBehaviour
 
     public GameObject parentToDestroy;
 
+    public bool isRotation=false;
+    private Quaternion Quaternion_Rotate_From;
+    private Quaternion Quaternion_Rotate_To;
+    public bool redo = false;
+    public GameObject redoTarget;
+
     private void Start()
     {
     }
@@ -46,10 +52,19 @@ public class MovementFood : MonoBehaviour
                 transform.position = Vector3.Lerp(startPos, endMiddlePos, perc1);
             }
 
+            if (isRotation)
+            {
+                Quaternion_Rotate_From = transform.rotation;
+                Quaternion_Rotate_To = Quaternion.Euler(0, 90, 0);
+                transform.rotation = Quaternion.Lerp(Quaternion_Rotate_From, Quaternion_Rotate_To, Time.deltaTime * 0.4f);
+            }
 
             if (currentLerpTime1 == lerpTime1)
             {
                 currentLerpTime2 += Time.deltaTime;
+
+                float perc2 = currentLerpTime2 / lerpTime2;
+                transform.position = Vector3.Lerp(startMiddlePos, endPos, perc2);
                 if (currentLerpTime2 >= lerpTime2)
                 {
                     currentLerpTime2 = lerpTime2;
@@ -61,10 +76,15 @@ public class MovementFood : MonoBehaviour
                         Destroy(parentToDestroy);
                         gameObject.name = gameObject.name + "Bin";
                     }
-                    this.enabled = false;
+                    if (redo)
+                    {
+                        StartCoroutine(WaitForRedo(1f));
+                    }
+                    else
+                    {
+                        this.enabled = false;
+                    }
                 }
-                float perc2 = currentLerpTime2 / lerpTime2;
-                transform.position = Vector3.Lerp(startMiddlePos, endPos, perc2);
             }
         }
 
@@ -111,15 +131,15 @@ public class MovementFood : MonoBehaviour
         currentLerpTime1 = 0;
         currentLerpTime2 = 0;
 
-        lerpTime1 = 8;
+        lerpTime1 = 6;
         lerpTime2 = 1;
 
         startPos = transform.position;
 
-        endMiddlePos = dishPosition + new Vector3(0f, 1.2f, 0f);
+        endMiddlePos = dishPosition + new Vector3(-1f, 1.2f, 0f);
         startMiddlePos = endMiddlePos;
 
-        endPos = dishPosition;
+        endPos = dishPosition + new Vector3(-1f, 0f, 0f);
         positionSetted = true;
 
     }
@@ -150,6 +170,7 @@ public class MovementFood : MonoBehaviour
         if (foodMovedToDolphin == false)
         {
             currentLerpTime1 = 0;
+            currentLerpTime2 = 0;
             lerpTime1 = 3;
             lerpTime2 = 1;
             startPos = transform.position;
@@ -168,6 +189,7 @@ public class MovementFood : MonoBehaviour
         if (foodMovedToDolphin == false)
         {
             currentLerpTime1 = 0;
+            currentLerpTime2 = 0;
             lerpTime1 = 3;
             lerpTime2 = 1;
             startPos = transform.position;
@@ -178,5 +200,37 @@ public class MovementFood : MonoBehaviour
             positionSetted = true;
         }
     }
+
+    public void SetEatFood()
+    {
+        redo = true;
+        redoTarget = eatTarget;
+    }
+
+
+    public void SetRedo(GameObject eatTarget)
+    {
+        currentLerpTime1 = 0;
+        currentLerpTime2 = 0;
+        lerpTime1 = 6;
+        lerpTime2 = 6;
+
+        startPos = transform.position;
+
+        endMiddlePos = transform.position + new Vector3(0f, 4.2f, -3f);
+        startMiddlePos = endMiddlePos;
+
+        endPos = eatTarget.transform.position;
+        isRotation = true;
+        positionSetted = true;
+        redo = false;
+    }
+
+    private IEnumerator WaitForRedo(float sec)
+    {
+        yield return new WaitForSeconds(sec);
+        SetRedo(redoTarget);
+    }
 }
+
 

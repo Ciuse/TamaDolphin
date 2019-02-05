@@ -15,10 +15,9 @@ public class DolphinInteraction : MonoBehaviour
     List<GameObject> needAdvicesList = new List<GameObject>();
     List<GameObject> advicesActivatedList = new List<GameObject>();
 
+
     public void Start()
     {
-
-
         cloud.SetActive(false);
         inizioSuggerimento = false;
         needAdvicesList.Add(planeCloud);
@@ -27,18 +26,13 @@ public class DolphinInteraction : MonoBehaviour
         foreach (GameObject item in needAdvicesList)
         {
             item.SetActive(false);
-
         }
-
-
     }
 
 
     public void Suggerimenti()
     {
-
         StartCoroutine(SuggerimentiAsync());
-
     }
 
     public void StopSuggerimenti()
@@ -58,9 +52,7 @@ public class DolphinInteraction : MonoBehaviour
                 {
                     advice.SetActive(false);
                     yield return new WaitForSeconds(1f);
-
                 }
-
             }
 
             item.SetActive(true);
@@ -70,10 +62,7 @@ public class DolphinInteraction : MonoBehaviour
             }
             yield return new WaitForSeconds(4f);
             advicesActivatedList.Add(item);
-            Debug.Log("suggerimento attivato");
         }
-
-
     }
 
     public void Appear()
@@ -86,10 +75,7 @@ public class DolphinInteraction : MonoBehaviour
 
             }
         }
-
-
     }
-
 
 
     public void Disappear()
@@ -110,24 +96,8 @@ public class DolphinInteraction : MonoBehaviour
         yield return new WaitForSeconds(5);
 
         cloud.SetActive(true);
-        Debug.Log("nuvola attivata");
         Suggerimenti();
-
-
-
     }
-
-
-
-    private IEnumerator WaitTenSeconds()
-    {
-        yield return new WaitForSeconds(10);
-
-    }
-
-
-
 
 }
-
 
