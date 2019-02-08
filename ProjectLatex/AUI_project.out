@@ -1,0 +1,36 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Our idea: The TamaDolphin}{section.1}% 2
+\BOOKMARK [1][-]{section.2}{Target groups and User Need}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{Main Target Groups}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Context and Needs addressed:}{section.2}% 5
+\BOOKMARK [2][-]{subsection.2.3}{Goals}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.4}{Requirements}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.5}{Constraints}{section.2}% 8
+\BOOKMARK [1][-]{section.3}{State of the art}{}% 9
+\BOOKMARK [2][-]{subsection.3.1}{Autistic children}{section.3}% 10
+\BOOKMARK [2][-]{subsection.3.2}{Therapeutic activities}{section.3}% 11
+\BOOKMARK [2][-]{subsection.3.3}{Relationship between technologies and autism}{section.3}% 12
+\BOOKMARK [2][-]{subsection.3.4}{Analysis of similar projects}{section.3}% 13
+\BOOKMARK [1][-]{section.4}{Solution \205 UX Design}{}% 14
+\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 15
+\BOOKMARK [2][-]{subsection.4.2}{User experience:}{section.4}% 16
+\BOOKMARK [3][-]{subsubsection.4.2.1}{VR User Experience}{subsection.4.2}% 17
+\BOOKMARK [3][-]{subsubsection.4.2.2}{Sam User Experience}{subsection.4.2}% 18
+\BOOKMARK [3][-]{subsubsection.4.2.3}{Therapist Experience}{subsection.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.3}{Scenarios}{section.4}% 20
+\BOOKMARK [1][-]{section.5}{Solution - Game Logic}{}% 21
+\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 22
+\BOOKMARK [2][-]{subsection.5.2}{Feedback Management}{section.5}% 23
+\BOOKMARK [3][-]{subsubsection.5.2.1}{Feedback of the First Round Phase}{subsection.5.2}% 24
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Feedback of the Second Round Phase}{subsection.5.2}% 25
+\BOOKMARK [2][-]{subsection.5.3}{Rounds Game Management}{section.5}% 26
+\BOOKMARK [3][-]{subsubsection.5.3.1}{Round-based division}{subsection.5.3}% 27
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Two Phases of each Round}{subsection.5.3}% 28
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Exchange of technologies}{subsection.5.3}% 29
+\BOOKMARK [1][-]{section.6}{Implementation}{}% 30
+\BOOKMARK [2][-]{subsection.6.1}{High-level Diagram}{section.6}% 31
+\BOOKMARK [1][-]{section.7}{SW Architecture}{}% 32
+\BOOKMARK [2][-]{subsection.7.1}{Mobile device}{section.7}% 33
+\BOOKMARK [2][-]{subsection.7.2}{Website}{section.7}% 34
+\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 35
+\BOOKMARK [1][-]{section.9}{Future work}{}% 36
