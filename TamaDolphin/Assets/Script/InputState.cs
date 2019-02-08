@@ -32,7 +32,6 @@ public class InputState : MonoBehaviour {
         correctCardIdFindNeed = "Hungry";
         correctWebIdFindNeed = "Correct";
 
-
         correctCardIdFindFood = "Fish";
         correctWebIdFindFood = "Fish";
 
@@ -67,6 +66,7 @@ public class InputState : MonoBehaviour {
     public void SetInputRealSamFindNeed(string cardValue)
     {
         string cardKey = KeyByValue(cards, cardValue); //DA TESTARE -> dovrebbe prendere il codice "a3cd81d5" e trasformarlo in "hungry"
+
         realSamInputValue = cardKey;
         Debug.Log("realSamInputValue input settato con valore:" + realSamInputValue);
 
@@ -102,38 +102,53 @@ public class InputState : MonoBehaviour {
 
     //************** THERAPIST INPUT ***************
 
-    public void SetInputTherapistFindNeed(string buttonPressedId)
+    public bool SetInputTherapistFindNeed(string buttonPressedId)
     {
-        therapistInputValue = KeyByValue(webInput, buttonPressedId);
-        Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
+        string inputKey = KeyByValue(webInput, buttonPressedId);
+        if (inputKey == "Wrong" || inputKey == "Correct")
+        {
+            therapistInputValue = inputKey;
+            Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
 
-        if (correctWebIdFindNeed == therapistInputValue)
-        {
-            therapistInput = TypeOfInput.correct;
-            Debug.Log("therapist input settato con valore correct");
+            if (correctWebIdFindNeed == therapistInputValue)
+            {
+                therapistInput = TypeOfInput.correct;
+                Debug.Log("therapist input settato con valore correct");
+            }
+            else
+            {
+                therapistInput = TypeOfInput.wrong;
+                Debug.Log("therapist input settato con valore wrong");
+            }
+            return true;
         }
-        else
-        {
-            therapistInput = TypeOfInput.wrong;
-            Debug.Log("therapist input settato con valore wrong");
-        }
+        return false;
+      
     }
 
-    public void SetInputTherapistFindFood(string buttonPressedId)
+    public bool SetInputTherapistFindFood(string buttonPressedId)
     {
-        therapistInputValue = KeyByValue(webInput, buttonPressedId);
-        Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
 
-        if (correctWebIdFindFood == therapistInputValue)
+        string inputKey = KeyByValue(webInput, buttonPressedId);
+        if (inputKey == "Fish" || inputKey == "Meat" || inputKey == "Fruit" || inputKey == "Cake")
         {
-            therapistInput = TypeOfInput.correct;
-            Debug.Log("therapist input settato con valore correct");
+            therapistInputValue = inputKey;
+            Debug.Log("therapistInputValue input settato con valore:" + therapistInputValue);
+
+            if (correctWebIdFindFood == therapistInputValue)
+            {
+                therapistInput = TypeOfInput.correct;
+                Debug.Log("therapist input settato con valore correct");
+            }
+            else
+            {
+                therapistInput = TypeOfInput.wrong;
+                Debug.Log("therapist input settato con valore wrong");
+            }
+
+            return true;
         }
-        else
-        {
-            therapistInput = TypeOfInput.wrong;
-            Debug.Log("therapist input settato con valore wrong");
-        }
+        return false;
     }
 
     public static string KeyByValue(Dictionary<string, string> dict, string val)

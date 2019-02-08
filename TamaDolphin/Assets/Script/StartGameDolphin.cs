@@ -39,6 +39,8 @@ public class StartGameDolphin : MonoBehaviour
         {
             buttonStart.SetActive(true);
             network.realSamManager.sendPost = false;
+            network.SetRealSamSetting(network.realSamManager.SetLights("set", "#000000", "#000000", "#000000", "#000000"));
+
         }
     }
 
@@ -54,8 +56,9 @@ public class StartGameDolphin : MonoBehaviour
     private IEnumerator PlayGame()
     {
         yield return new WaitForSeconds(2);
-        Debug.Log("Wait is over");
         SceneManager.LoadScene("SamScene");
 
     }
+
+ 
 }

@@ -12,7 +12,7 @@ public class GameEventManager : MonoBehaviour
     public GamePhase gamePhase;
     public bool inputSetted = false;
     public bool changedWrongFoodTherapist = false;
-
+    public bool endGame =false;
 
 
     // Use this for initialization
@@ -42,6 +42,11 @@ public class GameEventManager : MonoBehaviour
                     FeedbackFindFood();
                     inputSetted = true;
                 }
+            }
+
+            if(endGame && !feedbackManager.isFoodInMovement)
+            {
+                SceneManager.LoadScene("Fireworks");
             }
         }
     }
@@ -73,6 +78,7 @@ public class GameEventManager : MonoBehaviour
             {
                 feedbackManager.SameCorrectFindFood();
                 inputState.ResetInput(); // TODO quando si inseriranno nuove fase questo sarà il punto di partenza per la successiva.
+                endGame = true;
             }
             if (inputState.realSamInput == TypeOfInput.wrong && inputState.therapistInput == TypeOfInput.wrong)  //stessi sbagliati
             {
@@ -91,6 +97,8 @@ public class GameEventManager : MonoBehaviour
                     feedbackManager.DifferentCorrectChangedFood();
                     inputState.ResetInput(); // TODO quando si inseriranno nuove fase questo sarà il punto di partenza per la successiva.
                     changedWrongFoodTherapist = false;
+                    endGame = true;
+
                 }
 
 
@@ -124,35 +132,42 @@ public class GameEventManager : MonoBehaviour
     {
         if (gamePhase == GamePhase.startFindNeed) //Fase 1.0 -> leggo l'input della terapista
         {
-            inputState.SetInputTherapistFindNeed(buttonPressedId);
-            feedbackManager.ActivateSamFindNeed(); //Fase 1.1 -> dopo che la terapista preme il bottone si "attiva" sam fisico
-            gamePhase = GamePhase.findNeed;
-            return; //da testare se da problemi
+            if (inputState.SetInputTherapistFindNeed(buttonPressedId))
+            {
+                feedbackManager.ActivateSamFindNeed(); //Fase 1.1 -> dopo che la terapista preme il bottone si "attiva" sam fisico
+                gamePhase = GamePhase.findNeed;
+                return;
+            }
         }
 
         if (gamePhase == GamePhase.startFindFood && feedbackManager.findFoodObjectSpawned == true)  //Fase 2.0 -> leggo l'input della terapista, il cibo comunicato si muove verso il delfino
         {
-            inputState.SetInputTherapistFindFood(buttonPressedId);
-            feedbackManager.spawnEngine.DestroyObjectSpawned();
-            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
-            feedbackManager.ActivateSamFindFood(); //Fase 2.1 -> TODO il delfino sam fisico si attiva
-            gamePhase = GamePhase.findFood;
-            return; //da testare se da problemi
+            if (inputState.SetInputTherapistFindFood(buttonPressedId))
+            {
+                feedbackManager.spawnEngine.DestroyObjectSpawned();
+                feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue); //Fase 2.1 -> TODO il delfino sam fisico si attiva
+                gamePhase = GamePhase.findFood;
+                return;
+            }
         }
 
         if (gamePhase == GamePhase.findNeed) // Fase 1.3 -> la terapista può cambiare l'eventuale input sbagliato
         {
-            inputState.SetInputTherapistFindNeed(buttonPressedId);
-            OverloadInput();
+            if (inputState.SetInputTherapistFindNeed(buttonPressedId))
+            {
+                OverloadInput();
+            }
         }
 
         if (gamePhase == GamePhase.findFood) // Fase 2.3 -> la terapista può cambiare l'eventuale input sbagliato --> TODO abbiamo deciso di lasciarlo così ma eventualmente si può evitare che la scelta del VR venga cambiata
         {
-            inputState.SetInputTherapistFindFood(buttonPressedId);
-            feedbackManager.spawnEngine.DestroyObjectSpawned();
-            feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
-            changedWrongFoodTherapist = true;
-            OverloadInput();
+            if (inputState.SetInputTherapistFindFood(buttonPressedId))
+            {
+                feedbackManager.spawnEngine.DestroyObjectSpawned();
+                feedbackManager.VisualFoodFeedbackChoice(inputState.therapistInputValue);
+                changedWrongFoodTherapist = true;
+                OverloadInput();
+            }
         }
     }
 

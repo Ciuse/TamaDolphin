@@ -335,7 +335,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!4 &205963958 stripped
@@ -898,7 +897,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466162809}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.21, z: -3.59}
+  m_LocalPosition: {x: 0.28, y: -0.35, z: -3.59}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1590094041}
@@ -1068,7 +1067,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!1 &558974842
@@ -1433,7 +1431,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!1001 &697323894
@@ -1709,7 +1706,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!4 &776617928 stripped
@@ -1753,6 +1749,7 @@ MonoBehaviour:
   gamePhase: 0
   inputSetted: 0
   changedWrongFoodTherapist: 0
+  endGame: 0
 --- !u!4 &842932274
 Transform:
   m_ObjectHideFlags: 0
@@ -2111,7 +2108,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!4 &998146331 stripped
@@ -2948,7 +2944,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!1001 &1402509388
@@ -3764,7 +3759,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!1 &1652528129 stripped
@@ -4431,7 +4425,6 @@ MonoBehaviour:
   destroyBucket: 0
   parentToDestroy: {fileID: 0}
   isRotation: 0
-  Rotation_Smoothness: 15
   redo: 0
   redoTarget: {fileID: 0}
 --- !u!1001 &1975602578

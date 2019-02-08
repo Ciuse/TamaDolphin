@@ -53,8 +53,6 @@ public class ServerHttp : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Debug.Log("ciao");
-
         _listener = new HttpListener();
         _listener.Prefixes.Add("http://+:2601/");
 
@@ -141,8 +139,6 @@ public class ServerHttp : MonoBehaviour
         // Obtain a response object.
         HttpListenerResponse response = context.Response;
         string contRead = new StreamReader(request.InputStream).ReadToEnd();
-        
-
         
         foreach (Regex r in _requestHandlers.Keys)
         {

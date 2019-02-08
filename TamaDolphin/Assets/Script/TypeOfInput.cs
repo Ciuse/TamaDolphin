@@ -13,5 +13,6 @@ public enum GamePhase
     startFindNeed,
     findNeed,
     startFindFood,
-    findFood
+    findFood,
+    endPhase
 }
