@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.10.21)  8 FEB 2019 16:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.11)  9 FEB 2019 14:50
 entering extended mode
 **./AUI_project.tex
 (AUI_project.tex
 LaTeX2e <2017-04-15>
-Babel <3.15> and hyphenation patterns for 75 language(s) loaded.
+Babel <3.10> and hyphenation patterns for 75 language(s) loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\size12.clo"
@@ -396,11 +396,8 @@ Now handling font encoding U ...
    defining Unicode char U+2423 (decimal 9251)
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
-Package: babel 2017/11/03 3.15 The Babel package
+Package: babel 2017/05/19 3.10 The Babel package
 
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/11/03 3.15 Babel switching mechanism
-)
 *************************************
 * Local config file bblopts.cfg used
 *
@@ -409,14 +406,10 @@ File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
  babel
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
-Language: english 2017/06/06 v3.3r English support from the babel system
+Language: english 2017/01/24 v3.3q English support from the babel system
 
 ("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
-File: babel.def 2017/11/03 3.15 Babel common definitions
-
-("C:\Program Files\MiKTeX 2.9\tex\generic\babel\switch.def"
-File: switch.def 2017/11/03 3.15 Babel switching mechanism
-)
+File: babel.def 2017/05/19 3.10 Babel common definitions
 \babel@savecnt=\count108
 \U@D=\dimen111
 )
@@ -566,10 +559,10 @@ Package: enumitem 2011/09/28 v3.5.2 Customized lists
 Package: wrapfig 2003/01/31  v 3.6
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
-Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
@@ -580,7 +573,8 @@ File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 Package graphics Info: Driver file: pdftex.def on input line 99.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
-File: pdftex.def 2017/06/24 v1.0g Graphics/color driver for pdftex
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+\Gread@gobject=\count121
 ))
 \Gin@req@height=\dimen119
 \Gin@req@width=\dimen120
@@ -598,14 +592,14 @@ Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
 \titlewidthfirst=\dimen125
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
-Package: subcaption 2018/05/01 v1.1-162 Sub-captions (AR)
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
-Package: caption 2018/10/06 v3.3-154 Customizing captions (AR)
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
-Package: caption3 2018/09/12 v1.8c caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 64.
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen126
 \captionmargin@=\dimen127
 \captionwidth=\dimen128
@@ -614,7 +608,6 @@ Package caption3 Info: TeX engine: e-TeX on input line 64.
 \caption@parindent=\dimen131
 \caption@hangindent=\dimen132
 )
-\c@caption@flags=\count121
 \c@ContinuedFloat=\count122
 Package caption Info: hyperref package is loaded.
 Package caption Info: wrapfig package is loaded.
@@ -756,29 +749,28 @@ Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 38.
 Package grfext Info: Graphics extension search list:
-(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<logopoli.jpg, id=147, 310.83871pt x 315.5013pt>
-File: logopoli.jpg Graphic file (type jpg)
-<use logopoli.jpg>
-Package pdftex.def Info: logopoli.jpg  used on input line 40. on input line 40.
 
-Package pdftex.def Info: Requested size: 165.0283pt x 165.02444pt on input line
- 40.
+<logopoli.jpg, id=155, 310.83871pt x 315.5013pt>
+File: logopoli.jpg Graphic file (type jpg)
+ <use logopoli.jpg>
+Package pdftex.def Info: logopoli.jpg used on input line 40.
+(pdftex.def)             Requested size: 165.0283pt x 165.02444pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 55.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 55.
- [1{C:/Users/giuli/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <./logopoli.jpg>]
-(AUI_project.toc [2
+ <./logopoli.jpg>] (AUI_project.toc
+[2
 
 ])
 \tf@toc=\write4
@@ -788,18 +780,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 
 ]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 88.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 88.
  [5
 
-] [6] [7
+]
+[6] [7
 
-] [8]
-[9
+] [8] [9
 
 ] [10]
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -845,31 +836,187 @@ Underfull \hbox (badness 10000) in paragraph at lines 223--232
 
 ] [15] [16] [17] [18] [19] [20
 
-] [21] [22] [23] [24
+] [21] [22] [23]
+<HWarchitecture.jpg, id=334, 680.5425pt x 532.99126pt>
+File: HWarchitecture.jpg Graphic file (type jpg)
 
-] [25
+<use HWarchitecture.jpg>
+Package pdftex.def Info: HWarchitecture.jpg used on input line 340.
+(pdftex.def)             Requested size: 369.88623pt x 284.53348pt.
+ [24
 
-] [26] [27]
-[28
+ <./HWarchitecture.jpg>]
+<UML.jpg, id=340, 1429.34pt x 1681.28125pt>
+File: UML.jpg Graphic file (type jpg)
+ <use UML.jpg>
+Package pdftex.def Info: UML.jpg used on input line 353.
+(pdftex.def)             Requested size: 455.23897pt x 625.96379pt.
+ [25
+
+ <./UML.jpg>]
+<DeploymentDiagram1.jpg, id=347, 1045.9075pt x 716.6775pt>
+File: DeploymentDiagram1.jpg Graphic file (type jpg)
+
+<use DeploymentDiagram1.jpg>
+Package pdftex.def Info: DeploymentDiagram1.jpg used on input line 361.
+(pdftex.def)             Requested size: 455.25336pt x 369.88588pt.
+ [26
+
+ <./DeploymentDiagram1.jpg>]
+<VrMirino.jpg, id=353, 337.26pt x 140.9265pt>
+File: VrMirino.jpg Graphic file (type jpg)
+ <use VrMirino.jpg>
+Package pdftex.def Info: VrMirino.jpg used on input line 378.
+(pdftex.def)             Requested size: 455.25562pt x 165.02956pt.
+ [27
+
+ <./VrMirino.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 382--385
+
+ []
+
+<StartServer.jpg, id=359, 501.37312pt x 136.25906pt>
+File: StartServer.jpg Graphic file (type jpg)
+ <use StartServer.jpg>
+Package pdftex.def Info: StartServer.jpg used on input line 388.
+(pdftex.def)             Requested size: 455.26335pt x 142.27159pt.
+
+<ReadRequest.jpg, id=360, 614.295pt x 317.68687pt>
+File: ReadRequest.jpg Graphic file (type jpg)
+ <use ReadRequest.jpg>
+Package pdftex.def Info: ReadRequest.jpg used on input line 393.
+(pdftex.def)             Requested size: 455.24606pt x 227.62912pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 395--396
+
+ []
+
+<Dictionary.jpg, id=361, 398.99063pt x 93.34875pt>
+File: Dictionary.jpg Graphic file (type jpg)
+ <use Dictionary.jpg>
+Package pdftex.def Info: Dictionary.jpg used on input line 399.
+(pdftex.def)             Requested size: 398.35649pt x 99.58873pt.
+
+<SendPost.jpg, id=362, 514.92375pt x 342.5297pt>
+File: SendPost.jpg Graphic file (type jpg)
+ <use SendPost.jpg>
+Package pdftex.def Info: SendPost.jpg used on input line 407.
+(pdftex.def)             Requested size: 455.2557pt x 284.55045pt.
+ [28
+
+ <./StartServer.jpg> <./ReadRequest.jpg>] [29 <./Dictionary.jpg> <./SendPost.jp
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 411--413
+
+ []
+
+<SubFase1.jpg, id=375, 769.37437pt x 164.86594pt>
+File: SubFase1.jpg Graphic file (type jpg)
+ <use SubFase1.jpg>
+Package pdftex.def Info: SubFase1.jpg used on input line 416.
+(pdftex.def)             Requested size: 483.71056pt x 113.81294pt.
+
+Overfull \hbox (28.46645pt too wide) in paragraph at lines 416--417
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 419--420
+
+ []
+
+<SubFase2.jpg, id=376, 920.68968pt x 121.95563pt>
+File: SubFase2.jpg Graphic file (type jpg)
+ <use SubFase2.jpg>
+Package pdftex.def Info: SubFase2.jpg used on input line 423.
+(pdftex.def)             Requested size: 483.7065pt x 113.81204pt.
+
+Overfull \hbox (28.46239pt too wide) in paragraph at lines 423--424
+ [][] 
+ []
+
+<InputDictionary.jpg, id=377, 536.0025pt x 479.54156pt>
+File: InputDictionary.jpg Graphic file (type jpg)
+
+<use InputDictionary.jpg>
+Package pdftex.def Info: InputDictionary.jpg used on input line 431.
+(pdftex.def)             Requested size: 369.88301pt x 426.79796pt.
+ [30
+
+ <./SubFase1.jpg> <./SubFase2.jpg>] [31 <./InputDictionary.jpg>] <ControlloInpu
+t.jpg, id=390, 1046.40938pt x 216.81pt>
+File: ControlloInput.jpg Graphic file (type jpg)
+
+<use ControlloInput.jpg>
+Package pdftex.def Info: ControlloInput.jpg used on input line 441.
+(pdftex.def)             Requested size: 483.68533pt x 170.72554pt.
+
+Overfull \hbox (28.44122pt too wide) in paragraph at lines 441--442
+ [][] 
+ []
+
+<PossibiliFeedback.jpg, id=391, 1166.10657pt x 240.14719pt>
+File: PossibiliFeedback.jpg Graphic file (type jpg)
+
+<use PossibiliFeedback.jpg>
+Package pdftex.def Info: PossibiliFeedback.jpg used on input line 450.
+(pdftex.def)             Requested size: 483.6939pt x 170.7182pt.
+
+Overfull \hbox (28.44978pt too wide) in paragraph at lines 450--451
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 454--455
+
+ []
+
+<FeedbackManager.jpg, id=392, 900.36375pt x 286.82156pt>
+File: FeedbackManager.jpg Graphic file (type jpg)
+
+<use FeedbackManager.jpg>
+Package pdftex.def Info: FeedbackManager.jpg used on input line 458.
+(pdftex.def)             Requested size: 483.70253pt x 199.17189pt.
+
+Overfull \hbox (28.45842pt too wide) in paragraph at lines 458--459
+ [][] 
+ []
+
+[32
+
+ <./ControlloInput.jpg> <./PossibiliFeedback.jpg>] [33 <./FeedbackManager.jpg>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--470
+
+ []
+
+<Website.jpg, id=404, 1444.64719pt x 779.16093pt>
+File: Website.jpg Graphic file (type jpg)
+ <use Website.jpg>
+Package pdftex.def Info: Website.jpg used on input line 473.
+(pdftex.def)             Requested size: 455.24263pt x 341.42896pt.
+ [34
+
+ <./Website.jpg>] [35
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 378.
- [29
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+ [36
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 378.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 485.
  (AUI_project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 378.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 378.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 485.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 485.
 Package rerunfilecheck Info: File `AUI_project.out' has not changed.
-(rerunfilecheck)             Checksum: 9D0A2C81EF494660D8A2589B5B4D7627;2481.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 378.
+(rerunfilecheck)             Checksum: 41FDCDE71CA1CFB91A2F71345ED53328;2638.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
  ) 
 Here is how much of TeX's memory you used:
- 9188 strings out of 493312
- 136662 string characters out of 3138898
- 244900 words of memory out of 3000000
- 12533 multiletter control sequences out of 15000+200000
+ 9256 strings out of 493323
+ 137153 string characters out of 3139056
+ 246608 words of memory out of 3000000
+ 12557 multiletter control sequences out of 15000+200000
  8848 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,14n,43p,1585b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -881,9 +1028,9 @@ ts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/p
 ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmti10.pfb>
-Output written on AUI_project.pdf (29 pages, 257302 bytes).
+Output written on AUI_project.pdf (36 pages, 1826375 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
- 99 named destinations out of 1000 (max. 500000)
- 294 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 472 PDF objects out of 1000 (max. 8388607)
+ 123 named destinations out of 1000 (max. 500000)
+ 385 words of extra memory for PDF output out of 10000 (max. 10000000)
 

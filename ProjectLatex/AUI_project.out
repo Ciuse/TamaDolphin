@@ -29,8 +29,10 @@
 \BOOKMARK [3][-]{subsubsection.5.3.3}{Exchange of technologies}{subsection.5.3}% 29
 \BOOKMARK [1][-]{section.6}{Implementation}{}% 30
 \BOOKMARK [2][-]{subsection.6.1}{High-level Diagram}{section.6}% 31
-\BOOKMARK [1][-]{section.7}{SW Architecture}{}% 32
-\BOOKMARK [2][-]{subsection.7.1}{Mobile device}{section.7}% 33
-\BOOKMARK [2][-]{subsection.7.2}{Website}{section.7}% 34
-\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 35
-\BOOKMARK [1][-]{section.9}{Future work}{}% 36
+\BOOKMARK [2][-]{subsection.6.2}{UML}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.3}{Deployment Diagram}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.4}{SW Architecture}{section.6}% 34
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Mobile device}{subsection.6.4}% 35
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Website}{subsection.6.4}% 36
+\BOOKMARK [1][-]{section.7}{Critical reflection on our work}{}% 37
+\BOOKMARK [1][-]{section.8}{Future work}{}% 38

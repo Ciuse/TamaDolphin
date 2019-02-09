@@ -334,13 +334,37 @@ The exchange of technologies would give children a greater identification, as ex
 Virtual reality would help the child to focus on a given situation without having distractions from the outside world while the child with the smart object will have to deal with external stimuli from which he will not have to be distracted by maintaining a high concentration on play and communication with the other child.
 \section{Implementation}
 \subsection{High-level Diagram}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=10cm,width=13cm]{HWarchitecture.jpg}
+\end{figure}
+
 The project is characterized by an architecture that allows interaction between the 3 different systems: the web client, the smart object created with Arduino and the VR application that runs on a mobile device.
 Communication between the three systems is allowed thanks to a WiFi connection and the assignment of a known IP address to the various components, thus allowing communication. 
 Communication between the various components is performed via http post requests.
-The smartphone is the main server that handles the requests of both the website and the dolphin Sam. The main server then has the task of taking incoming http requests and according to their origin manages them in the appropriate way through a dictionary. In addition, the smartphone in turn communicates with the server of the dolphin Sam through http post requests that allow you to manage the various physical components of Sam as the setting of LEDs, sounds or mouth motors. 
-\section{SW Architecture} 
+The smartphone is the main server that handles the requests of both the website and the dolphin Sam. The main server then has the task of taking incoming http requests and according to their origin manages them in the appropriate way through a dictionary. In addition, the smartphone in turn communicates with the server of the dolphin Sam through http post requests that allow you to manage the various physical components of Sam as the setting of LEDs, sounds or mouth motors.
+\clearpage
+
+\subsection{UML}
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[height=22cm,width=16cm]{UML.jpg}
+\end{figure}
+
+\clearpage
+\subsection{Deployment Diagram}
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[height=13cm,width=16cm]{DeploymentDiagram1.jpg}
+\end{figure}
+
+\clearpage
+\subsection{SW Architecture} 
 Tamadolphin is a system that includes three connected devices. At the software level, a code has been created that is able to manage and command the various elements by putting them in communication with each other. This section shows the architecture of the code on the mobile application and on the website. 
-\subsection {Mobile device}
+\subsubsection {Mobile device}
 The main code of our project has been realized using the graphic engine Unity, which uses scripts in C\# language.\\
 The scripts are divided into \underline{Fourth Macro Parts:}
 \begin{itemize}[•]
@@ -348,25 +372,108 @@ The scripts are divided into \underline{Fourth Macro Parts:}
 Tamadolphin, as already mentioned, is an application that exploits the technology of virtual reality, which aims to immerse the user in a fully artificial digital environment.
 The aim is to isolate the user thanks to a Head MountedDisplays(HMDs) from those that may be the stimuli of the outside world and to allow him to better concentrate in what are the elements and demands of the game.
 To allow the user to interact with the game using only the movement of the head have been used Google API for the VR. The Google API provides various scripts that simulate a viewfinder in the virtual game; the viewfinder when it passes over an object with which the user can interact will grow and after a few seconds in which the user focuses his attention on the element in question, there will be significant changes within the virtual world.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.8cm,width=16cm]{VrMirino.jpg}
+\end{figure}
+\clearpage
+
 \item \textbf{Network Management}\\
 The logic of networking has been developed using scripts in C\# language, which are always executed within the Unity engine.
-The script that contains the main logic is "ServerHttp.cs". When the application is started the script instantiates a HttpListener that takes care of all the requests that occur within the local network addressed to port "2601". The listener is able to manage the http requests coming from the website and from the Sam dolphin in a different way thanks to a Dictionary that distinguishes the requests that come from different IP addresses, in this way we can distinguish the values that arrive from the Sam dolphin from those of the website.
+The script that contains the main logic is "ServerHttp.cs". When the application is started the script instantiates a HttpListener that takes care of all the requests that occur within the local network addressed to port "2601". \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=16cm]{StartServer.jpg}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=8cm,width=16cm]{ReadRequest.jpg}
+\end{figure}
+The listener is able to manage the http requests coming from the website and from the Sam dolphin in a different way thanks to a Dictionary that distinguishes the requests that come from different IP addresses, in this way we can distinguish the values that arrive from the Sam dolphin from those of the website.\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=3.5cm,width=14cm]{Dictionary.jpg}
+\end{figure}
+
+
 The other script useful for Networking is "HttpPostRequest.cs" which allows you to create a POST request containing a Json string with the various changes to be made to the dolphin SAM and the Ip address of the device that generates it. In this way our game is able to modify also the state of the Sam puppet. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=10cm,width=16cm]{SendPost.jpg}
+\end{figure}
+\clearpage
+
 \item \textbf{Game Logic Management}\\
-Our game is currently characterized by phases in which the environment and the user's task change. To allow the game to recognize the phase in which the user is, a special variable has been created within the class "GameEventManager.cs" that indicates the time of the game. An interesting aspect is the fact that each phase of the game is actually characterized by two sub phases. In the first subphase it is up to the user of the VR to make his choice (which input, however, is inserted into our system by the therapist who will have to press a button on his website).  While in the second sub phase will be the child who plays with the dolphin Sam to make his choice.
+Our game is currently characterized by phases in which the environment and the user's task change. To allow the game to recognize the phase in which the user is, a special variable has been created within the class "GameEventManager.cs" that indicates the phase of the game. An interesting aspect is the fact that each phase of the game is actually characterized by two sub phases. In the first subphase it is up to the user of the VR to make his choice (which input, however, is inserted into our system by the therapist who will have to press a button on his website).\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4cm,width=17cm]{SubFase1.jpg}
+\end{figure}
+
+While in the second sub phase will be the child who plays with the dolphin Sam to make his choice.\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4cm,width=17cm]{SubFase2.jpg}
+\end{figure}
+
 The other fundamental part of GameLogic is the management of the choices (input) that users make. In the class "InputState.cs" the inputs are saved and then decoded by two dictionaries because one input corresponds to the id of the card read and the other to a button pressed on the website and therefore normally would not be comparable. Once translated, they are compared with what the game expects in order to go ahead and show the various feedbacks.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=15cm,width=13cm]{InputDictionary.jpg}
+\end{figure}
+\clearpage
+
 \item \textbf{Feedback Management}\\
 Feedback management is the main part of our game, where both users of our game will receive appropriate feedback based on the choices they have made.
-There are many possible outputs and they differ depending on the stage of the game you are in. The control of what to show users is only done after both players have been chosen. The code allows users to change their choice until both players have made the correct choice for the game.
+There are many possible outputs and they differ depending on the stage of the game you are in.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6cm,width=17cm]{ControlloInput.jpg}
+\end{figure}
+
+The control of what to show users is only done after both players have been chosen. The code allows users to change their choice until both players have made the correct choice for the game.
 The game will in any case show appropriate feedback based on the values that will assume both inputs, whether they are right or wrong and whether they coincide or not.
-The control of the input values is done in the "GameEventManager.cs" class but then the actual function that manages the feedback according to the various cases is written in the "FeedbackManager.cs". Mainly a feedback will make objects appear or disappear in the scene of the game and send Sam a Post containing the command that the smart object must perform (setting led lights, sound reproduction).
+The control of the input values is done in the "GameEventManager.cs" class
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6cm,width=17cm]{PossibiliFeedback.jpg}
+\end{figure}
+
+
+but then the actual function that manages the feedback according to the various cases is written in the "FeedbackManager.cs". Mainly a feedback will make objects appear or disappear in the scene of the game and send Sam a Post containing the command that the smart object must perform (setting led lights, sound reproduction). \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=7cm,width=17cm]{FeedbackManager.jpg}
+\end{figure}
+
 \end{itemize}
-\subsection{Website}
+\clearpage
+
+\subsubsection{Website}
 The web page is the tool with which the therapist translates what the child expresses in words into an input for the system.
 We decided to create a web page instead of an application because it is more convenient to use and does not require any kind of installation, except that of a simple browser. The web page has been developed following the Responsive Design that defines the creation of sites that can adapt graphically to the device on which they are displayed.
 The page structure has been developed through the HTML language (HyperText Markup Language) while the graphics management is done with CSS (Cascading Style Sheets) style sheets. The Responsive Design was introduced using the Bootstrap tool in version 4, thanks to which you can divide the web page into columns that adapt to the size of the device based on the parameters entered.
 JS and Ajax have been used to manage the buttons and send the POST messages.
-There is also a box where you can change the Ip address of the device on which the game is run and to which the POST requests must arrive.
+There is also a box where you can change the Ip address of the device on which the game is run and to which the POST requests must arrive. \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=12cm,width=16cm]{Website.jpg}
+\end{figure}
+
+
 \section{Critical reflection on our work}
 Realizing this project was a great challenge for us because neither of us had a direct approach to the technologies used to realize it. We were completely unrelated to the world of virtual reality and smart objects. Our inexperience led us to do a thorough research both on the two technologies with their possible interactions and on finding an original idea to develop, which could be used in the context of disabled children. Among the main challenges of "TamaDolphin" there were those concerning the creation of the server in Unity (and its management of client-server communications between the dolphin Sam and the game in Unity), the creation of 3D models (using Blender software) and the management of Cross-Domain Security policies typical of Web Applications. One of the main challenges we encountered was game logic. It was very difficult to think about how to structure the game in its phases because making two disabled children interact through two different technologies is almost impossible. The solution we found to this problem was the introduction of verbal communication which has become the backbone of our game. In order to make verbal communication the main part of an interactive game with disabled children, it was necessary to introduce the figure of the therapist. The therapist is therefore responsible for encouraging  communication between children.
 \section{Future work}

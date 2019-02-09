@@ -30,8 +30,10 @@
 \contentsline {subsubsection}{\numberline {5.3.3}Exchange of technologies}{23}{subsubsection.5.3.3}
 \contentsline {section}{\numberline {6}Implementation}{24}{section.6}
 \contentsline {subsection}{\numberline {6.1}High-level Diagram}{24}{subsection.6.1}
-\contentsline {section}{\numberline {7}SW Architecture}{25}{section.7}
-\contentsline {subsection}{\numberline {7.1}Mobile device}{25}{subsection.7.1}
-\contentsline {subsection}{\numberline {7.2}Website}{26}{subsection.7.2}
-\contentsline {section}{\numberline {8}Critical reflection on our work}{28}{section.8}
-\contentsline {section}{\numberline {9}Future work}{29}{section.9}
+\contentsline {subsection}{\numberline {6.2}UML}{25}{subsection.6.2}
+\contentsline {subsection}{\numberline {6.3}Deployment Diagram}{26}{subsection.6.3}
+\contentsline {subsection}{\numberline {6.4}SW Architecture}{27}{subsection.6.4}
+\contentsline {subsubsection}{\numberline {6.4.1}Mobile device}{27}{subsubsection.6.4.1}
+\contentsline {subsubsection}{\numberline {6.4.2}Website}{34}{subsubsection.6.4.2}
+\contentsline {section}{\numberline {7}Critical reflection on our work}{35}{section.7}
+\contentsline {section}{\numberline {8}Future work}{36}{section.8}
