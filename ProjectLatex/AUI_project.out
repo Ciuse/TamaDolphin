@@ -20,19 +20,20 @@
 \BOOKMARK [2][-]{subsection.4.3}{Scenarios}{section.4}% 20
 \BOOKMARK [1][-]{section.5}{Solution - Game Logic}{}% 21
 \BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.2}{Feedback Management}{section.5}% 23
+\BOOKMARK [2][-]{subsection.5.2}{Input and Feedback Management}{section.5}% 23
 \BOOKMARK [3][-]{subsubsection.5.2.1}{Feedback of the First Round Phase}{subsection.5.2}% 24
 \BOOKMARK [3][-]{subsubsection.5.2.2}{Feedback of the Second Round Phase}{subsection.5.2}% 25
-\BOOKMARK [2][-]{subsection.5.3}{Rounds Game Management}{section.5}% 26
-\BOOKMARK [3][-]{subsubsection.5.3.1}{Round-based division}{subsection.5.3}% 27
-\BOOKMARK [3][-]{subsubsection.5.3.2}{Two Phases of each Round}{subsection.5.3}% 28
-\BOOKMARK [3][-]{subsubsection.5.3.3}{Exchange of technologies}{subsection.5.3}% 29
-\BOOKMARK [1][-]{section.6}{Implementation}{}% 30
-\BOOKMARK [2][-]{subsection.6.1}{High-level Diagram}{section.6}% 31
-\BOOKMARK [2][-]{subsection.6.2}{UML}{section.6}% 32
-\BOOKMARK [2][-]{subsection.6.3}{Deployment Diagram}{section.6}% 33
-\BOOKMARK [2][-]{subsection.6.4}{SW Architecture}{section.6}% 34
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Mobile device}{subsection.6.4}% 35
-\BOOKMARK [3][-]{subsubsection.6.4.2}{Website}{subsection.6.4}% 36
-\BOOKMARK [1][-]{section.7}{Critical reflection on our work}{}% 37
-\BOOKMARK [1][-]{section.8}{Future work}{}% 38
+\BOOKMARK [2][-]{subsection.5.3}{Representation of the Need}{section.5}% 26
+\BOOKMARK [2][-]{subsection.5.4}{Rounds Game Management}{section.5}% 27
+\BOOKMARK [3][-]{subsubsection.5.4.1}{Round-based division}{subsection.5.4}% 28
+\BOOKMARK [3][-]{subsubsection.5.4.2}{Two Phases of each Round}{subsection.5.4}% 29
+\BOOKMARK [3][-]{subsubsection.5.4.3}{Exchange of technologies}{subsection.5.4}% 30
+\BOOKMARK [1][-]{section.6}{Implementation}{}% 31
+\BOOKMARK [2][-]{subsection.6.1}{High-level Diagram}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.2}{UML}{section.6}% 33
+\BOOKMARK [2][-]{subsection.6.3}{Deployment Diagram}{section.6}% 34
+\BOOKMARK [2][-]{subsection.6.4}{SW Architecture}{section.6}% 35
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Mobile device}{subsection.6.4}% 36
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Website}{subsection.6.4}% 37
+\BOOKMARK [1][-]{section.7}{Critical reflection on our work}{}% 38
+\BOOKMARK [1][-]{section.8}{Future work}{}% 39

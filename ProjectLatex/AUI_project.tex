@@ -234,6 +234,13 @@ VR can be particularly useful for people with cognitive and perceptual disabilit
 
 \section{Solution – UX Design}
 \subsection{Introduction}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=10cm]{HighLevel.jpg}
+\end{figure}
+
+
 Tamadolphin is a very innovative video game that allows children to collaborate using two different technologies that offer two very different user experiences. The key point of the user experience is collaboration, which is possible even though the two players use two completely different technologies. This aspect is very interesting because the goal is to encourage players to tell in more detail their experience so that the other player can also draw useful information to compare with his experience in order to make a more complete and reasoned choice, and the therapist can intervene at any time of the game to correct and stimulate collaboration.
 \subsection{User experience:}
 The user experience of our system is divided into three categories, the one concerning the use of VR, the one concerning the smart object and the one concerning the website. 
@@ -285,24 +292,58 @@ Alessandro chooses the meat basket and the therapist will click on the button co
 \subsection{Introduction}
 We have implemented TamaDolphin as a tool to be used during a therapeutic session. It consists of an activity that therapists can propose to autistic children to help them improve their communication skills and social interaction. One of the main elements on which our game is based is the \textbf{Feedback Management } that allows therapists to have support during the phase of verbal communication. 
 The introduction of the feedback was the trick with which we were able to solve situations of misunderstanding that could arise during the communication phase. To better manage the verbal communication part, the game was designed to be \textbf{played in Rounds.}
-\subsection{Feedback Management}
-The management of feedback is one of the special features of our project. We thought about how to manage every possible combination of input in the two phases of the game, that of recognizing need and that of satisfying it.  We decided to use purely visual feedback for the virtual world using symbols of strong visual impact while for the SAM smart object we use both visual and audio feedback. The use of feedback allowed us to better manage moments of misunderstanding that could arise during the communication phase. For therapists it is very important to be able to work with disabled children in a situation where they can make mistakes as it can be a starting point for reflection on their actions. It is precisely during a situation in which children can make mistakes that the therapist can have more ideas for her work in order to better conduct a "therapeutic session". Feedback is therefore the device by which the therapist can make the children interact in order to make them reflect on their mistakes and the situation in front of them.
+\subsection{Input and Feedback Management}
+The management of input and feedback is one of the main features of our project. We thought about how to manage every possible combination of input in the two phases of the game, that of recognizing need and that of satisfying it.  We decided to use purely visual feedback for the virtual world using symbols of strong visual impact while for the SAM smart object we use both visual and audio feedback. The use of feedback allowed us to better manage moments of misunderstanding that could arise during the communication phase. For therapists it is very important to be able to work with disabled children in a situation where they can make mistakes as it can be a starting point for reflection on their actions. It is precisely during a situation in which children can make mistakes that the therapist can have more ideas for her work in order to better conduct a "therapeutic session". Feedback is therefore the device by which the therapist can make the children interact in order to make them reflect on their mistakes and the situation in front of them.
+
+\clearpage
 \subsubsection{Feedback of the First Round Phase}
-In the first phase (recognition of the need) there can be 3 possible combinations of inputs managed differently depending on the technology used: VR or Smart Object.
+In the first phase (recognition of the need) there can be 3 possible combinations of inputs based on what the children choose, managed differently depending on the technology used: VR or Smart Object.
+
+ 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=10cm]{Feedback1.png}
+\end{figure}
+
 \begin{itemize}[•]
 \item \textbf{VR technology:}\\
-In virtual reality, for example, we used red xs to indicate a combination of wrong inputs or question marks to indicate an indefinite situation in which one of the two children made the right choice and the other the wrong one. The positive case instead leads to the beginning of the second phase of the game through the appearance of some important elements such as the fork, the knife and the bib.
+In virtual reality, for example, we used red x to indicate a combination of wrong inputs or question marks to indicate an indefinite situation in which one of the two children made the right choice and the other the wrong one. The positive case instead leads to the beginning of the second phase of the game through the appearance of some important elements such as the fork, the knife and the bib.
 \item \textbf{Smart Object technology:}\\
 As for the SAM smart object, the feedback is both visual and auditory. We selected sounds that could better reflect/represent the success or failure of the action of the two children. We associated to a situation of total failure a sound that reproduced a cry accompanied by red leds; to a successful situation a sound that reproduced a feeling of happiness accompanied by green leds and to an indefinite situation a sound that expressed ambiguity accompanied by gray leds.
 \end{itemize}
+
+
+\clearpage
 \subsubsection{Feedback of the Second Round Phase}
-In the second phase (the satisfaction of the need) there can be other 3 possible combinations of inputs managed in different ways depending on the technology used: VR or Smart Object.
+In the second phase (the satisfaction of the need) there can be other 3 possible combinations of inputs managed based on what the children choose, in different ways depending on the technology used: VR or Smart Object.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.5cm,width=13cm]{Feedback2.png}
+\end{figure}
+
 \begin{itemize}[•]
 \item \textbf{VR technology:}\\
 In order to better represent in virtual reality the case in which both children chose the same right food to give to the dolphin, we decided to use as visual feedback, an animation created with the blender software in which the dolphin actually ate the fish. In case the two children choose the same food but wrong, in addition to appearing a red x near the dolphin, the child with the VR would see the food move to the basket. In an indefinite situation where the two children choose two different but wrong foods, we decided to make question marks appear as feedback.
 \item \textbf{Smart Object technology:}\\
 Feedback on the smart object is both visual and auditory. In case both children choose the same right food, we turned on all the dolphin's LEDs by green and selected a sound that could represent the scene of the dolphin eating. The sound chosen reproduces the sound of chewing so that it indicates that the dolphin is eating the fish.   In case the two children choose the same but wrong food, we selected a sound that reproduces a crying accompanied by red leds; In an indefinite situation, instead, in which the two children choose two different but wrong foods, we decided on a sound that expresses ambiguity accompanied by gray leds.
 \end{itemize}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=20cm,width=15cm]{FeedbackUX1.png}
+\end{figure}
+
+\clearpage
+
+\subsection{Representation of the Need}
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.5cm,width=14cm]{FeedbackUX2.png}
+\end{figure}
+
 \subsection{Rounds Game Management}
 The game is \textbf{designed to be Played in Rounds}. Currently, the game has only one round in which the need for the dolphin is the "hunger" and it  will initially appear in the virtual world. In a future implementation we will think about complementing the game in its entirety. 
 Each round will correspond to a different need of the dolphin that will initially appear only on one of the two technologies. If in the first round the need appears on the VR, in the second round it will appear on the smart object. Each round is in turn divided into \textbf{Two Phases}: the first concerns the recognition of the current need and the second its satisfaction. Once all rounds are over, the therapist may decide to repeat the game from the beginning by \textbf{Exchanging the Technologies used by the children}, to offer them a more complete experience.
@@ -314,7 +355,7 @@ The first one will be to recognize the need of the dolphin in both the virtual a
 \begin{enumerate}
 \item  \textbf{First Round Phase: Both the users try to understand the dolphin need}
 \begin{itemize}[•]
-\item The first child through the VR will see different suggestions that will appear depending on the needs of the dolphin, (we used mainly a cloud of thoughts: for example if the dolphin was hungry the cloud will contain cutlery, if he was sleepy a bed and if he wanted to play, colored circles through which to jump, etc ....) and a 3D model of the dolphin that will behave differently depending on the situation. For example, if the dolphin is hungry, it will open its mouth to indicate its desire for food.
+\item The first child through the VR will see different suggestions that will appear depending on the needs of the dolphin, (we used mainly a cloud of thoughts: for example if the dolphin was hungry the cloud will contain cutlery, if he was sleepy a bed and if he wanted to play, coloured circles through which to jump, etc ....) and a 3D model of the dolphin that will behave differently depending on the situation. For example, if the dolphin is hungry, it will open its mouth to indicate its desire for food.
 \item Once the child has understood the need for the dolphin, thanks to the various suggestions that have appeared in the virtual world, he will have to communicate it to his playmate( \textbf{first moment devoted to verbal communication}). In turn, the other child will have to observe the dolphin puppet which will show the same need as the virtual dolphin. On the basis of what is communicated to him and what he observes, the second child will have to choose, among the cards available, the one that in his opinion will best represent the need of the dolphin. 
 Once both children have given their interpretation on the need of the dolphin, in case of error, the therapist will encourage them to communicate with each other to understand it and to fix it( \textbf{second moment devoted to verbal communication}).
 \end{itemize}
@@ -338,8 +379,7 @@ Virtual reality would help the child to focus on a given situation without havin
 \begin{figure}[ht!]
 \centering
 \includegraphics[height=10cm,width=13cm]{HWarchitecture.jpg}
-\end{figure}
-
+\end{figure}   
 The project is characterized by an architecture that allows interaction between the 3 different systems: the web client, the smart object created with Arduino and the VR application that runs on a mobile device.
 Communication between the three systems is allowed thanks to a WiFi connection and the assignment of a known IP address to the various components, thus allowing communication. 
 Communication between the various components is performed via http post requests.
