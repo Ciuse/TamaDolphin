@@ -7,7 +7,7 @@ public class DolphinInteraction : MonoBehaviour
 
     public GameObject cloud;
     public GameObject planeCloud;
-    public GameObject textMeshPro;
+    public GameObject planeCloud2;
     public GameObject table;
     public GameObject bavaglio;
     public bool inizioSuggerimento;
@@ -22,7 +22,7 @@ public class DolphinInteraction : MonoBehaviour
         inizioSuggerimento = false;
         needAdvicesList.Add(planeCloud);
         needAdvicesList.Add(table);
-        needAdvicesList.Add(textMeshPro);
+        needAdvicesList.Add(planeCloud2);
         foreach (GameObject item in needAdvicesList)
         {
             item.SetActive(false);
@@ -60,7 +60,7 @@ public class DolphinInteraction : MonoBehaviour
             {
                 item.GetComponent<MovementTable>().enabled = false;
             }
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(5f);
             advicesActivatedList.Add(item);
         }
     }
@@ -93,7 +93,7 @@ public class DolphinInteraction : MonoBehaviour
 
     private IEnumerator CloudOccur()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
 
         cloud.SetActive(true);
         Suggerimenti();

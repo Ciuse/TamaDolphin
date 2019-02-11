@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.11)  11 FEB 2019 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.11)  11 FEB 2019 22:21
 entering extended mode
 **./AUI_project.tex
 (AUI_project.tex
@@ -763,307 +763,316 @@ Package pdftex.def Info: logopoli.jpg used on input line 40.
 (pdftex.def)             Requested size: 165.0283pt x 165.02444pt.
  [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
 
- <./logopoli.jpg>] (AUI_project.toc
+ <./logopoli.jpg>]
+<Team.jpg, id=194, 3208.98875pt x 4433.56375pt>
+File: Team.jpg Graphic file (type jpg)
+ <use Team.jpg>
+Package pdftex.def Info: Team.jpg used on input line 63.
+(pdftex.def)             Requested size: 412.5315pt x 583.28389pt.
+ [2
+
+ <./Team.jpg>] (AUI_project.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <12> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 4.
+ [3
 
-[2
 
 ])
 \tf@toc=\write4
 \openout4 = `AUI_project.toc'.
 
- [3] [4
+ [4] [5
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 80.
- ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 80.
- [5
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+ [6
 
-]
-[6] [7
+] [7] [8
 
-] [8] [9
+] [9]
+[10
 
-] [10]
+] [11]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 191.
+(Font)              <7> on input line 197.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 191.
+(Font)              <5> on input line 197.
 
-Underfull \hbox (badness 1472) in paragraph at lines 196--196
+Underfull \hbox (badness 1472) in paragraph at lines 202--202
 \OT1/cmr/m/n/12 rather than us-ing mouses or game
  []
 
 
-Underfull \hbox (badness 4279) in paragraph at lines 198--198
+Underfull \hbox (badness 4279) in paragraph at lines 204--204
 \OT1/cmr/m/n/12 two dif-fer-ent tech-no-log-i-cal re-al-i-ties
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--201
+Underfull \hbox (badness 10000) in paragraph at lines 197--207
 
  []
 
-[11]
-Overfull \hbox (0.38173pt too wide) in paragraph at lines 202--214
+[12]
+Overfull \hbox (0.38173pt too wide) in paragraph at lines 208--220
 \OT1/cmr/m/n/12 This re-search aims to help chil-dren with neu-ro-log-i-cal de-
 vel-op-men-tal dis-or-ders (NDD)
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 202--214
-
- []
-
-[12
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 215--224
+Underfull \hbox (badness 10000) in paragraph at lines 208--220
 
  []
 
 [13
 
-] <HighLevel.jpg, id=311, 380.622pt x 172.0026pt>
-File: HighLevel.jpg Graphic file (type jpg)
- <use HighLevel.jpg>
-Package pdftex.def Info: HighLevel.jpg used on input line 232.
-(pdftex.def)             Requested size: 284.54234pt x 142.26344pt.
+]
+Underfull \hbox (badness 10000) in paragraph at lines 221--230
+
+ []
 
 [14
 
- <./HighLevel.jpg>] [15] [16] [17] [18] [19] [20
+] <HighLevel.jpg, id=317, 380.622pt x 172.0026pt>
+File: HighLevel.jpg Graphic file (type jpg)
+ <use HighLevel.jpg>
+Package pdftex.def Info: HighLevel.jpg used on input line 238.
+(pdftex.def)             Requested size: 284.54234pt x 142.26344pt.
+
+[15
+
+ <./HighLevel.jpg>] [16] [17] [18] [19] [20] [21
 
 ]
-<Feedback1.png, id=351, 289.08pt x 142.6128pt>
+<Feedback1.png, id=357, 289.08pt x 142.6128pt>
 File: Feedback1.png Graphic file (type png)
  <use Feedback1.png>
-Package pdftex.def Info: Feedback1.png used on input line 297.
+Package pdftex.def Info: Feedback1.png used on input line 303.
 (pdftex.def)             Requested size: 284.54036pt x 142.26642pt.
- [21
+ [22
 
- <./Feedback1.png>] <Feedback2.png, id=358, 382.5492pt x 167.6664pt>
+ <./Feedback1.png>] <Feedback2.png, id=364, 382.5492pt x 167.6664pt>
 File: Feedback2.png Graphic file (type png)
 
 <use Feedback2.png>
-Package pdftex.def Info: Feedback2.png used on input line 314.
+Package pdftex.def Info: Feedback2.png used on input line 320.
 (pdftex.def)             Requested size: 369.89897pt x 156.49864pt.
- <FeedbackUX1.png, id=359, 492.8814pt x 656.2116pt>
+ <FeedbackUX1.png, id=365, 492.8814pt x 656.2116pt>
 File: FeedbackUX1.png Graphic file (type png)
 
 <use FeedbackUX1.png>
-Package pdftex.def Info: FeedbackUX1.png used on input line 326.
+Package pdftex.def Info: FeedbackUX1.png used on input line 332.
 (pdftex.def)             Requested size: 426.7953pt x 569.06711pt.
- [22
+ [23
 
- <./Feedback2.png>] [23 <./FeedbackUX1.png>]
-<FeedbackUX2.png, id=372, 500.1084pt x 167.6664pt>
+ <./Feedback2.png>] [24 <./FeedbackUX1.png>]
+<FeedbackUX2.png, id=378, 500.1084pt x 167.6664pt>
 File: FeedbackUX2.png Graphic file (type png)
  <use FeedbackUX2.png>
-Package pdftex.def Info: FeedbackUX2.png used on input line 349.
+Package pdftex.def Info: FeedbackUX2.png used on input line 355.
 (pdftex.def)             Requested size: 426.79587pt x 170.72578pt.
 
-[24
+[25
 
-] [25 <./FeedbackUX2.png>] [26
+] [26 <./FeedbackUX2.png>] [27
 
-] [27]
-<HWarchitecture.jpg, id=398, 680.5425pt x 532.99126pt>
+] [28]
+<HWarchitecture.jpg, id=404, 680.5425pt x 532.99126pt>
 File: HWarchitecture.jpg Graphic file (type jpg)
 
 <use HWarchitecture.jpg>
-Package pdftex.def Info: HWarchitecture.jpg used on input line 379.
+Package pdftex.def Info: HWarchitecture.jpg used on input line 385.
 (pdftex.def)             Requested size: 369.88623pt x 284.53348pt.
- [28
-
- <./HWarchitecture.jpg>]
-<UML.jpg, id=404, 1429.34pt x 1681.28125pt>
-File: UML.jpg Graphic file (type jpg)
- <use UML.jpg>
-Package pdftex.def Info: UML.jpg used on input line 391.
-(pdftex.def)             Requested size: 455.23897pt x 625.96379pt.
  [29
 
+ <./HWarchitecture.jpg>]
+<UML.jpg, id=410, 1429.34pt x 1681.28125pt>
+File: UML.jpg Graphic file (type jpg)
+ <use UML.jpg>
+Package pdftex.def Info: UML.jpg used on input line 397.
+(pdftex.def)             Requested size: 455.23897pt x 625.96379pt.
+ [30
+
  <./UML.jpg>]
-<DeploymentDiagram1.jpg, id=410, 1045.9075pt x 716.6775pt>
+<DeploymentDiagram1.jpg, id=416, 1045.9075pt x 716.6775pt>
 File: DeploymentDiagram1.jpg Graphic file (type jpg)
 
 <use DeploymentDiagram1.jpg>
-Package pdftex.def Info: DeploymentDiagram1.jpg used on input line 399.
+Package pdftex.def Info: DeploymentDiagram1.jpg used on input line 405.
 (pdftex.def)             Requested size: 455.25336pt x 369.88588pt.
- [30
-
- <./DeploymentDiagram1.jpg>]
-<VrMirino.jpg, id=416, 337.26pt x 140.9265pt>
-File: VrMirino.jpg Graphic file (type jpg)
- <use VrMirino.jpg>
-Package pdftex.def Info: VrMirino.jpg used on input line 416.
-(pdftex.def)             Requested size: 455.25562pt x 165.02956pt.
  [31
 
- <./VrMirino.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 420--423
-
- []
-
-<StartServer.jpg, id=423, 501.37312pt x 136.25906pt>
-File: StartServer.jpg Graphic file (type jpg)
- <use StartServer.jpg>
-Package pdftex.def Info: StartServer.jpg used on input line 426.
-(pdftex.def)             Requested size: 455.26335pt x 142.27159pt.
-
-<ReadRequest.jpg, id=424, 614.295pt x 317.68687pt>
-File: ReadRequest.jpg Graphic file (type jpg)
- <use ReadRequest.jpg>
-Package pdftex.def Info: ReadRequest.jpg used on input line 431.
-(pdftex.def)             Requested size: 455.24606pt x 227.62912pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 433--434
-
- []
-
-<Dictionary.jpg, id=425, 398.99063pt x 93.34875pt>
-File: Dictionary.jpg Graphic file (type jpg)
- <use Dictionary.jpg>
-Package pdftex.def Info: Dictionary.jpg used on input line 437.
-(pdftex.def)             Requested size: 398.35649pt x 99.58873pt.
-
-<SendPost.jpg, id=426, 514.92375pt x 342.5297pt>
-File: SendPost.jpg Graphic file (type jpg)
- <use SendPost.jpg>
-Package pdftex.def Info: SendPost.jpg used on input line 445.
-(pdftex.def)             Requested size: 455.2557pt x 284.55045pt.
+ <./DeploymentDiagram1.jpg>]
+<VrMirino.jpg, id=423, 337.26pt x 140.9265pt>
+File: VrMirino.jpg Graphic file (type jpg)
+ <use VrMirino.jpg>
+Package pdftex.def Info: VrMirino.jpg used on input line 422.
+(pdftex.def)             Requested size: 455.25562pt x 165.02956pt.
  [32
 
- <./StartServer.jpg> <./ReadRequest.jpg>] [33 <./Dictionary.jpg> <./SendPost.jp
-g>]
-Underfull \hbox (badness 10000) in paragraph at lines 449--451
+ <./VrMirino.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 426--429
 
  []
 
-<SubFase1.jpg, id=439, 769.37437pt x 164.86594pt>
+<StartServer.jpg, id=429, 501.37312pt x 136.25906pt>
+File: StartServer.jpg Graphic file (type jpg)
+ <use StartServer.jpg>
+Package pdftex.def Info: StartServer.jpg used on input line 432.
+(pdftex.def)             Requested size: 455.26335pt x 142.27159pt.
+
+<ReadRequest.jpg, id=430, 614.295pt x 317.68687pt>
+File: ReadRequest.jpg Graphic file (type jpg)
+ <use ReadRequest.jpg>
+Package pdftex.def Info: ReadRequest.jpg used on input line 437.
+(pdftex.def)             Requested size: 455.24606pt x 227.62912pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 439--440
+
+ []
+
+<Dictionary.jpg, id=431, 398.99063pt x 93.34875pt>
+File: Dictionary.jpg Graphic file (type jpg)
+ <use Dictionary.jpg>
+Package pdftex.def Info: Dictionary.jpg used on input line 443.
+(pdftex.def)             Requested size: 398.35649pt x 99.58873pt.
+
+<SendPost.jpg, id=432, 514.92375pt x 342.5297pt>
+File: SendPost.jpg Graphic file (type jpg)
+ <use SendPost.jpg>
+Package pdftex.def Info: SendPost.jpg used on input line 451.
+(pdftex.def)             Requested size: 455.2557pt x 284.55045pt.
+ [33
+
+ <./StartServer.jpg> <./ReadRequest.jpg>] [34 <./Dictionary.jpg> <./SendPost.jp
+g>]
+Underfull \hbox (badness 10000) in paragraph at lines 455--457
+
+ []
+
+<SubFase1.jpg, id=445, 769.37437pt x 164.86594pt>
 File: SubFase1.jpg Graphic file (type jpg)
  <use SubFase1.jpg>
-Package pdftex.def Info: SubFase1.jpg used on input line 454.
+Package pdftex.def Info: SubFase1.jpg used on input line 460.
 (pdftex.def)             Requested size: 483.71056pt x 113.81294pt.
 
-Overfull \hbox (28.46645pt too wide) in paragraph at lines 454--455
+Overfull \hbox (28.46645pt too wide) in paragraph at lines 460--461
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 463--464
 
  []
 
-<SubFase2.jpg, id=440, 920.68968pt x 121.95563pt>
+<SubFase2.jpg, id=446, 920.68968pt x 121.95563pt>
 File: SubFase2.jpg Graphic file (type jpg)
  <use SubFase2.jpg>
-Package pdftex.def Info: SubFase2.jpg used on input line 461.
+Package pdftex.def Info: SubFase2.jpg used on input line 467.
 (pdftex.def)             Requested size: 483.7065pt x 113.81204pt.
 
-Overfull \hbox (28.46239pt too wide) in paragraph at lines 461--462
+Overfull \hbox (28.46239pt too wide) in paragraph at lines 467--468
  [][] 
  []
 
-<InputDictionary.jpg, id=441, 536.0025pt x 479.54156pt>
+<InputDictionary.jpg, id=447, 536.0025pt x 479.54156pt>
 File: InputDictionary.jpg Graphic file (type jpg)
 
 <use InputDictionary.jpg>
-Package pdftex.def Info: InputDictionary.jpg used on input line 469.
+Package pdftex.def Info: InputDictionary.jpg used on input line 475.
 (pdftex.def)             Requested size: 369.88301pt x 426.79796pt.
- [34
+ [35
 
- <./SubFase1.jpg> <./SubFase2.jpg>] [35 <./InputDictionary.jpg>] <ControlloInpu
-t.jpg, id=453, 1046.40938pt x 216.81pt>
+ <./SubFase1.jpg> <./SubFase2.jpg>] [36 <./InputDictionary.jpg>] <ControlloInpu
+t.jpg, id=459, 1046.40938pt x 216.81pt>
 File: ControlloInput.jpg Graphic file (type jpg)
 
 <use ControlloInput.jpg>
-Package pdftex.def Info: ControlloInput.jpg used on input line 479.
+Package pdftex.def Info: ControlloInput.jpg used on input line 485.
 (pdftex.def)             Requested size: 483.68533pt x 170.72554pt.
 
-Overfull \hbox (28.44122pt too wide) in paragraph at lines 479--480
+Overfull \hbox (28.44122pt too wide) in paragraph at lines 485--486
  [][] 
  []
 
-<PossibiliFeedback.jpg, id=454, 1166.10657pt x 240.14719pt>
+<PossibiliFeedback.jpg, id=460, 1166.10657pt x 240.14719pt>
 File: PossibiliFeedback.jpg Graphic file (type jpg)
 
 <use PossibiliFeedback.jpg>
-Package pdftex.def Info: PossibiliFeedback.jpg used on input line 488.
+Package pdftex.def Info: PossibiliFeedback.jpg used on input line 494.
 (pdftex.def)             Requested size: 483.6939pt x 170.7182pt.
 
-Overfull \hbox (28.44978pt too wide) in paragraph at lines 488--489
+Overfull \hbox (28.44978pt too wide) in paragraph at lines 494--495
  [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 492--493
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 
  []
 
-<FeedbackManager.jpg, id=455, 900.36375pt x 286.82156pt>
+<FeedbackManager.jpg, id=461, 900.36375pt x 286.82156pt>
 File: FeedbackManager.jpg Graphic file (type jpg)
 
 <use FeedbackManager.jpg>
-Package pdftex.def Info: FeedbackManager.jpg used on input line 496.
+Package pdftex.def Info: FeedbackManager.jpg used on input line 502.
 (pdftex.def)             Requested size: 483.70253pt x 199.17189pt.
 
-Overfull \hbox (28.45842pt too wide) in paragraph at lines 496--497
+Overfull \hbox (28.45842pt too wide) in paragraph at lines 502--503
  [][] 
  []
 
-[36
+[37
 
- <./ControlloInput.jpg> <./PossibiliFeedback.jpg>] [37 <./FeedbackManager.jpg>]
+ <./ControlloInput.jpg> <./PossibiliFeedback.jpg>] [38 <./FeedbackManager.jpg>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--508
+Underfull \hbox (badness 10000) in paragraph at lines 509--514
 
  []
 
-<Website.jpg, id=468, 1444.64719pt x 779.16093pt>
+<Website.jpg, id=474, 1444.64719pt x 779.16093pt>
 File: Website.jpg Graphic file (type jpg)
  <use Website.jpg>
-Package pdftex.def Info: Website.jpg used on input line 511.
+Package pdftex.def Info: Website.jpg used on input line 517.
 (pdftex.def)             Requested size: 455.24263pt x 341.42896pt.
- [38
+ [39
 
- <./Website.jpg>] [39
-
-] [40
+ <./Website.jpg>] [40
 
 ] [41
 
-]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 555.
- [42
+] [42
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 555.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 561.
+ [43
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 561.
  (AUI_project.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 555.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 555.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 561.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 561.
 Package rerunfilecheck Info: File `AUI_project.out' has not changed.
 (rerunfilecheck)             Checksum: 456FB02E171C04CB936BCDE71DD91C1C;3077.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 555.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 561.
  ) 
 Here is how much of TeX's memory you used:
- 9298 strings out of 493323
- 137816 string characters out of 3139056
+ 9305 strings out of 493323
+ 137899 string characters out of 3139056
  246612 words of memory out of 3000000
- 12573 multiletter control sequences out of 15000+200000
+ 12577 multiletter control sequences out of 15000+200000
  9195 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,43p,1585b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,11n,43p,1585b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Fi
 les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTe
@@ -1073,9 +1082,9 @@ ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.p
 fb>
-Output written on AUI_project.pdf (42 pages, 2038187 bytes).
+Output written on AUI_project.pdf (43 pages, 3019263 bytes).
 PDF statistics:
- 556 PDF objects out of 1000 (max. 8388607)
- 142 named destinations out of 1000 (max. 500000)
- 466 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 563 PDF objects out of 1000 (max. 8388607)
+ 144 named destinations out of 1000 (max. 500000)
+ 471 words of extra memory for PDF output out of 10000 (max. 10000000)
 
