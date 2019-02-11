@@ -1,0 +1,16 @@
+
+TAMADOLPHIN
+
+Per una persona autistica anche le operazioni più semplici diventano complicate. Oggi però grazie alla tecnologia è possibile stimolare maggiormente chi è affetto da autismo. Queste tecnologie possono essere usate per stimolare la socializzazione poiché ripropongono azioni e comportamenti che potrebbero essere generalizzati in contesti esterni. 
+Abbiamo deciso di realizzare un progetto che fosse in grado di stimolare i bambini disabili a migliorare le loro capacità comunicative e che potesse aiutarli a relazionarsi meglio tra loro. 
+Il nostro progetto è nato come una combinazione tra due diverse tecnologie : la realtà virtuale e lo smart object.
+TamaDolphin consiste in un gioco pensato appositamente per i bambini affetti da autismo che hanno problemi a comunicare e a relazionarsi con i propri coetanei. E' forse una delle prime volte che la combinazione tra realtà virtuale e smart object viene utilizzata per aiutare i bambini autistici. 
+TamaDolphin aiuta i ragazzi autistici a non focalizzarsi troppo su loro stessi ma ad imparare ad interpretare i bisogni altrui e ad analizzare situazioni a loro esterne.
+Il gioco che abbiamo realizzato ha come protagonisti due bambini che dovranno collaborare e comunicare tra loro per risolvere diversi minigiochi. 
+Il punto chiave del nostro progetto è migliorare la capacità comunicativa dei due bambini attraverso un gioco divertente che li stimoli a parlare e giocare insieme sotto la supervisione di un terapeuta. Il terapeuta avrà la responsabilità di supervisionare il gioco e di incoraggiare i bambini a confrontarsi soprattutto nelle fasi in cui i bambini possono incorrere in errori. 
+Abbiamo cercato di dare molta importanza alle fasi prettamente comunicative in cui i due bambini potessero sbagliare poichè questi momenti possono essere un punto di partenza per un'attività terapeutica concreta e approfondita. 
+Il gioco ha come protagonista un delfino che si presenterà sotto forma di modellino 3D nel mondo virtuale e di pupazzo nel mondo reale. Le due rappresentazioni del delfino mostreranno gli stessi bisogni attraverso feedback diversi in base alla tecnologia usata. 
+Il gioco consiste nel riconoscere un certo bisogno del delfino e di soddisfarlo attraverso una collaborazione attiva tra i due bambini. Un bambino userà il pupazzo delfino, mentre l'altro il VR.
+Per sviluppare il gioco intorno al tema della comunicazione, abbiamo pensato di onganizzarlo in più turni ognuno dei quali associato ad un bisogno preciso del delfino. Ogni turno di gioco è a sua volta diviso in due fasi principali: la prima consiste nell'individuare il bisogno del delfino(la fame) e la seconda che consiste nel soddisfarlo.
+Il bambino con il VR dovrà comunicare al suo compagno di gioco diversi compiti da svolgere. Una volta risolto il problema, uno avrà un feedback visivo attraverso il VR, mentre l'altro avrà un feedback audio-visivo attraverso lo smart object.
+Per dare più spazio e importanza alla comunicazione verbale tra i due bambini abbiamo deciso di creare in ogni fase del gioco un momento speciale in cui i bambini potessero interagire senza pressione e senza limiti di tempo.
