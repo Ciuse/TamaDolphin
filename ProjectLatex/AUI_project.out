@@ -1,44 +1,45 @@
-\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
-\BOOKMARK [2][-]{subsection.1.1}{Our idea: The TamaDolphin}{section.1}% 2
-\BOOKMARK [1][-]{section.2}{Target groups and User Need}{}% 3
-\BOOKMARK [2][-]{subsection.2.1}{Main Target Groups}{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.2}{Context and Needs addressed:}{section.2}% 5
-\BOOKMARK [2][-]{subsection.2.3}{Goals}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.4}{Requirements}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.5}{Constraints}{section.2}% 8
-\BOOKMARK [1][-]{section.3}{State of the art}{}% 9
-\BOOKMARK [2][-]{subsection.3.1}{Autistic children}{section.3}% 10
-\BOOKMARK [2][-]{subsection.3.2}{Therapeutic activities}{section.3}% 11
-\BOOKMARK [2][-]{subsection.3.3}{Relationship between technologies and autism}{section.3}% 12
-\BOOKMARK [2][-]{subsection.3.4}{Analysis of similar projects}{section.3}% 13
-\BOOKMARK [1][-]{section.4}{Solution \205 UX Design}{}% 14
-\BOOKMARK [2][-]{subsection.4.1}{Introduction}{section.4}% 15
-\BOOKMARK [2][-]{subsection.4.2}{User experience:}{section.4}% 16
-\BOOKMARK [3][-]{subsubsection.4.2.1}{VR User Experience}{subsection.4.2}% 17
-\BOOKMARK [3][-]{subsubsection.4.2.2}{Sam User Experience}{subsection.4.2}% 18
-\BOOKMARK [3][-]{subsubsection.4.2.3}{Therapist Experience}{subsection.4.2}% 19
-\BOOKMARK [2][-]{subsection.4.3}{Scenarios}{section.4}% 20
-\BOOKMARK [1][-]{section.5}{Solution - Game Logic}{}% 21
-\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 22
-\BOOKMARK [2][-]{subsection.5.2}{Input and Feedback Management}{section.5}% 23
-\BOOKMARK [3][-]{subsubsection.5.2.1}{Feedback of the First Round Phase}{subsection.5.2}% 24
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Feedback of the Second Round Phase}{subsection.5.2}% 25
-\BOOKMARK [2][-]{subsection.5.3}{Representation of the Need}{section.5}% 26
-\BOOKMARK [2][-]{subsection.5.4}{Representation of Food desire}{section.5}% 27
-\BOOKMARK [2][-]{subsection.5.5}{Rounds Game Management}{section.5}% 28
-\BOOKMARK [3][-]{subsubsection.5.5.1}{Round-based division}{subsection.5.5}% 29
-\BOOKMARK [3][-]{subsubsection.5.5.2}{Two Phases of each Round}{subsection.5.5}% 30
-\BOOKMARK [3][-]{subsubsection.5.5.3}{Exchange of technologies}{subsection.5.5}% 31
-\BOOKMARK [1][-]{section.6}{Implementation}{}% 32
-\BOOKMARK [2][-]{subsection.6.1}{High-level Diagram}{section.6}% 33
-\BOOKMARK [2][-]{subsection.6.2}{UML}{section.6}% 34
-\BOOKMARK [2][-]{subsection.6.3}{Deployment Diagram}{section.6}% 35
-\BOOKMARK [2][-]{subsection.6.4}{SW Architecture}{section.6}% 36
-\BOOKMARK [3][-]{subsubsection.6.4.1}{Mobile device}{subsection.6.4}% 37
-\BOOKMARK [3][-]{subsubsection.6.4.2}{Website}{subsection.6.4}% 38
-\BOOKMARK [1][-]{section.7}{Critical reflection on our work}{}% 39
-\BOOKMARK [1][-]{section.8}{Future work}{}% 40
-\BOOKMARK [1][-]{section.9}{Bibliography}{}% 41
-\BOOKMARK [1][-]{section.10}{Appendix}{}% 42
-\BOOKMARK [2][-]{subsection.10.1}{Software Used}{section.10}% 43
-\BOOKMARK [2][-]{subsection.10.2}{Objects Used}{section.10}% 44
+\BOOKMARK [1][-]{section.1}{The Team}{}% 1
+\BOOKMARK [1][-]{section.2}{Introduction}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{Our idea: The TamaDolphin}{section.2}% 3
+\BOOKMARK [1][-]{section.3}{Target groups and User Need}{}% 4
+\BOOKMARK [2][-]{subsection.3.1}{Main Target Groups}{section.3}% 5
+\BOOKMARK [2][-]{subsection.3.2}{Context and Needs addressed:}{section.3}% 6
+\BOOKMARK [2][-]{subsection.3.3}{Goals}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.4}{Requirements}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.5}{Constraints}{section.3}% 9
+\BOOKMARK [1][-]{section.4}{State of the art}{}% 10
+\BOOKMARK [2][-]{subsection.4.1}{Autistic children}{section.4}% 11
+\BOOKMARK [2][-]{subsection.4.2}{Therapeutic activities}{section.4}% 12
+\BOOKMARK [2][-]{subsection.4.3}{Relationship between technologies and autism}{section.4}% 13
+\BOOKMARK [2][-]{subsection.4.4}{Analysis of similar projects}{section.4}% 14
+\BOOKMARK [1][-]{section.5}{Solution \205 UX Design}{}% 15
+\BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 16
+\BOOKMARK [2][-]{subsection.5.2}{User experience:}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.1}{VR User Experience}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.2}{Sam User Experience}{subsection.5.2}% 19
+\BOOKMARK [3][-]{subsubsection.5.2.3}{Therapist Experience}{subsection.5.2}% 20
+\BOOKMARK [2][-]{subsection.5.3}{Scenarios}{section.5}% 21
+\BOOKMARK [1][-]{section.6}{Solution - Game Logic}{}% 22
+\BOOKMARK [2][-]{subsection.6.1}{Introduction}{section.6}% 23
+\BOOKMARK [2][-]{subsection.6.2}{Input and Feedback Management}{section.6}% 24
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Feedback of the First Round Phase}{subsection.6.2}% 25
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Feedback of the Second Round Phase}{subsection.6.2}% 26
+\BOOKMARK [2][-]{subsection.6.3}{Representation of the Need}{section.6}% 27
+\BOOKMARK [2][-]{subsection.6.4}{Representation of Food desire}{section.6}% 28
+\BOOKMARK [2][-]{subsection.6.5}{Rounds Game Management}{section.6}% 29
+\BOOKMARK [3][-]{subsubsection.6.5.1}{Round-based division}{subsection.6.5}% 30
+\BOOKMARK [3][-]{subsubsection.6.5.2}{Two Phases of each Round}{subsection.6.5}% 31
+\BOOKMARK [3][-]{subsubsection.6.5.3}{Exchange of technologies}{subsection.6.5}% 32
+\BOOKMARK [1][-]{section.7}{Implementation}{}% 33
+\BOOKMARK [2][-]{subsection.7.1}{High-level Diagram}{section.7}% 34
+\BOOKMARK [2][-]{subsection.7.2}{UML}{section.7}% 35
+\BOOKMARK [2][-]{subsection.7.3}{Deployment Diagram}{section.7}% 36
+\BOOKMARK [2][-]{subsection.7.4}{SW Architecture}{section.7}% 37
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Mobile device}{subsection.7.4}% 38
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Website}{subsection.7.4}% 39
+\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 40
+\BOOKMARK [1][-]{section.9}{Future work}{}% 41
+\BOOKMARK [1][-]{section.10}{Bibliography}{}% 42
+\BOOKMARK [1][-]{section.11}{Appendix}{}% 43
+\BOOKMARK [2][-]{subsection.11.1}{Software Used}{section.11}% 44
+\BOOKMARK [2][-]{subsection.11.2}{Objects Used}{section.11}% 45
