@@ -196,6 +196,7 @@ public class GameEventManager : MonoBehaviour
 
     public void StartFindFoodGamePhase()
     {
+        feedbackManager.dolphin_VR.GetComponent<BoxCollider>().enabled = false;
         inputSetted = false;
         inputState.ResetInput();
         gamePhase = GamePhase.startFindFood;
