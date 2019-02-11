@@ -14,32 +14,36 @@
 \BOOKMARK [2][-]{subsection.4.4}{Analysis of similar projects}{section.4}% 14
 \BOOKMARK [1][-]{section.5}{Solution \205 UX Design}{}% 15
 \BOOKMARK [2][-]{subsection.5.1}{Introduction}{section.5}% 16
-\BOOKMARK [2][-]{subsection.5.2}{User experience:}{section.5}% 17
-\BOOKMARK [3][-]{subsubsection.5.2.1}{VR User Experience}{subsection.5.2}% 18
-\BOOKMARK [3][-]{subsubsection.5.2.2}{Sam User Experience}{subsection.5.2}% 19
-\BOOKMARK [3][-]{subsubsection.5.2.3}{Therapist Experience}{subsection.5.2}% 20
-\BOOKMARK [2][-]{subsection.5.3}{Scenarios}{section.5}% 21
-\BOOKMARK [1][-]{section.6}{Solution - Game Logic}{}% 22
-\BOOKMARK [2][-]{subsection.6.1}{Introduction}{section.6}% 23
-\BOOKMARK [2][-]{subsection.6.2}{Input and Feedback Management}{section.6}% 24
-\BOOKMARK [3][-]{subsubsection.6.2.1}{Feedback of the First Round Phase}{subsection.6.2}% 25
-\BOOKMARK [3][-]{subsubsection.6.2.2}{Feedback of the Second Round Phase}{subsection.6.2}% 26
-\BOOKMARK [2][-]{subsection.6.3}{Representation of the Need}{section.6}% 27
-\BOOKMARK [2][-]{subsection.6.4}{Representation of Food desire}{section.6}% 28
-\BOOKMARK [2][-]{subsection.6.5}{Rounds Game Management}{section.6}% 29
-\BOOKMARK [3][-]{subsubsection.6.5.1}{Round-based division}{subsection.6.5}% 30
-\BOOKMARK [3][-]{subsubsection.6.5.2}{Two Phases of each Round}{subsection.6.5}% 31
-\BOOKMARK [3][-]{subsubsection.6.5.3}{Exchange of technologies}{subsection.6.5}% 32
-\BOOKMARK [1][-]{section.7}{Implementation}{}% 33
-\BOOKMARK [2][-]{subsection.7.1}{High-level Diagram}{section.7}% 34
-\BOOKMARK [2][-]{subsection.7.2}{UML}{section.7}% 35
-\BOOKMARK [2][-]{subsection.7.3}{Deployment Diagram}{section.7}% 36
-\BOOKMARK [2][-]{subsection.7.4}{SW Architecture}{section.7}% 37
-\BOOKMARK [3][-]{subsubsection.7.4.1}{Mobile device}{subsection.7.4}% 38
-\BOOKMARK [3][-]{subsubsection.7.4.2}{Website}{subsection.7.4}% 39
-\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 40
-\BOOKMARK [1][-]{section.9}{Future work}{}% 41
-\BOOKMARK [1][-]{section.10}{Bibliography}{}% 42
-\BOOKMARK [1][-]{section.11}{Appendix}{}% 43
-\BOOKMARK [2][-]{subsection.11.1}{Software Used}{section.11}% 44
-\BOOKMARK [2][-]{subsection.11.2}{Objects Used}{section.11}% 45
+\BOOKMARK [2][-]{subsection.5.2}{Our user interfaces}{section.5}% 17
+\BOOKMARK [3][-]{subsubsection.5.2.1}{3D Dolphin model}{subsection.5.2}% 18
+\BOOKMARK [3][-]{subsubsection.5.2.2}{SAM dolphin}{subsection.5.2}% 19
+\BOOKMARK [2][-]{subsection.5.3}{User experience:}{section.5}% 20
+\BOOKMARK [3][-]{subsubsection.5.3.1}{VR User Experience}{subsection.5.3}% 21
+\BOOKMARK [3][-]{subsubsection.5.3.2}{Sam User Experience}{subsection.5.3}% 22
+\BOOKMARK [3][-]{subsubsection.5.3.3}{Therapist Experience}{subsection.5.3}% 23
+\BOOKMARK [2][-]{subsection.5.4}{Scenarios}{section.5}% 24
+\BOOKMARK [1][-]{section.6}{Solution - Game Logic}{}% 25
+\BOOKMARK [2][-]{subsection.6.1}{Introduction}{section.6}% 26
+\BOOKMARK [2][-]{subsection.6.2}{Input and Feedback Management}{section.6}% 27
+\BOOKMARK [3][-]{subsubsection.6.2.1}{Feedback of the First Round Phase}{subsection.6.2}% 28
+\BOOKMARK [3][-]{subsubsection.6.2.2}{Feedback of the Second Round Phase}{subsection.6.2}% 29
+\BOOKMARK [2][-]{subsection.6.3}{Summarising Feedback and Input}{section.6}% 30
+\BOOKMARK [2][-]{subsection.6.4}{Representation of the Need}{section.6}% 31
+\BOOKMARK [2][-]{subsection.6.5}{Representation of Food desire}{section.6}% 32
+\BOOKMARK [2][-]{subsection.6.6}{Rounds Game Management}{section.6}% 33
+\BOOKMARK [3][-]{subsubsection.6.6.1}{Round-based division}{subsection.6.6}% 34
+\BOOKMARK [3][-]{subsubsection.6.6.2}{Two Phases of each Round}{subsection.6.6}% 35
+\BOOKMARK [3][-]{subsubsection.6.6.3}{Exchange of technologies}{subsection.6.6}% 36
+\BOOKMARK [1][-]{section.7}{Implementation}{}% 37
+\BOOKMARK [2][-]{subsection.7.1}{High-level Diagram}{section.7}% 38
+\BOOKMARK [2][-]{subsection.7.2}{UML}{section.7}% 39
+\BOOKMARK [2][-]{subsection.7.3}{Deployment Diagram}{section.7}% 40
+\BOOKMARK [2][-]{subsection.7.4}{SW Architecture}{section.7}% 41
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Mobile device}{subsection.7.4}% 42
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Website}{subsection.7.4}% 43
+\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 44
+\BOOKMARK [1][-]{section.9}{Future work}{}% 45
+\BOOKMARK [1][-]{section.10}{Bibliography}{}% 46
+\BOOKMARK [1][-]{section.11}{Appendix}{}% 47
+\BOOKMARK [2][-]{subsection.11.1}{Software Used}{section.11}% 48
+\BOOKMARK [2][-]{subsection.11.2}{Objects Used}{section.11}% 49
