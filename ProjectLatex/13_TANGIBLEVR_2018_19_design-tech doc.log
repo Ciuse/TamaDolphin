@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.11)  12 FEB 2019 01:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6350 64-bit) (preloaded format=pdflatex 2017.10.11)  12 FEB 2019 10:39
 entering extended mode
 **"./13_TANGIBLEVR_2018_19_design-tech doc.tex"
 ("13_TANGIBLEVR_2018_19_design-tech doc.tex"
@@ -1245,25 +1245,25 @@ Package pdftex.def Info: Website.jpg used on input line 686.
 ] [50
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 731.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 749.
  [51
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 731.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 749.
 
 ("13_TANGIBLEVR_2018_19_design-tech doc.aux")
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 731.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 731.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 749.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 749.
 Package rerunfilecheck Info: File `"13_TANGIBLEVR_2018_19_design-tech doc".out'
  has not changed.
 (rerunfilecheck)             Checksum: 4CA46181632EDEF57579831807342CF2;3760.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 731.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 749.
  ) 
 Here is how much of TeX's memory you used:
- 9460 strings out of 493323
- 141643 string characters out of 3139056
+ 9472 strings out of 493323
+ 141730 string characters out of 3139056
  246677 words of memory out of 3000000
- 12681 multiletter control sequences out of 15000+200000
+ 12684 multiletter control sequences out of 15000+200000
  9195 words of font info for 32 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,11n,43p,1613b,599s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1276,10 +1276,10 @@ ublic/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmti10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti12.p
 fb>
-Output written on "13_TANGIBLEVR_2018_19_design-tech doc.pdf" (51 pages, 221105
-23 bytes).
+Output written on "13_TANGIBLEVR_2018_19_design-tech doc.pdf" (51 pages, 221134
+91 bytes).
 PDF statistics:
- 684 PDF objects out of 1000 (max. 8388607)
- 172 named destinations out of 1000 (max. 500000)
+ 696 PDF objects out of 1000 (max. 8388607)
+ 181 named destinations out of 1000 (max. 500000)
  653 words of extra memory for PDF output out of 10000 (max. 10000000)
 
