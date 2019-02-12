@@ -1,0 +1,731 @@
+\documentclass [12pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ left=25mm,
+ right=25mm,
+ top=30mm,
+ bottom=30mm,
+ headsep=10mm,
+ footskip=15mm}
+\linespread{1.175}\selectfont
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\def\labelitemi{--}
+\def\labelitemii{*}
+\pagenumbering{arabic}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[shortlabels]{enumitem}
+\usepackage{wrapfig}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small{AUI project}}
+\rhead{\small{\rightmark}}
+\rfoot{\small{Page \thepage}}
+
+
+\setlength{\headheight}{17pt}
+\usepackage{graphicx}
+\newcommand{\sectionbreak}{\clearpage}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{subcaption}
+\usepackage{tabu}
+\begin{document}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.8cm,width=5.8cm]{logopoli.jpg}
+\end{figure}
+\begin{large}
+\centerline{\textbf{Politecnico di Milano} }
+\centerline{AA 2018-2019}
+\vspace{0.5cm}
+\centerline{Computer Science and Engineering}
+\vspace{0.5cm}
+\centerline{Advanced User Interface course}
+\centerline{\textbf{TAMADOLPHIN: TangibleVR Project}}
+\vspace{1cm}
+\rightline{Giulia Meneghin}
+\rightline{Giuseppe Mauri}
+\end{large}
+\vspace{0.5cm}
+
+\begin{abstract}
+Our project consists of an interactive game that will use two different technologies: virtual reality and smart object. The game we have created has, as its protagonists, two children who will have to collaborate and communicate with each other. The key point of our project is improving the ability to communicate between children through a fun game that can stimulate them to talk and play together under the supervision of a therapist. The therapist will be responsible for supervising the game and encouraging the children to confront each other especially during those phases in which the children may incur in error. In order to develop the game around the theme of communication/collaboration, we thought of organizing the game in two main phases: the first consists in identifying the need of the dolphin and the second consists in satisfying it. To give more space and importance to verbal communication between the two children we decided to create in each phase of the game a special moment in which the children can interact without pressure and without time limitations.
+\end{abstract}
+
+\section{The Team}
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=20.5cm,width=14.5cm]{Team.jpg}
+\end{figure}
+\clearpage
+
+
+\tableofcontents
+
+\section{Introduction}
+This document will describe the main characteristics on which our idea for the project is based.
+\subsection{Our idea: The TamaDolphin}
+Our idea has as its basic concept the \textbf{Collaboration} between two children with different skills.
+The game has as a protagonist a dolphin that it presents itself in the form of a 3D model in the virtual world and a puppet in the real world. The two dolphin representations will show the same needs through different feedback depending on the technology used.
+One child will play with the dolphin puppet while the other will use the VR.
+The child with the VR will have to communicate to his playmate several tasks to perform. Once the problem is solved, one will have visual feedback, while the other will have audio-visual feedback through the smart object.
+The game should consist of several minigames each one concerning a certain need of the dolphin. Currently only one of them has been implemented: the one concerning the need for "Hunger". Each minigames is divided into two main phases. 
+The first phase of the game will be to recognize the need of the dolphin in both the virtual and the real world. While, the second phase  will consist in solving some tasks to satisfy the need of the dolphin.
+
+
+
+
+\section{Target groups and User Need}
+
+\subsection{Main Target Groups}
+\begin{enumerate}
+\item \underline{Clients:} For us who is officially  “signing  the  contract” can be different \textbf{Therapeutic centers} like L’Abilita’ or other organizations that work with children with disabilities.
+\begin{itemize}[•]
+\item \textbf{Interests of L’Abilita’(or other similar Therapeutic centers ):} this association would  introduce a new experience/activity/play in its services for the disabled children that could be a different way to HELP them.
+\end{itemize}
+\item \underline{End User:} we have decided to realize this project for \textbf{NDD Children} with disabilities with different kind of skills. 
+This project has also like end users the \textbf{Therapists} that have to coordinate and control the interaction between the children and their interaction with the two technologies used.
+\begin{itemize}[•]
+\item \textbf{Interests of Children:} the children need to improve their social and emotional spheres by communicating and collaborating.
+\item \textbf{Interests of Therapists:} the therapists need a new way to  communicate with the children using a more innovative and modern tool able to help them to socialize and to adapt themselves to different situations.
+\end{itemize}
+\item \underline{Financing Partners:} Those who provide financial resources concide with the client or with other \textbf{Foundations for disabled children}, \textbf{Parents} or \textbf{Private Schools} that want to help the NDD children.
+\begin{itemize}[•]
+\item \textbf{Interests of Parents:} The parents would introduce more specific activities for their disabled children in their routine because they care about them.
+\item \textbf{Interests of schools(teachers):} they would find new ways to integrate the disabled children in the school environment.
+\end{itemize}
+\item \underline{Developers:}They develop for the system introducing new significant elements  either software or hardware(like new smart objects or new 3D models for the VR application).
+Their contribution may strongly influence the final quality of the application.
+\begin{itemize}[•]
+\item \textbf{Interests of Project developers} they are concerned with developing an application that is closer to the customer's needs.
+\end{itemize}
+\end{enumerate}
+
+
+\subsection{Context and Needs addressed:}
+The context of our project regards therapeutic activities that help disabled children to integrate into society and to improve their social skills. Following a detailed study and skimming of all possible needs of children, we have deduced the following needs: 
+\begin{enumerate}
+\item The users need a new way to stimulate and improve their capacity of communication.
+\item The users need to develop an higher level of attention( increase their attention threshold.) 
+\end{enumerate}
+
+\subsection{Goals}
+\begin{enumerate}
+\item[(G1)]Stimulate the collaboration between the children.
+\item[(G2)]Improve coordination between the two children solving a common task.
+\item[(G3)]Help the children to maintain a high level of concentration during the game.
+\item[(G4)]Improve the ability to interpret the needs of others in addition to personal needs.
+\end{enumerate}
+
+
+
+\clearpage
+
+\subsection{Requirements}
+The fundamental requirement on which to base the realization of "TamaDolphin" is the creation of an application that allows a meaningful relationship between the two users. The "TamaDolphin" therefore aims to be a more relational tool, going to develop communication and relationships between the child with the VR and the other one with the dolphin puppet. 
+\begin{enumerate}
+\item \textbf{Users requirements:}
+TamaDolphin was created as a tool through which the therapist could work together with the two children. The children have to collaborate with each other using two different technologies so it is essential that they understand each other. The therapist has to supervise the progress of the game, intervening during the phases of verbal communication and translating what the child with the VR says into input for our system.
+\begin{itemize}
+\item [(R1)] There must be 2 users(children) and a therapist.
+\item [(R2)] One of the users must use the “Smart” dolphin puppet.
+\item [(R3)] One of the users must use the ``VR'' headset.
+\item [(R4)] Therapist must use the website application. 
+\item [(R5)] Users must be able to understand each other.
+
+\end{itemize}
+\item \textbf{Technological requirements:}
+Our project has been developed involving three different technologies: virtual reality, smart object and a website that supports the therapist to translate the verbal communication of the child with the vr in input to our system. In both the virtual and the real world, we took care of simulating the human needs on the two dolphins that will interact with children during the game.
+\begin{itemize}
+\item [(R6)] There must be a 3D model of a dolphin, in a VR world, that simulate the main human needs.
+\item [(R7)] The technology of the “Smart” dolphin puppet must be able to replicate the main human needs.
+\item [(R8)] The website application is used to translate the verbal communication of the VR user.
+
+\end{itemize}
+
+\item \textbf{Game requirements:}
+The game is divided into a phase that concerns the recognition of the need of the dolphin and another phase that concerns the resolution of the problem. The need will be presented in both the real and the virtual world, so that the two children can confront each other on what they see and hear. We use different visual and auditory suggestions that put children in a position to recognize the problem and solve it together. Each phase of the game is studied in detail so as to give the necessary time to understand the problem that is posed to the children. The children will have, after they have made a choice, appropriate feedback that the system will emit both in the virtual and real world.
+\begin{itemize}
+\item [(R9)] The 2 representation of the dolphin must simulate the same need during the equivalent game phase.
+\item [(R10)] The game presents hints to help users make the right choice. 
+\item [(R11)] The 2 users have to resolve together the same dolphin need.
+\item [(R12)] When one of the users is resolving the task, the other must be careful and wait for the successive instruction.
+\item [(R13)] The 2 dolphin must emit feedback based on the input correctness.
+\item [(R14)] Incorrect decisions should be used to improve communication.
+
+\end{itemize}
+
+\end{enumerate}
+\subsection{Constraints}
+\begin{itemize}
+\item [(C1)] SAM dolphin must have a Wi-Fi adaptor and the smartphone must have a Wi-Fi connection.
+\item [(C2)] Smartphone must have a gyroscope and accelerometer.
+\item [(C3)] The VR graphics must be simple (without too many objects/shadows that distract the NDD children).
+\item [(C4)] The SAM dolphin must interact with the user through simple inputs; sounds for example must be easily recognizable.
+\end{itemize}
+
+
+\section{State of the art}
+This section explains the difficulty of disabled children in communicating and collaborating. We started from a general analysis of this problem up to the analysis of some therapies used today that can help children to improve their social skills. In the last part, the link between therapy and technology is addressed, also through some projects that approach ours in some ways.
+\subsection{Autistic children}
+TamaDolphin aims to work with children with intellectual disabilities and in particular with autistic children. Among the distinctive symptoms of autism there is a deficit in social communication due to the lack of or delayed development of language. The communication deficit can include several aspects including a compromise of verbal and nonverbal communication, of the subject's ability to respect communicative shifts, of the sharing of implicit and explicit symbols and meanings. In some subjects, however, the language is adequate but the ability to initiate or sustain a conversation with others is compromised. In this case the main difficulties concern the ability to respect the alternation of shifts, to take into account what the other expresses, and often the conversation can be centered only on the limited and narrow interests of the subject with autism. Our project focuses mainly on two aspects: respecting the communicative shifts, encouraging verbal communication on an external topic (the need of the dolphin) that is not simply limited to the interest of the subject with autism.  
+\subsection{Therapeutic activities}
+Many therapeutic activities are aimed at improving certain aspects of verbal communication in autistic children.
+\begin{enumerate}
+\item \textbf{Understanding the cause and effect:}\\
+It is very important that the child understands how his/her behaviour can have an effect on others and the surrounding environment. It is therefore important to have activities for these children that have an effect on each cause, so that there is a minimum exchange of communication. In order to promote the understanding of the cause-effect relationships we have provided in our game, a series of audio and visual feedback that our system will emit to each type of choice that the child can take.
+\item \textbf{Wish to communicate:}\\
+Often children who do not use verbal language, show little willingness to communicate with another person and do not show particular interest in them, since one of their main difficulties is the inability to relate with others in a conventional way. To encourage children to communicate with each other we decided to use the figure of the therapist who can ask them about what happens in the virtual and real world. The therapist then assumes the role of initiator of the communicative exchange.
+\item \textbf{Something to communicate about:}\\
+If the autistic child does not have something to communicate about, he will not communicate. In therapeutic activities, therapists let the child establish the object of communication; the child should take the lead and direct the communicative interaction. Then they start from objects or actions that the child likes, in order to have as an object of communication something interesting that stimulates communication. Once communication has started, the practitioner works on extending the vocabulary. We also tried to use objects and elements that could please the children, in fact we opted for a cartoon setting whose protagonist is a dolphin who tries to interact with the children showing them his needs. 
+\end{enumerate}
+\subsection{Relationship between technologies and autism}
+Using innovative technologies with autistic children and young people allows to present the didactic and educational material choosing a mainly visual-spatial language that we know to be their strong point. In this sense, the language of computer science responds to the needs of clarity and precision of communication because it is clear, structured and predictable, without emotional inferences or implicit typical of communication between two or more people.
+Some recent scientific studies have shown improvements in social skills by some adolescents with autism after the use of advanced technologies but the limited number of people on whom the experiments have been conducted still do not allow to verify the scientific validity.
+\begin{itemize}[•]
+\item  \textbf{Virtual and Augmented Reality} represent the new challenge to support, in therapeutic interventions, people with autism. The simulation of everyday life contexts seems to be effective in improving the social integration of these people. Virtual reality represents real life experiences in a safe and controllable way, allowing to repeat the intervention several times.   Such versatility in the creation of virtual environments and the elimination of those common stress factors in face-to-face interactions suggest that VR can be more effective in improving the ability to interact and the social relations skills of other methodologies. 
+\item Another innovative technology that is used during therapeutic activities is that of  \textbf{Smart Objects}. A Smart Object is a technological object that through multisensory effects and integration with animation on tablet, PC or TV, helps children to mitigate anxiety and overcome communication and expressive difficulties in particular stressful conditions, for example during an educational therapeutic course in a rehabilitation center.
+\end{itemize}
+\subsection{Analysis of similar projects}
+Our project is a combination of two different technologies: virtual reality and smart object. Each child will have to use one of the two technologies.
+Our project deals with a research topic that is not much developed: the collaboration between disabled children and communication between two different technologies.    
+There are no similar projects to ours, which use the two technologies simultaneously on two different users.
+The only similar project uses a physical object as an alternative to a normal controller, demonstrating that the end user experience is better. We, on the other hand, use the Smart Object as a "controller" but with additional functionality.
+\begin{itemize}[•]
+\item \textbf{``Using real objects for interaction in virtual reality:'' \footnote{Ryota Yoshimoto \& Mariko Sasakura (2017). Using real objects for interaction in virtual reality. \textit{21st International Conference Information Visualization (IV)}}}\\ 
+In this conference was described, a new system of tower defense game, in which users could try two different ways, one using real objects as controllers, the other using the mouse to move the "Towers". They showed that using real objects to move the towers was more difficult because of the technical difficulties like object detection failure.  But the "fun to use" factor was higher for real objects than for typical controllers. This showed that the use of real objects has a high potential for interaction between users and the VR system.\\
+ \underline{\textbf{Differences and similarities:}}\\\\
+ \begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+ They used real objects as controllers rather than using mouses or game controllers to manipulate the objects shown in VR. & We use the SAM dolphin as a kind of “Controller” because when the SAM child moves it, caresses it and much more, certain actions happen in the virtual world. The dolphin is seen as a tool through which real actions have a certain feedback in the virtual world.\\
+\hline
+They have developed a game in which two different technological realities (Smart object and VR) communicate with each other. The smart object is used by the same person who uses the viewer for virtual reality.  & Also in our project these two technological realities communicate with each other but are used in a different way. In fact, we have separated their use between two users: One child will have to use the virtual reality viewer while the other child will have to use the SAM dolphin.\\
+\hline
+\end{tabular}
+\clearpage
+\item \textbf{``A Smart Dolphin for Children with Neurodevelopmental Disorders:''\footnote{Simone C. \& Franca G. \& Mirko G. \& Mattia M. \& Francesco C. (2016). A Smart Dolphin for Children with Neurodevelopmental Disorders}}\\ 
+This research aims to help children with neurological developmental disorders (NDD) to "learn through play" by interacting with digitally enriched physical toys. An "intelligent" dolphin called Sam has been created to involve children in a variety of playful activities. Sam emits different stimuli (sound, vibration and light) with his body in response to the manipulation of children. His behavior is integrated with multimedia lights and animations or videos displayed in the environment and can be customized by therapists to meet the specific needs of each child.\\
+ \underline{\textbf{Differences and similarities:}}\\\\
+ \begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+The “Smart" dolphin behavior is integrated with lights and multimedia animations or videos displayed in the environment and can be customized by therapists to meet the specific needs of each child.&Also in our project the dolphin SAM is used but not integrating multimedia animations, external lights or videos but only with its own functions.\\
+\hline
+The dolphin SAM has been used as a tool to help NDD subjects to release their often persistent state of anxiety and improve relaxation, as the man-animal bond acts on the production of "stress hormones", inducing a reduction in blood pressure, heart rate and respiratory. & In our project instead the dolphin SAM is used as a tool with which the child interacts physically to solve certain tasks of the Application, and it simulates the real needs of a dolphin that the child should be able to understand and communicate to the other child.\\
+\hline
+In their project the SAM Dolphin is an end in itself technology. & In our project the SAM Dolphin communicates closely with the HMD.\\
+\hline
+\end{tabular}
+\clearpage
+\item \textbf{``Virtual reality technologies for children on the autism spectrum:''\footnote{Sarah Parsons \& Sue Cobb (2011). State-of-the-art of virtual reality technologies for children on the autism spectrum. \textit{European Journal of Special Needs Education}}}\\
+Based on the study conducted for the use of VR technologies for children in the autism spectrum, it is argued that Virtual Reality offers particular benefits for children on the autism spectrum, chiefly because it can offer simulations of authentic real-world situations in a carefully controlled and safe environment. Given the real world social difficulties experienced by children on the spectrum this technology has therefore been argued to offer distinct advantages and benefits for social and life skills training compared to other approaches.\\
+\underline{\textbf{Differences and similarities:}}\\\\
+ \begin{tabular}{|p{7cm}|p{7cm}|}
+\hline
+In the study conducted for the use of VR technologies for children of the autistic spectrum, it is highlighted that this technology allows to create simulated environments that offer benefits for learning and testing actions and responses in different contexts.
+VR can be particularly useful for people with cognitive and perceptual disabilities because the technology can help in planning, problem solving and behaviour management; and offer powerful communication structures for people with limited expressive language.&In our project the VR environment will be used both as a place where the child will have to learn and understand the needs of the dolphin to communicate them, and either to wait for instructions from the other child who is playing, without being distracted. Moreover, thanks to the environment simulated by the VR, we think it is easier for the child to concentrate on a single element and communicate what he sees.\\
+\hline
+\end{tabular} 
+\end{itemize}
+
+
+\section{Solution – UX Design}
+\subsection{Introduction}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=10cm]{HighLevel.jpg}
+\end{figure}
+
+
+Tamadolphin is a very innovative video game that allows children to collaborate using two different technologies that offer two very different user experiences. The key point of the user experience is collaboration, which is possible even though the two players use two completely different technologies. This aspect is very interesting because the goal is to encourage players to tell in more detail their experience so that the other player can also draw useful information to compare with his experience in order to make a more complete and reasoned choice, and the therapist can intervene at any time of the game to correct and stimulate collaboration.
+\subsection{Our user interfaces}
+\subsubsection{3D Dolphin model}
+We made a 3D model of the dolphin using the Blender software. The 3D dolphin is similar to a cartoon in order to have a more confidential impact with the autistic child.  
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.3\linewidth}
+\includegraphics[width=\linewidth]{FrontRenderpng.png}
+\caption{\textbf{Front view}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{FiancoRender2.png}
+\caption{\textbf{Side view}}
+\end{subfigure}
+\hspace*{\fill}
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{BackRender.png}
+\caption{\textbf{Back view}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+\subsubsection{SAM dolphin}
+The second representation of the dolphin is that of the SAM puppet, which is able to represent the needs of the dolphin through audio-visual feedback (leds and sounds).  
+ 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=8cm,width=10cm]{SamDolphin.jpg}
+\end{figure}
+\clearpage
+\subsection{User experience:}
+The user experience of our system is divided into three categories, the one concerning the use of VR, the one concerning the smart object and the one concerning the website. 
+We have studied and realized an experience that, despite covering three very different situations, offers users the same sensations even if through different senses.
+\subsubsection{VR User Experience}
+The user using the VR viewer will be immersed in a virtual world without external stimuli that will allow him to focus his attention on the elements of the game. His experience will be characterized above all by visual elements that represent simple and everyday objects; easy to understand and describe, so as to facilitate communication with the other user. 
+Moreover, the user immersed in the VR world can interact with some of the elements by moving the pointer he will see in the game simply by moving his head and focusing his attention for a few seconds on the object concerned.
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6.5cm,width=10cm]{VirtualWorld.jpg}
+\caption{\textbf{Virtual World screenshot}}
+\end{figure}
+\clearpage
+\subsubsection{Sam User Experience}
+The experience of the child using the dolphin Sam will be less immersive than that of the VR because he will not be put in a situation of isolation from the external world but in a freer and "more open" situation where he can interact and play directly with the dolphin puppet. The user will have to pay attention to what the child with the VR will communicate to him and to the visual and sound stimuli that the dolphin will show him. The interaction between the child and the smart object will be through the RFID cards and the special reader that is located in the mouth of the dolphin. The user will be stimulated by audio feedback that represents very detailed and distinguishable needs such as the rumbling of the belly, to indicate hunger, and visual feedback such as the change in color of the LEDs to provide immediate feedback following the choices that the two users will take in the game.
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=8cm,width=10cm]{SamUserExperience.jpg}
+\caption{\textbf{Sam User Experience}}
+\end{figure}
+\subsubsection{Therapist Experience}
+The therapist will have two main tasks: to translate the VR child's verbal communication into system input and to coordinate the communication between the two children, stimulating them to interact with each other. 
+The interaction between the therapist and the website will take place through two categories of buttons: the one concerning the phase of recognition of the Dolphin's need and the one concerning the phase of satisfaction of the need itself.
+The buttons in the first category are essentially two: Correct and Wrong. These buttons will be used to translate the correctness or incorrectness of the communication of the child with the VR.
+The buttons of the second category instead will represent the 4 different foods that the child with the VR will see appear in the virtual world when the second phase begins.
+Pressing the button will lead to some changes during the game either in the virtual world or in the real world. For example, pressing one of the two buttons in the first category will activate the physical Sam who will show some audio-visual feedback.
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.46\linewidth}
+\includegraphics[width=\linewidth]{TherapistUserExperience.jpg}
+\caption{\textbf{Therapist User Experience}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.46\linewidth}
+\includegraphics[width=\linewidth]{Website.jpg}
+\caption{\textbf{Website}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+
+\subsection{Scenarios}
+\begin{enumerate}
+\item \textbf{First introductory Scenario:}
+Giacomo, a 12-year-old autistic man, has just moved to Milan with his family.
+Since he still doesn't know anyone at the new school and it is difficult for him to relate to others, the parents decided to turn to an association that helps them to make the child more autonomous and able to communicate with others. The association offers them to choose between different activities; the parents' attention falls on a game based on virtual reality, "The TamaDolphin", whose main purpose is to allow the child to communicate with another child.
+Children with autism have a considerable difficulty in relating with other people. Giacomo is then encouraged through TamaDolphin to communicate with the other child what he sees in the virtual world or on the dolphin Sam according to the situation, for example if Giacomo used the VR and the dolphin wanted to eat, would appear in the virtual world of such suggestions as to allow James to communicate to his partner the need for the dolphin.
+\item \textbf{ First Phase Game Scenario(The Dolphin is hungry):}
+Martina and Luca are playing with "The TamaDolphin." Martina is the VR user while Luca is the SAM user (dolphin puppet). Martina can see through the viewer the 3D model of the dolphin. At a certain point she sees several consecutive suggestions: a cloud near the dolphin with a knife and fork drawn, an empty table on the right side of the dolphin and the dolphin that continues to open and close its mouth to indicate that it is hungry. At this point Martina decides to describe to Luca what she saw in the virtual world telling him the need of the dolphin. \\
+\textbf{At this point there can be three different scenarios:}
+\begin{enumerate}
+\item \textbf{ First scenario (both children make the right choice)}\\
+Martina says: "the dolphin is hungry". The therapist, seeing that the child has performed the communication correctly, will not interfere in the game but will simply click on the Correct button, which will translate Martina's verbal communication into an input to our system. The click of the button will correspond to the activation of the dolphin Sam. The belly will light up red and it will emit the sound of "the belly growling" and the mouth of the dolphin will open so as to further suggest to Luca that he is hungry. Luca will have to choose among the various needs cards, the one that will represent, according to him, the need of the dolphin. He chooses the hunger card and passes it in his mouth. The first phase of the game therefore ends correctly as both children have solved the task in the right way. Martina will have visual feedback in the virtual world: the cloud of thoughts will disappear, the table will move under the dolphin and the cutlery will appear in the hand of the dolphin wearing a bib ready to eat. Around her will also appear baskets containing 4 different foods. 
+Instead Luca will have both visual and auditory feedback as the dolphin will light up in green and emit a sound of "happiness".
+\item \textbf{Second scenario(both children make the wrong choice)}\\
+Martina says, "The dolphin has sleep." The therapist, seeing that the child has performed the communication incorrectly, will click the Wrong button, which will translate Martina's verbal communication into an input to our system. The click of the button will correspond to the activation of the dolphin Sam. The belly will be illuminated in red, which will emit the sound of the "belly growling" and the mouth of the dolphin will open so as to further suggest the need for the dolphin. Luca will have to choose among the various needs cards, the one that will represent, according to him, the need of the dolphin.  He chooses the card of the dolphin he wants to play and passes it in his mouth. Both children have solved the task in the wrong way. Martina will receive a negative visual feedback in the virtual world: red xs will appear around the dolphin to suggest that she has solved the task in the wrong way. Luca instead will receive negative audio-visual feedback: the dolphin Sam will light up red and make a sound of "sadness".  The therapist will then have to intervene during this phase of the game: she will put the two children in a position to communicate with each other so as to make them understand their mistake and to remedy it. Once the two children have corrected their mistake, the second phase of the game will begin.
+\item \textbf{Third scenario(one of the two children makes the right choice, the other the wrong one)}\\
+Martina says, "The dolphin has hunger." The therapist, seeing that the child has performed the communication correctly, will click the Correct button, which will translate Martina's verbal communication into an input to our system. The click of the button will correspond to the activation of the dolphin Sam. The belly will be illuminated in red, which will emit the sound of the "belly growling" and the mouth of the dolphin will open so as to further suggest the need for the dolphin. Luca will have to choose among the various needs cards, the one that will represent, according to him, the need of the dolphin.  He chooses the "Sleep" card. Martina has solved the task correctly while Luca has solved it incorrectly.
+Both children will receive feedback that will express "perplexity".
+Martina will see grey question marks appear around the dolphin to suggest that one of the two children has solved the task incorrectly. Luca will receive audio-visual feedback: the dolphin Sam will light up in grey and make a "perplexing" sound. The therapist will then have to intervene during this phase of the game: she will put the two children in a position to confront each other to understand who made the mistake and how to solve it. Once the two children have remedied the error, the second phase of the game will begin.
+\end{enumerate}
+\item \textbf{Second Phase Game Scenario(The Dolphin is hungry):}
+Alessandro and Francesco are playing with "TamaDolphin" while the therapist supervises the game between the two children. They have just started the second phase of the game. Alessandro is using the VR viewer while Francesco is using the SAM puppet. At a certain point Alessandro sees 4 baskets containing 4 different foods appear around the dolphin: a basket with fruit, one with meat, one with fish and one with cake. Each time Alessandro moves the viewfinder to one of the baskets, the food rises a bit so that he can see them better. The therapist questions him about what he sees in the virtual world and asks him what he would like to feed the dolphin.\\
+\textbf{At this point there can be three different scenarios:}
+\begin{enumerate}
+\item \textbf{First scenario (both children choose the \underline{Same Correct food})}\\
+Alessandro chooses the fish basket and the therapist will click on the button corresponding to it. Clicking the button on the website will raise the food chosen by Alessandro (the fish), which will be placed near the dolphin and will also activate the RFID card reader into the mouth of the dolphin Sam. Francesco, on the basis of what Alessandro suggested to him, will have to choose between the food cards, the one he thinks is the right one.  He chooses the card with the fish drawn on it. Both children choose the fish correctly. The system will give positive feedback to both children. Alessandro will see the fish move on the plate and the dolphin will eat it. At the end the final scene with the fireworks will appear.  Francesco instead will see the dolphin SAM move his mouth to indicate that he is eating, he will light up all green and make a sound of happiness. 
+\item  \textbf{Second scenario (both children choose the \underline{Same Wrong food})}\\
+Alessandro chooses the fruit basket and the therapist will click on the button corresponding to it. Clicking the button on the website will raise the food chosen by Alessandro (the fruit) which will be placed near the dolphin and will also activate the RFID card reader in the mouth of the dolphin Sam.  Francesco, on the basis of what Alessandro suggested to him, will have to choose between the food cards, the one he thinks is the right one.  He chooses the card with the fruit drawn on it. Both children choose the same food, that is fruit, but for our system it is a wrong choice. The system will then give negative feedback to both children. Alessandro will see the fish move towards the basket (it is thrown away) and a red x will appear to indicate that the fruit is not what the dolphin would have liked to eat. The SAM dolphin, on the other hand, will emit a disgusting sound and light up red. The therapist will then have to intervene during this phase of the game: it will put the two children in a position to confront each other to understand what they have wrong. They will then have to repeat the choice of food.  
+\item \textbf{Third scenario (the children choose \underline{Two Different Wrong food})}\\
+Alessandro chooses the meat basket and the therapist will click on the button corresponding to it. Clicking the button on the website will raise the food chosen by Alessandro (the fruit) which will be placed near the dolphin and will also activate the RFID card reader in the mouth of the dolphin Sam.  Francesco, on the basis of what Alessandro suggested to him, will have to choose between the food cards, the one he thinks is the right one.  He chooses the card with the cake drawn on it. The two children choose two different foods that for our system correspond both to a wrong choice. The system will then give feedback of "perplexity" to both. Alessandro will see a grey question mark appear so that he can make suggestions that both have made a mistake in choosing the food to feed the dolphin. The SAM dolphin, on the other hand, will emit a "perplexing" sound and light up in grey. The therapist will then have to intervene during this phase of the game: it will put the two children in a position to confront each other to understand what they have done wrong.  They will then have to repeat the choice of food.  When Alessandro changes his choice with the cake, the food he had previously chosen returns to his basket and then disappears. As a result, the new food he has chosen will rise and be placed close to the dolphin. The system still has in its memory the input of Francesco (cake) for this reason Alessandro will see a red x appear near the dolphin and the cake will move to the basket because the two children have chosen the same wrong food.
+\end{enumerate}
+\end{enumerate}
+\section{Solution - Game Logic}
+\subsection{Introduction}
+We have implemented TamaDolphin as a tool to be used during a therapeutic session. It consists of an activity that therapists can propose to autistic children to help them improve their communication skills and social interaction. One of the main elements on which our game is based is the \textbf{Feedback Management } that allows therapists to have support during the phase of verbal communication. 
+The introduction of the feedback was the trick with which we were able to solve situations of misunderstanding that could arise during the communication phase. To better manage the verbal communication part, the game was designed to be \textbf{played in Rounds.}
+\subsection{Input and Feedback Management}
+The management of input and feedback is one of the main features of our project. We thought about how to manage every possible combination of input in the two phases of the game, that of recognizing need and that of satisfying it.  We decided to use purely visual feedback for the virtual world using symbols of strong visual impact while for the SAM smart object we use both visual and audio feedback. The use of feedback allowed us to better manage moments of misunderstanding that could arise during the communication phase. For therapists it is very important to be able to work with disabled children in a situation where they can make mistakes as it can be a starting point for reflection on their actions. It is precisely during a situation in which children can make mistakes that the therapist can have more ideas for her work in order to better conduct a "therapeutic session". Feedback is therefore the device by which the therapist can make the children interact in order to make them reflect on their mistakes and the situation in front of them.
+
+\clearpage
+\subsubsection{Feedback of the First Round Phase}
+In the first phase (recognition of the need) there can be 3 possible combinations of inputs based on what the children choose, managed differently depending on the technology used: VR or Smart Object.
+
+ 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=10cm]{Feedback1.png}
+\end{figure}
+
+\begin{itemize}[•]
+\item \textbf{VR technology:}\\
+In virtual reality, for example, we used red x to indicate a combination of wrong inputs or question marks to indicate an indefinite situation in which one of the two children made the right choice and the other the wrong one. The positive case instead leads to the beginning of the second phase of the game through the appearance of some important elements such as the fork, the knife and the bib.
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.3\linewidth}
+\includegraphics[width=\linewidth]{NegativeCase.jpg}
+\caption{\textbf{Negative case}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{QuestionMarkCase.jpg}
+\caption{\textbf{Question Mark case}}
+\end{subfigure}
+\hspace*{\fill}
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{PositiveCase.jpg}
+\caption{\textbf{Positive case}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+\clearpage
+\item \textbf{Smart Object technology:}\\
+As for the SAM smart object, the feedback is both visual and auditory. We selected sounds that could better reflect/represent the success or failure of the action of the two children. We associated to a situation of total failure a sound that reproduced a cry accompanied by red leds; to a successful situation a sound that reproduced a feeling of happiness accompanied by green leds and to an indefinite situation a sound that expressed ambiguity accompanied by gray leds.
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.3\linewidth}
+\includegraphics[width=\linewidth]{NegativeCaseSam.jpg}
+\caption{\textbf{Negative case}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{UndefinedCaseSam.jpg}
+\caption{\textbf{Undefined case}}
+\end{subfigure}
+\hspace*{\fill}
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{PositiveCaseSam.jpg}
+\caption{\textbf{Positive case}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+\end{itemize}
+
+
+\clearpage
+\subsubsection{Feedback of the Second Round Phase}
+In the second phase (the satisfaction of the need) there can be other 3 possible combinations of inputs managed based on what the children choose, in different ways depending on the technology used: VR or Smart Object.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.5cm,width=13cm]{Feedback2.png}
+\end{figure}
+
+\begin{itemize}[•]
+\item \textbf{VR technology:}\\
+In order to better represent in virtual reality the case in which both children chose the same right food to give to the dolphin, we decided to use as visual feedback, an animation created with the blender software in which the dolphin actually ate the fish. In case the two children choose the same food but wrong, in addition to appearing a red x near the dolphin, the child with the VR would see the food move to the basket. In an indefinite situation where the two children choose two different but wrong foods, we decided to make question marks appear as feedback.
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.3\linewidth}
+\includegraphics[width=\linewidth]{NegativeCaseFood.jpg}
+\caption{\textbf{Negative case}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{UndefinedCaseFood.jpg}
+\caption{\textbf{Undefined case}}
+\end{subfigure}
+\hspace*{\fill}
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{PositiveCaseFood.jpg}
+\caption{\textbf{Positive case}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+\clearpage
+\item \textbf{Smart Object technology:}\\
+Feedback on the smart object is both visual and auditory. In case both children choose the same right food, we turned on all the dolphin's LEDs by green and selected a sound that could represent the scene of the dolphin eating. The sound chosen reproduces the sound of chewing so that it indicates that the dolphin is eating the fish.   In case the two children choose the same but wrong food, we selected a sound that reproduces a crying accompanied by red leds; In an indefinite situation, instead, in which the two children choose two different but wrong foods, we decided on a sound that expresses ambiguity accompanied by gray leds.
+\end{itemize}
+\begin{figure}[h!]
+\centering
+\hspace*{\fill}
+\begin{subfigure}[tl]{0.3\linewidth}
+\includegraphics[width=\linewidth]{NegativeCaseSam.jpg}
+\caption{\textbf{Negative case}}
+\end{subfigure}\hfill
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{UndefinedCaseSam.jpg}
+\caption{\textbf{Undefined case}}
+\end{subfigure}
+\hspace*{\fill}
+\begin{subfigure}[tr]{0.3\linewidth}
+\includegraphics[width=\linewidth]{PositiveCaseSam.jpg}
+\caption{\textbf{Positive case}}
+\end{subfigure}
+\hspace*{\fill}
+\end{figure}
+\clearpage
+
+\subsection{Summarising Feedback and Input}
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=20cm,width=15cm]{FeedbackUX1.png}
+\end{figure}
+
+\clearpage
+
+\subsection{Representation of the Need}
+\subsubsection{Virtual reality}
+In order to represent the need of the dolphin in the virtual world, different visual elements will be used and will appear in sequence. These suggestions should help the child to gradually understand the need of the dolphin. To do this, we used a cloud of thoughts, a table and animations of the 3D model of the dolphin. The cloud will contain cutlery, the 3D model of the dolphin will open its mouth to indicate its desire for food and the table will be placed next to the dolphin. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.6cm,width=6.5cm]{NeedRepresentation.jpg}
+\caption{\textbf{VR Need Representation}}
+\end{figure}
+\subsubsection{Smart Object}
+In order to represent the need of the dolphin in the real world, different audio-visual elements will be used and they will appear in sequence. These suggestions should help the child to gradually understand the need of the dolphin. To do this, we used LEDs, sounds and mouth motors. The LEDs will illuminate the belly of the SAM dolphin in red, the sound of the belly growling will be reproduced and the SAM puppet will open its mouth to indicate its desire for food.
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.6cm,width=6.5cm]{NeedRepresentationSam.jpg}
+\caption{\textbf{SAM Need Representation}}
+\end{figure} 
+\clearpage
+\subsection{Representation of Food desire}
+
+\subsubsection{Virtual reality}
+At the beginning of the second phase of the game, in order to represent the dolphin's desire for food, other visual elements will be used with which the child can interact. The child will see the appearance of cutlery in the hand of the dolphin, a bib and the table will move in front of the dolphin and when the movement is over, a plate will appear on the table. In addition, 4 baskets containing different foods will appear with which the child can interact with the VR. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.8cm,width=7cm]{FoodDesireRepresentation.JPG}
+\caption{\textbf{VR Need Representation}}
+\end{figure}
+\subsubsection{Smart Object}
+In order to represent the dolphin's food desire in the real world, different audio-visual elements will be used and will appear in sequence. To do this, we used LEDs, sounds and mouth motors. The LEDs will illuminate the belly of the SAM dolphin in grey, the sound of the belly growling will be reproduced and the SAM doll will open its mouth to indicate its desire for food. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.8cm,width=7cm]{FoodDesireRepresentationSam.jpg}
+\caption{\textbf{SAM Need Representation}}
+\end{figure}
+
+\subsection{Summarising Representation of Need}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6cm,width=15cm]{FeedbackUX2.png}
+\end{figure}
+\clearpage
+
+\subsection{Rounds Game Management}
+The game is \textbf{designed to be Played in Rounds}. Currently, the game has only one round in which the need for the dolphin is the "hunger" and it  will initially appear in the virtual world. In a future implementation we will think about complementing the game in its entirety. 
+Each round will correspond to a different need of the dolphin that will initially appear only on one of the two technologies. If in the first round the need appears on the VR, in the second round it will appear on the smart object. Each round is in turn divided into \textbf{Two Phases}: the first concerns the recognition of the current need and the second its satisfaction. Once all rounds are over, the therapist may decide to repeat the game from the beginning by \textbf{Exchanging the Technologies used by the children}, to offer them a more complete experience.
+\subsubsection{Round-based division}
+In the first round of the game, the dolphin will show a certain need in the virtual world and to lead the game will be mainly the child with the VR, once satisfied this need and concluded the two phases of this round, the second round of the game will begin and the situation will be reversed: the dolphin will show a new need but this time on the dolphin SAM. The round-based division will serve to put both children in a position to analyze the situation in front of them and to acquire a greater sense of observation and analytical ability. Recognising the needs of the dolphin will help the children to interact with situations outside their own so as not to focus too much on themselves.
+\subsubsection{Two Phases of each Round}
+Each minigame of our project is divided into two main phases. 
+The first one will be to recognize the need of the dolphin in both the virtual and the real world. While, the second phase  will consist in solving some tasks to satisfy the need of the dolphin.
+\begin{enumerate}
+\item  \textbf{First Round Phase: Both the users try to understand the dolphin need}
+\begin{itemize}[•]
+\item At the beginning of the first round phase, the child with the VR will have to recognize the need of the dolphin thanks to different suggestions that will appear in the virtual world and thanks to a 3D model of the dolphin that will behave differently depending on the situation.
+\item Once the child has understood the need for the dolphin, he will have to communicate it to his playmate( \textbf{first moment devoted to verbal communication}). In turn, the other child will have to observe the dolphin puppet which will show the same need as the virtual dolphin. On the basis of what is communicated to him and what he observes, the second child will have to choose, among the cards available, the one that in his opinion will best represent the need of the dolphin. 
+Once both children have given their interpretation on the need of the dolphin, in case of error, the therapist will encourage them to communicate with each other to understand it and to fix it( \textbf{second moment devoted to verbal communication}). If the two children make instead the correct choice, the first phase of the round will end and the next phase will begin.
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.5cm,width=10cm]{NeedCards.jpg}
+\caption{\textbf{Need Cards}}
+\end{figure}
+\clearpage
+\end{itemize}
+\item \textbf{Second Round Phase: Both the users try to satisfy the dolphin need}\\
+The second phase will begin when the two children have received positive feedback from the system for the correct recognition of the need for the dolphin. At this point the virtual world will change: several elements will appear that the child with the VR will have to analyze and choose the right one for him. The therapist will click on the button corresponding to the element chosen by the child with the VR, translating it into an input for our system. Also the child with the dolphin SAM will have to carry out a small activity related to the cards that will be available. As long as the two children have not chosen the same element, the game will not go on. Thanks to the supervision of the therapist the children will work together to arrive at the same solution so as to receive positive feedback otherwise they will continue to interact with each other and the system will help them through different feedback. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4.5cm,width=10cm]{FoodCards.jpg}
+\caption{\textbf{Food Cards}}
+\end{figure}
+\end{enumerate}
+
+\subsubsection{Exchange of technologies}
+Once all the rounds of the game have been completed, the therapist could make an exchange of technologies used by the two children.
+The exchange of technologies would offer the children a greater experience of the game, as exchanging roles would help them to deal with two completely different situations: one with greater isolation from the outside world, virtual reality, and one with more external stimuli, the smart object.
+Virtual reality would help the child to focus on a given situation without having distractions from the outside world while the child with the smart object will have to deal with external stimuli from which he will not have to be distracted by maintaining a high concentration on play and communication with the other child.
+\section{Implementation}
+\subsection{High-level Diagram}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=10cm,width=13cm]{HWarchitecture.jpg}
+\caption{\textbf{Client-Server Architecture}}
+\end{figure}   
+The project is characterized by an architecture that allows interaction between the 3 different systems: the web client, the smart object created with Arduino and the VR application that runs on a mobile device.
+Communication between the three systems is allowed thanks to a WiFi connection and the assignment of a known IP address to the various components, thus allowing communication. 
+Communication between the various components is performed via http post requests.
+The smartphone is the main server that handles the requests of both the website and the dolphin Sam. The main server then has the task of taking incoming http requests and according to their origin manages them in the appropriate way through a dictionary. In addition, the smartphone in turn communicates with the server of the dolphin Sam through http post requests that allow you to manage the various physical components of Sam as the setting of LEDs, sounds or mouth motors.
+\clearpage
+
+\subsection{UML}
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[height=22cm,width=16cm]{UML.jpg}
+\caption{\textbf{Food Cards}}
+\end{figure}
+
+\clearpage
+\subsection{Deployment Diagram}
+
+ \begin{figure}[ht!]
+\centering
+\includegraphics[height=13cm,width=16cm]{DeploymentDiagram1.jpg}
+\caption{\textbf{Deployment Diagram}}
+\end{figure}
+
+\clearpage
+\subsection{SW Architecture} 
+Tamadolphin is a system that includes three connected devices. At the software level, a code has been created that is able to manage and command the various elements by putting them in communication with each other. This section shows the architecture of the code on the mobile application and on the website. 
+\subsubsection {Mobile device}
+The main code of our project has been realized using the graphic engine Unity, which uses scripts in C\# language.\\
+The scripts are divided into \underline{Fourth Macro Parts:}
+\begin{itemize}[•]
+\item \textbf{VR technology management}\\
+Tamadolphin, as already mentioned, is an application that exploits the technology of virtual reality, which aims to immerse the user in a fully artificial digital environment.
+The aim is to isolate the user thanks to a Head MountedDisplays(HMDs) from those that may be the stimuli of the outside world and to allow him to better concentrate in what are the elements and demands of the game.
+To allow the user to interact with the game using only the movement of the head have been used Google API for the VR. The Google API provides various scripts that simulate a viewfinder in the virtual game; the viewfinder when it passes over an object with which the user can interact will grow and after a few seconds in which the user focuses his attention on the element in question, there will be significant changes within the virtual world.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5.8cm,width=16cm]{VrMirino.jpg}
+\caption{\textbf{VR Input Target}}
+\end{figure}
+\clearpage
+
+\item \textbf{Network Management}\\
+The logic of networking has been developed using scripts in C\# language, which are always executed within the Unity engine.
+The script that contains the main logic is "ServerHttp.cs". When the application is started the script instantiates a HttpListener that takes care of all the requests that occur within the local network addressed to port "2601". \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=5cm,width=16cm]{StartServer.jpg}
+\end{figure}
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=8cm,width=16cm]{ReadRequest.jpg}
+\end{figure}
+The listener is able to manage the http requests coming from the website and from the Sam dolphin in a different way thanks to a Dictionary that distinguishes the requests that come from different IP addresses, in this way we can distinguish the values that arrive from the Sam dolphin from those of the website.\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=3.5cm,width=14cm]{Dictionary.jpg}
+\end{figure}
+
+
+The other script useful for Networking is "HttpPostRequest.cs" which allows you to create a POST request containing a Json string with the various changes to be made to the dolphin SAM and the Ip address of the device that generates it. In this way our game is able to modify also the state of the Sam puppet. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=10cm,width=16cm]{SendPost.jpg}
+\end{figure}
+\clearpage
+
+\item \textbf{Game Logic Management}\\
+Our game is currently characterized by phases in which the environment and the user's task change. To allow the game to recognize the phase in which the user is, a special variable has been created within the class "GameEventManager.cs" that indicates the phase of the game. An interesting aspect is the fact that each phase of the game is actually characterized by two sub phases. In the first subphase it is up to the user of the VR to make his choice (which input, however, is inserted into our system by the therapist who will have to press a button on his website).\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4cm,width=17cm]{SubFase1.jpg}
+\end{figure}
+
+While in the second sub phase will be the child who plays with the dolphin Sam to make his choice.\\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=4cm,width=17cm]{SubFase2.jpg}
+\end{figure}
+
+The other fundamental part of GameLogic is the management of the choices (input) that users make. In the class "InputState.cs" the inputs are saved and then decoded by two dictionaries because one input corresponds to the id of the card read and the other to a button pressed on the website and therefore normally would not be comparable. Once translated, they are compared with what the game expects in order to go ahead and show the various feedbacks.
+
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=15cm,width=13cm]{InputDictionary.jpg}
+\end{figure}
+\clearpage
+
+\item \textbf{Feedback Management}\\
+Feedback management is the main part of our game, where both users of our game will receive appropriate feedback based on the choices they have made.
+There are many possible outputs and they differ depending on the stage of the game you are in.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6cm,width=17cm]{ControlloInput.jpg}
+\end{figure}
+
+The control of what to show users is only done after both players have been chosen. The code allows users to change their choice until both players have made the correct choice for the game.
+The game will in any case show appropriate feedback based on the values that will assume both inputs, whether they are right or wrong and whether they coincide or not.
+The control of the input values is done in the "GameEventManager.cs" class
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=6cm,width=17cm]{PossibiliFeedback.jpg}
+\end{figure}
+
+
+but then the actual function that manages the feedback according to the various cases is written in the "FeedbackManager.cs". Mainly a feedback will make objects appear or disappear in the scene of the game and send Sam a Post containing the command that the smart object must perform (setting led lights, sound reproduction). \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=7cm,width=17cm]{FeedbackManager.jpg}
+\end{figure}
+
+\end{itemize}
+\clearpage
+
+\subsubsection{Website}
+The web page is the tool with which the therapist translates what the child expresses in words into an input for the system.
+We decided to create a web page instead of an application because it is more convenient to use and does not require any kind of installation, except that of a simple browser. The web page has been developed following the Responsive Design that defines the creation of sites that can adapt graphically to the device on which they are displayed.
+The page structure has been developed through the HTML language (HyperText Markup Language) while the graphics management is done with CSS (Cascading Style Sheets) style sheets. The Responsive Design was introduced using the Bootstrap tool in version 4, thanks to which you can divide the web page into columns that adapt to the size of the device based on the parameters entered.
+JS and Ajax have been used to manage the buttons and send the POST messages.
+There is also a box where you can change the Ip address of the device on which the game is run and to which the POST requests must arrive. \\
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[height=12cm,width=16cm]{Website.jpg}
+\caption{\textbf{Website Interface}}
+\end{figure}
+
+
+\section{Critical reflection on our work}
+Realizing this project was a great challenge for us because neither of us had a direct approach to the technologies used to realize it. We were completely unrelated to the world of virtual reality and smart objects. Our inexperience led us to do a thorough research both on the two technologies with their possible interactions and on finding an original idea to develop, which could be used in the context of disabled children. Among the main challenges of "TamaDolphin" there were those concerning the creation of the server in Unity (and its management of client-server communications between the dolphin Sam and the game in Unity), the creation of 3D models (using Blender software) and the management of Cross-Domain Security policies typical of Web Applications. One of the main challenges we encountered was game logic. It was very difficult to think about how to structure the game in its phases because making two disabled children interact through two different technologies is almost impossible. The solution we found to this problem was the introduction of verbal communication which has become the backbone of our game. In order to make verbal communication the main part of an interactive game with disabled children, it was necessary to introduce the figure of the therapist. The therapist is therefore responsible for encouraging  communication between children.
+\section{Future work}
+TamaDolphin has a lot of potential as a project thanks to its strength that is verbal communication which allows you to easily expand the activities to be carried out by users. Currently our game has been made with a single round, but for a future implementation we would like to include new rounds in the game with new activities to be carried out by users. It would be very interesting to insert a new round in which the need for the dolphin appears initially on the physical dolphin instead of on the VR.
+One activity that could be added in the future would be to use the physical dolphin LEDs to illuminate some parts of the dolphin that will then have to be caressed to fall asleep the dolphin. 
+The child with Sam will have to communicate to the player with the VR the illuminated part while the child using the viewer will have to perform an associated task to satisfy the need of the dolphin.
+To make the experience of the child using the smart object more interesting and varied, it would be necessary to introduce new smart objects that would allow a series of interactions that are not possible at the moment. An interesting idea that we thought, would be to create a "labyrinth" activity in which there would always be a player who uses the VR and another who can walk around in a room where he will find the smart objects to use. The communication part would consist in giving the player with the VR some suggestions on where to find the objects in the real room and the other child should actually find them, and after finding the object you could introduce a mini activity to be solved, always working together, before continuing with the next object.
+\section{Bibliography}
+\begin{enumerate}
+\item Ryota Yoshimoto \& Mariko Sasakura (2017). Using real objects for interaction in virtual reality. \textit{21st International Conference Information Visualization (IV)}
+
+\item Simone C. \& Franca G. \& Mirko G. \& Mattia M. \& Francesco C. (2016). A Smart Dolphin for Children with Neurodevelopmental Disorders
+
+\item Sarah Parsons \& Sue Cobb (2011). State-of-the-art of virtual reality technologies for children on the autism spectrum. \textit{European Journal of Special Needs Education}
+
+\end{enumerate}
+
+\section{Appendix}
+\subsection{Software Used}
+\begin{itemize}[•]
+\item Unity v2018.3.2f1
+\item GVR SDK for Unity v1.190.1
+\item Blender v2.79
+\item Brackets v1.13
+\item StarUml v2.8.0
+\item Miktex v2.9.6361
+\item Texmaker v5.0.2
+\item DeepL
+\item GitHubDesktop v1.6.1
+\item Website.mysimpleshow.com
+\item AdobePhotoshop CC 2017
+\item Power Point
+\end{itemize}
+
+\subsection{Objects Used}
+\begin{itemize}[•]
+\item SAM Dolphin
+\item RFID cards
+\item Daydream/Cardboard
+\end{itemize}
+\end{document}
