@@ -29,21 +29,26 @@
 \BOOKMARK [3][-]{subsubsection.6.2.2}{Feedback of the Second Round Phase}{subsection.6.2}% 29
 \BOOKMARK [2][-]{subsection.6.3}{Summarising Feedback and Input}{section.6}% 30
 \BOOKMARK [2][-]{subsection.6.4}{Representation of the Need}{section.6}% 31
-\BOOKMARK [2][-]{subsection.6.5}{Representation of Food desire}{section.6}% 32
-\BOOKMARK [2][-]{subsection.6.6}{Rounds Game Management}{section.6}% 33
-\BOOKMARK [3][-]{subsubsection.6.6.1}{Round-based division}{subsection.6.6}% 34
-\BOOKMARK [3][-]{subsubsection.6.6.2}{Two Phases of each Round}{subsection.6.6}% 35
-\BOOKMARK [3][-]{subsubsection.6.6.3}{Exchange of technologies}{subsection.6.6}% 36
-\BOOKMARK [1][-]{section.7}{Implementation}{}% 37
-\BOOKMARK [2][-]{subsection.7.1}{High-level Diagram}{section.7}% 38
-\BOOKMARK [2][-]{subsection.7.2}{UML}{section.7}% 39
-\BOOKMARK [2][-]{subsection.7.3}{Deployment Diagram}{section.7}% 40
-\BOOKMARK [2][-]{subsection.7.4}{SW Architecture}{section.7}% 41
-\BOOKMARK [3][-]{subsubsection.7.4.1}{Mobile device}{subsection.7.4}% 42
-\BOOKMARK [3][-]{subsubsection.7.4.2}{Website}{subsection.7.4}% 43
-\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 44
-\BOOKMARK [1][-]{section.9}{Future work}{}% 45
-\BOOKMARK [1][-]{section.10}{Bibliography}{}% 46
-\BOOKMARK [1][-]{section.11}{Appendix}{}% 47
-\BOOKMARK [2][-]{subsection.11.1}{Software Used}{section.11}% 48
-\BOOKMARK [2][-]{subsection.11.2}{Objects Used}{section.11}% 49
+\BOOKMARK [3][-]{subsubsection.6.4.1}{Virtual reality}{subsection.6.4}% 32
+\BOOKMARK [3][-]{subsubsection.6.4.2}{Smart Object}{subsection.6.4}% 33
+\BOOKMARK [2][-]{subsection.6.5}{Representation of Food desire}{section.6}% 34
+\BOOKMARK [3][-]{subsubsection.6.5.1}{Virtual reality}{subsection.6.5}% 35
+\BOOKMARK [3][-]{subsubsection.6.5.2}{Smart Object}{subsection.6.5}% 36
+\BOOKMARK [2][-]{subsection.6.6}{Summarising Representation of Need}{section.6}% 37
+\BOOKMARK [2][-]{subsection.6.7}{Rounds Game Management}{section.6}% 38
+\BOOKMARK [3][-]{subsubsection.6.7.1}{Round-based division}{subsection.6.7}% 39
+\BOOKMARK [3][-]{subsubsection.6.7.2}{Two Phases of each Round}{subsection.6.7}% 40
+\BOOKMARK [3][-]{subsubsection.6.7.3}{Exchange of technologies}{subsection.6.7}% 41
+\BOOKMARK [1][-]{section.7}{Implementation}{}% 42
+\BOOKMARK [2][-]{subsection.7.1}{High-level Diagram}{section.7}% 43
+\BOOKMARK [2][-]{subsection.7.2}{UML}{section.7}% 44
+\BOOKMARK [2][-]{subsection.7.3}{Deployment Diagram}{section.7}% 45
+\BOOKMARK [2][-]{subsection.7.4}{SW Architecture}{section.7}% 46
+\BOOKMARK [3][-]{subsubsection.7.4.1}{Mobile device}{subsection.7.4}% 47
+\BOOKMARK [3][-]{subsubsection.7.4.2}{Website}{subsection.7.4}% 48
+\BOOKMARK [1][-]{section.8}{Critical reflection on our work}{}% 49
+\BOOKMARK [1][-]{section.9}{Future work}{}% 50
+\BOOKMARK [1][-]{section.10}{Bibliography}{}% 51
+\BOOKMARK [1][-]{section.11}{Appendix}{}% 52
+\BOOKMARK [2][-]{subsection.11.1}{Software Used}{section.11}% 53
+\BOOKMARK [2][-]{subsection.11.2}{Objects Used}{section.11}% 54
